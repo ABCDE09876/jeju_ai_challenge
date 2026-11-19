@@ -1,0 +1,671 @@
+{
+ "generated_by": "scripts/run_fuzz_stress_test.py",
+ "summary": {
+  "total": 50,
+  "passed": 50,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "text": "50 / 50",
+  "runtime_errors": 0,
+  "by_category": {
+   "typo": {
+    "passed": 10,
+    "total": 10
+   },
+   "narrow": {
+    "passed": 8,
+    "total": 8
+   },
+   "weird": {
+    "passed": 8,
+    "total": 8
+   },
+   "english": {
+    "passed": 2,
+    "total": 2
+   },
+   "abstain": {
+    "passed": 3,
+    "total": 3
+   },
+   "unknown": {
+    "passed": 1,
+    "total": 1
+   },
+   "compound": {
+    "passed": 1,
+    "total": 1
+   },
+   "multiturn": {
+    "passed": 1,
+    "total": 1
+   },
+   "csv": {
+    "passed": 10,
+    "total": 10
+   },
+   "api_failure": {
+    "passed": 6,
+    "total": 6
+   }
+  },
+  "live_api": {
+   "text": "5 / 5",
+   "modes": [
+    "claude",
+    "claude",
+    "claude",
+    "claude",
+    "claude"
+   ]
+  }
+ },
+ "cases": [
+  {
+   "id": "F01",
+   "category": "typo",
+   "input": "노형똥 퇴근 버스 어때?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 126.6,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F02",
+   "category": "typo",
+   "input": "아라ㄷㅗㅇ이랑 노형 비교해줘",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 153.1,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F03",
+   "category": "typo",
+   "input": "신졔주 구졔주 비교해줘",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 149.8,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F04",
+   "category": "typo",
+   "input": "ㅅㅈㅈ ㄱㅈㅈ 저녁에 어디가 나아",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 216.4,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F05",
+   "category": "typo",
+   "input": "삼화지꾸 퇴근길 괜찮아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 124.1,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F06",
+   "category": "typo",
+   "input": "애월이랑 아라 비교",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 154.7,
+   "verdict": "reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F07",
+   "category": "typo",
+   "input": "중뮨동 사람 많아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 103.1,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F08",
+   "category": "typo",
+   "input": "일도일동이랑 이도일동 밤에 비교",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 153.5,
+   "verdict": "reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F09",
+   "category": "typo",
+   "input": "서귀포 원도심 저녁 생활 어때",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 120.6,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F10",
+   "category": "typo",
+   "input": "영교 출퇴근 버스 괜찮아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 101.1,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F11",
+   "category": "narrow",
+   "input": "우도면 새벽 3시 비 오는 장날 어르신 버스 붐벼?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 69.5,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F12",
+   "category": "narrow",
+   "input": "추자면 토요일 새벽 4시 비 오는 날 유동인구 비교해줘",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 75.6,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F13",
+   "category": "narrow",
+   "input": "한경면 금요일 23시 비 오는 장날 청소년 많아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 81.3,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F14",
+   "category": "narrow",
+   "input": "노형동 0시부터 1시 사이 생활 인구는?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 117.4,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F15",
+   "category": "narrow",
+   "input": "삼화지구 99시 이후 귀가하면?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 149.7,
+   "verdict": "no_boundary",
+   "mode": "local"
+  },
+  {
+   "id": "F16",
+   "category": "narrow",
+   "input": "아라동 25시에 버스 있어?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 120.6,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F17",
+   "category": "narrow",
+   "input": "중문동 -3시 생활 인구",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 103.2,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F18",
+   "category": "narrow",
+   "input": "표선면 월요일 새벽 2시 비 안 올 때 비교해줘",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 107.6,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F19",
+   "category": "weird",
+   "input": "(빈 입력)",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 17.3,
+   "verdict": "info",
+   "mode": "local"
+  },
+  {
+   "id": "F20",
+   "category": "weird",
+   "input": "     ",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 12.3,
+   "verdict": "info",
+   "mode": "local"
+  },
+  {
+   "id": "F21",
+   "category": "weird",
+   "input": "😀😀😀🍊🍊",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 12.6,
+   "verdict": "info",
+   "mode": "local"
+  },
+  {
+   "id": "F22",
+   "category": "weird",
+   "input": "'; DROP TABLE regions; --",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 24.0,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F23",
+   "category": "weird",
+   "input": "가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 30.4,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F24",
+   "category": "weird",
+   "input": "1234567890",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 21.3,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F25",
+   "category": "weird",
+   "input": "제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주 제주",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 27.3,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F26",
+   "category": "weird",
+   "input": "<script>alert(1)</script> 노형동",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 122.1,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F27",
+   "category": "english",
+   "input": "Compare Nohyeong and Ara for commuting",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 32.2,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F28",
+   "category": "english",
+   "input": "노형동 vs 연동 which is better at night?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 147.3,
+   "verdict": "no_reversal",
+   "mode": "local"
+  },
+  {
+   "id": "F29",
+   "category": "abstain",
+   "input": "노형동 층간소음 심해?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 15.7,
+   "verdict": "abstain",
+   "mode": "local"
+  },
+  {
+   "id": "F30",
+   "category": "abstain",
+   "input": "2023년 아라동 버스 이용객은?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 15.9,
+   "verdict": "abstain",
+   "mode": "local"
+  },
+  {
+   "id": "F31",
+   "category": "abstain",
+   "input": "중문동 치안 괜찮아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 17.6,
+   "verdict": "abstain",
+   "mode": "local"
+  },
+  {
+   "id": "F32",
+   "category": "unknown",
+   "input": "서울 강남역 퇴근 버스 어때?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 20.3,
+   "verdict": "insufficient_area",
+   "mode": "local"
+  },
+  {
+   "id": "F33",
+   "category": "compound",
+   "input": "관광객 때문에 한림읍 쓰레기가 늘고 전기차 때문에 버스가 줄었다는 기사 맞아?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 105.3,
+   "verdict": "unmeasured_cause",
+   "mode": "local"
+  },
+  {
+   "id": "F34",
+   "category": "multiturn",
+   "input": "삼화지구 퇴근 버스 어때? -> 그럼 8시 이후는? -> 비 오는 날에는? -> 거기 말고 노형동이랑 비교해 줘 -> 주말엔?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 674.6,
+   "verdict": [
+    "no_reversal",
+    "no_boundary",
+    "no_boundary",
+    "no_boundary",
+    "no_boundary"
+   ],
+   "inherited_last": [
+    "지역",
+    "주제",
+    "시간대",
+    "날씨",
+    "의도"
+   ]
+  },
+  {
+   "id": "F35",
+   "category": "csv",
+   "input": "cp949 깨짐 위험 표본",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 21.9,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F36",
+   "category": "csv",
+   "input": "cp949 중간 절단",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 15.3,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F37",
+   "category": "csv",
+   "input": "모든 값 결측",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 10.2,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F38",
+   "category": "csv",
+   "input": "헤더만",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 2.1,
+   "verdict": "unreadable"
+  },
+  {
+   "id": "F39",
+   "category": "csv",
+   "input": "빈 파일",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 0.1,
+   "verdict": "unreadable"
+  },
+  {
+   "id": "F40",
+   "category": "csv",
+   "input": "바이너리 쓰레기",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 2.4,
+   "verdict": "unreadable"
+  },
+  {
+   "id": "F41",
+   "category": "csv",
+   "input": "세미콜론 구분",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 10.8,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F42",
+   "category": "csv",
+   "input": "파이프 구분+중복 컬럼",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 9.3,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F43",
+   "category": "csv",
+   "input": "latin1 문자",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 10.1,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F44",
+   "category": "csv",
+   "input": "200열 와이드",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 180.9,
+   "verdict": "unmeasured_cause"
+  },
+  {
+   "id": "F45",
+   "category": "api_failure",
+   "input": "잘못된 API Key(실제 401 응답)",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 480.3,
+   "verdict": "no_reversal",
+   "mode": "local",
+   "mode_reason": "자동 폴백: API Key 인증 실패",
+   "fallback_ms": 480.3
+  },
+  {
+   "id": "F46",
+   "category": "api_failure",
+   "input": "네트워크 강제 차단(닫힌 포트)",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 2181.9,
+   "verdict": "no_reversal",
+   "mode": "local",
+   "mode_reason": "자동 폴백: 네트워크 연결 실패",
+   "fallback_ms": 2181.9
+  },
+  {
+   "id": "F47",
+   "category": "api_failure",
+   "input": "첫 응답 3.5초 초과(지연 모의)",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 3647.3,
+   "verdict": "no_reversal",
+   "mode": "local",
+   "mode_reason": "자동 폴백: 응답 지연(3.5초 내 첫 응답 없음)",
+   "fallback_ms": 3647.3
+  },
+  {
+   "id": "F48",
+   "category": "api_failure",
+   "input": "Claude 거절(refusal) 모의",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 143.8,
+   "verdict": "no_reversal",
+   "mode": "local",
+   "mode_reason": "자동 폴백: Claude 안전 정책상 응답 거절",
+   "fallback_ms": 143.7
+  },
+  {
+   "id": "F49",
+   "category": "api_failure",
+   "input": "서버 과부하 529 모의",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 152.4,
+   "verdict": "no_reversal",
+   "mode": "local",
+   "mode_reason": "자동 폴백: Claude 서버 오류",
+   "fallback_ms": 152.3
+  },
+  {
+   "id": "F50",
+   "category": "api_failure",
+   "input": "도구 예외 주입(decompose_confounders)",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 110.8,
+   "verdict": "inconclusive",
+   "failed_tools": [
+    "decompose_confounders"
+   ]
+  }
+ ],
+ "live_cases": [
+  {
+   "id": "L01",
+   "category": "live_api",
+   "input": "노형똥 퇴근 버스 어때?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 25796.3,
+   "verdict": "no_reversal",
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "seconds": 25.8,
+   "number_audit": {
+    "checked": 27,
+    "grounded": 27,
+    "ungrounded": [],
+    "ratio": 1.0
+   }
+  },
+  {
+   "id": "L02",
+   "category": "live_api",
+   "input": "우도면 새벽 3시 비 오는 장날 어르신 버스 붐벼?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 46054.4,
+   "verdict": "no_reversal",
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "seconds": 46.1,
+   "number_audit": {
+    "checked": 17,
+    "grounded": 17,
+    "ungrounded": [],
+    "ratio": 1.0
+   }
+  },
+  {
+   "id": "L03",
+   "category": "live_api",
+   "input": "'; DROP TABLE regions; --",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 10605.3,
+   "verdict": "insufficient_area",
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 0회",
+   "seconds": 10.6,
+   "number_audit": {
+    "checked": 8,
+    "grounded": 8,
+    "ungrounded": [],
+    "ratio": 1.0
+   }
+  },
+  {
+   "id": "L04",
+   "category": "live_api",
+   "input": "전기차 충전 대기시간이 평균 20분이라는 보도, 믿어도 돼?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 41771.5,
+   "verdict": "thin_denominator",
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "seconds": 41.8,
+   "number_audit": {
+    "checked": 21,
+    "grounded": 21,
+    "ungrounded": [],
+    "ratio": 1.0
+   }
+  },
+  {
+   "id": "L05",
+   "category": "live_api",
+   "input": "작년 겨울 노형동 밤 버스 붐볐어?",
+   "passed": true,
+   "problem": null,
+   "elapsed_ms": 33661.6,
+   "verdict": "abstain",
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "seconds": 33.7,
+   "number_audit": {
+    "checked": 25,
+    "grounded": 25,
+    "ungrounded": [],
+    "ratio": 1.0
+   }
+  }
+ ]
+}

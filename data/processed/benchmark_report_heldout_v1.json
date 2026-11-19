@@ -1,0 +1,1220 @@
+{
+ "generated_by": "scripts/run_benchmark.py",
+ "protocol": [
+  "Dev 8문항: 개발 중 규칙·임계값 설계에 실제로 사용한 시나리오(공개).",
+  "Held-out Test 16문항: Dev 설계가 끝난 뒤 작성했고, 결과를 보고 규칙을 고치지 않는다. 1회 실행 결과를 그대로 보고한다.",
+  "정답 근거: 도구 임계값 수식이 아니라 합성 생성기의 설계값(심어 둔 은폐 구간 H1~H6, 지역 프로필의 무잡음 기대값 oracle, 배차 설계)과 원자료 보유 기간·컬럼 사전에서 정한다.",
+  "판정 보류(Abstention) 문항: 원자료에 필요한 컬럼·기간이 없어 억지 추론 대신 판정 보류와 현장 확인 질문 1개를 내야 정답."
+ ],
+ "engine": "로컬 신경-기호 엔진(결정론, force_offline=True, 캐시 미사용)",
+ "summary": {
+  "ours": {
+   "mean_illusion": {
+    "label": "평균 착시 오판 건수(낮을수록 좋음)",
+    "count": 0,
+    "total": 5,
+    "text": "0 / 5"
+   },
+   "masked_slice": {
+    "label": "은폐 슬라이스 검출 건수",
+    "count": 5,
+    "total": 6,
+    "text": "5 / 6"
+   },
+   "causal_block": {
+    "label": "집계 변경·미측정 인과·분모 함정 차단 건수",
+    "count": 3,
+    "total": 4,
+    "text": "3 / 4"
+   },
+   "false_alarm": {
+    "label": "정상 주장·대조군 오경보 건수(낮을수록 좋음)",
+    "count": 1,
+    "total": 5,
+    "text": "1 / 5"
+   },
+   "abstention": {
+    "label": "판정 보류(Abstention) 정확 건수",
+    "count": 4,
+    "total": 4,
+    "text": "4 / 4"
+   },
+   "accuracy_dev": {
+    "count": 8,
+    "total": 8,
+    "text": "8 / 8"
+   },
+   "accuracy_test": {
+    "count": 13,
+    "total": 16,
+    "text": "13 / 16"
+   },
+   "accuracy_all": {
+    "count": 21,
+    "total": 24,
+    "text": "21 / 24"
+   },
+   "avg_ms": 270.7,
+   "p95_ms": 383.6
+  },
+  "baseline_mean": {
+   "mean_illusion": {
+    "label": "평균 착시 오판 건수(낮을수록 좋음)",
+    "count": 5,
+    "total": 5,
+    "text": "5 / 5"
+   },
+   "masked_slice": {
+    "label": "은폐 슬라이스 검출 건수",
+    "count": 0,
+    "total": 6,
+    "text": "0 / 6"
+   },
+   "causal_block": {
+    "label": "집계 변경·미측정 인과·분모 함정 차단 건수",
+    "count": 0,
+    "total": 4,
+    "text": "0 / 4"
+   },
+   "false_alarm": {
+    "label": "정상 주장·대조군 오경보 건수(낮을수록 좋음)",
+    "count": 1,
+    "total": 5,
+    "text": "1 / 5"
+   },
+   "abstention": {
+    "label": "판정 보류(Abstention) 정확 건수",
+    "count": 0,
+    "total": 4,
+    "text": "0 / 4"
+   },
+   "accuracy_dev": {
+    "count": 1,
+    "total": 8,
+    "text": "1 / 8"
+   },
+   "accuracy_test": {
+    "count": 3,
+    "total": 16,
+    "text": "3 / 16"
+   },
+   "accuracy_all": {
+    "count": 4,
+    "total": 24,
+    "text": "4 / 24"
+   },
+   "avg_ms": 60.5,
+   "p95_ms": 89.9
+  },
+  "baseline_lookup": {
+   "mean_illusion": {
+    "label": "평균 착시 오판 건수(낮을수록 좋음)",
+    "count": 5,
+    "total": 5,
+    "text": "5 / 5"
+   },
+   "masked_slice": {
+    "label": "은폐 슬라이스 검출 건수",
+    "count": 0,
+    "total": 6,
+    "text": "0 / 6"
+   },
+   "causal_block": {
+    "label": "집계 변경·미측정 인과·분모 함정 차단 건수",
+    "count": 0,
+    "total": 4,
+    "text": "0 / 4"
+   },
+   "false_alarm": {
+    "label": "정상 주장·대조군 오경보 건수(낮을수록 좋음)",
+    "count": 1,
+    "total": 5,
+    "text": "1 / 5"
+   },
+   "abstention": {
+    "label": "판정 보류(Abstention) 정확 건수",
+    "count": 0,
+    "total": 4,
+    "text": "0 / 4"
+   },
+   "accuracy_dev": {
+    "count": 1,
+    "total": 8,
+    "text": "1 / 8"
+   },
+   "accuracy_test": {
+    "count": 3,
+    "total": 16,
+    "text": "3 / 16"
+   },
+   "accuracy_all": {
+    "count": 4,
+    "total": 24,
+    "text": "4 / 24"
+   },
+   "avg_ms": 61.0,
+   "p95_ms": 92.0
+  }
+ },
+ "peak_python_alloc_mb": 9.3,
+ "process_rss_mb": 209.1,
+ "oracle_label_check": {
+  "D1": true,
+  "D7": true,
+  "T1": true,
+  "T2": true,
+  "T3": true,
+  "T15": true
+ },
+ "items": [
+  {
+   "id": "D1",
+   "split": "dev",
+   "category": "A",
+   "question": "애월이 아라동보다 살기 활기찬 동네라던데, 도민 기준으로도 맞아?",
+   "expected": [
+    "refuted",
+    "reversal"
+   ],
+   "rationale": "애월읍은 관광 체류 규모 T=26,000(아라동 1,200)이라 단순 평균은 애월 우위, 도민 기준은 아라동 우위로 설계.",
+   "ours": {
+    "verdict": "refuted",
+    "pass": true,
+    "detail": "판정 refuted",
+    "elapsed_ms": 403.6,
+    "headline": "주장은 관광객이 포함된 단순 평균('애월읍' 우위)으로만 맞고, 도민 실생활 기준으로는 반대입니다: 교란 제거 후 '애월읍' 30,383 vs '아라동' 35,101.",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 25,
+     "grounded": 25,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'애월읍': 44393.54144021739, '아라동': 34085.229166666664}",
+    "elapsed_ms": 59.9,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'애월읍': 44393.54144021739, '아라동': 34085.229166666664}",
+    "elapsed_ms": 59.7,
+    "pass": false
+   },
+   "oracle": {
+    "pair": [
+     "애월읍",
+     "아라동"
+    ],
+    "window_hours": [
+     18,
+     19,
+     20,
+     21,
+     22
+    ],
+    "values": {
+     "애월읍": {
+      "naive_24h": 44336.477581521736,
+      "resident_window": 30358.275
+     },
+     "아라동": {
+      "naive_24h": 34023.192481884056,
+      "resident_window": 35093.30108695652
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.23261399331226942,
+    "window_margin": 0.13492677919423296
+   }
+  },
+  {
+   "id": "D2",
+   "split": "dev",
+   "category": "A",
+   "question": "삼화지구로 이사 가면 퇴근 버스 괜찮을까? 아라동이랑 비교해 줘",
+   "expected": [
+    "no_reversal",
+    "reversal",
+    "boundary"
+   ],
+   "rationale": "삼화지구 정류소는 피크 배차가 많지만 21시 이후 배차 계수 0.15로 급감하도록 설계 -> 귀가 경계 20~21시.",
+   "ours": {
+    "verdict": "no_reversal",
+    "pass": true,
+    "detail": "귀가 경계 20시 (정답 [20, 21])",
+    "elapsed_ms": 370.7,
+    "headline": "교란을 걷어내도 '아라동'이 계속 앞섭니다. 다만 결론 역전 경계: 20시. 그 전에는 '삼화지구', 그 이후에는 '아라동'이 귀가에 유리합니다.",
+    "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 22,
+     "grounded": 22,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'삼화지구': 21793.211163949276, '아라동': 34085.229166666664}",
+    "elapsed_ms": 27.9,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'삼화지구': 21970.192028985508, '아라동': 34740.13224637681}",
+    "elapsed_ms": 29.6,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "D3",
+   "split": "dev",
+   "category": "B",
+   "question": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H1: 장날 09~13시 x3.2.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시 (2.24배)",
+    "elapsed_ms": 296.6,
+    "headline": "평균만 보면 평범하지만 '제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시'에는 같은 시각 평소의 2.24배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "제주민속오일장 정류소에서 장날(2·7일) 09~13시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 20,
+     "grounded": 20,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 89.9,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 87.2,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "D4",
+   "split": "dev",
+   "category": "B",
+   "question": "비 오는 평일 퇴근길에 삼화지구 정류소가 언제 붐벼?",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H2: 비 오는 평일 17~19시 x1.6.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "삼화지구 정류소 승하차 · 비 오는 평일 · 17~19시 (1.78배)",
+    "elapsed_ms": 290.0,
+    "headline": "평균만 보면 평범하지만 '삼화지구 정류소 승하차 · 비 오는 평일 · 17~19시'에는 같은 시각 평소의 1.78배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "삼화지구 정류소에서 비 오는 평일 17~19시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 20,
+     "grounded": 20,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 44.3,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 42.5,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "D5",
+   "split": "dev",
+   "category": "C",
+   "question": "한림읍 음식물쓰레기가 2019년 12월에 10월보다 58.69배 폭증했다. 관광객 때문이다.",
+   "expected": [
+    "unmeasured_cause",
+    "structural_break"
+   ],
+   "rationale": "사용자 제공 공개 통계 사례(2019-11 RFID 전환) + 음식물쓰레기 자료에 관광객 컬럼 없음.",
+   "ours": {
+    "verdict": "unmeasured_cause",
+    "pass": true,
+    "detail": "단절 월 ['201911'] (정답 201911)",
+    "elapsed_ms": 214.8,
+    "headline": "수치 변화 자체는 확인되지만, 주장한 원인은 원자료 컬럼으로 측정되지 않아 단정할 수 없습니다. 또한 2019-11 월초 집계 단절이 감지되었습니다.",
+    "field_question": "2019년 11월 전후로 한림읍에 RFID 배출함이 몇 대 새로 설치됐는지 읍사무소 기록으로 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 22,
+     "grounded": 22,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음)",
+    "elapsed_ms": 57.3,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음)",
+    "elapsed_ms": 59.2,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "D6",
+   "split": "dev",
+   "category": "C",
+   "question": "제주 공공와이파이 이용자가 2020년 10월에 반토막 났다던데 맞아?",
+   "expected": [
+    "structural_break"
+   ],
+   "rationale": "2020-10 AP->장소 집계 단위 전환(집계변경 이력).",
+   "ours": {
+    "verdict": "structural_break",
+    "pass": true,
+    "detail": "단절 월 ['202010'] (정답 202010)",
+    "elapsed_ms": 268.9,
+    "headline": "2020년 10월 초에 계단식 집계 단절이 있어, 이 변화를 실제 증감으로 단정할 수 없습니다(집계변경 이력 일치: 집계단위 전환(AP 단위 접속 집계 -> 장소 단위 집계)).",
+    "field_question": "2020년 10월 전환 시점에 같은 기간을 두 방식으로 함께 집계한 병행 자료가 있는지 운영기관에 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 8,
+     "grounded": 8,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음)",
+    "elapsed_ms": 79.8,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음)",
+    "elapsed_ms": 80.8,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "D7",
+   "split": "dev",
+   "category": "C",
+   "question": "노형동은 저녁에 도민 유동인구가 연동보다 많다는데 맞아?",
+   "expected": [
+    "confirmed"
+   ],
+   "rationale": "정상 주장 대조군: 노형동 거주 규모 55,000 > 연동 43,000.",
+   "ours": {
+    "verdict": "confirmed",
+    "pass": true,
+    "detail": "판정 confirmed",
+    "elapsed_ms": 347.3,
+    "headline": "주장은 원자료와 일치합니다(정상 주장): 교란 제거 후 '노형동' 58,534 vs '연동' 49,137.",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 21,
+     "grounded": 21,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 57942.65285326087, '연동': 52792.16213768116}",
+    "elapsed_ms": 64.5,
+    "pass": true
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 66108.99184782608, '연동': 58560.18206521739}",
+    "elapsed_ms": 66.3,
+    "pass": true
+   },
+   "oracle": {
+    "pair": [
+     "노형동",
+     "연동"
+    ],
+    "window_hours": [
+     18,
+     19,
+     20,
+     21
+    ],
+    "values": {
+     "노형동": {
+      "naive_24h": 57825.02694746377,
+      "resident_window": 58390.372282608696
+     },
+     "연동": {
+      "naive_24h": 52700.854846014496,
+      "resident_window": 49031.26766304348
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.08861512690871337,
+    "window_margin": 0.16028506504920473
+   }
+  },
+  {
+   "id": "D8",
+   "split": "dev",
+   "category": "C",
+   "question": "노형동 집값 비싸?",
+   "expected": [
+    "abstain"
+   ],
+   "rationale": "부동산 가격 컬럼 없음 -> 판정 보류 + 현장 확인 질문.",
+   "ours": {
+    "verdict": "abstain",
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "elapsed_ms": 33.9,
+    "headline": "판정 보류: '부동산 가격'을(를) 측정한 컬럼이 공식 데이터에 없습니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+    "field_question": "해당 동네 최근 실거래가를 국토교통부 실거래가 공개시스템에서 확인해 볼 수 있을까요?",
+    "number_audit": {
+     "checked": 8,
+     "grounded": 8,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 57942.65285326087, '연동': 52792.16213768116}",
+    "elapsed_ms": 17.3,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 57942.65285326087, '연동': 52792.16213768116}",
+    "elapsed_ms": 18.1,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T1",
+   "split": "test",
+   "category": "A",
+   "question": "중문동이 대륜동보다 사람이 훨씬 많아서 살기 활기찬 동네라던데 맞아?",
+   "expected": [
+    "refuted",
+    "reversal"
+   ],
+   "rationale": "중문동 관광 체류 T=18,000·숙박 계수 1.6 vs 대륜동 T=1,500 -> 단순 평균은 중문, 도민 기준은 대륜동.",
+   "ours": {
+    "verdict": "refuted",
+    "pass": true,
+    "detail": "판정 refuted",
+    "elapsed_ms": 346.7,
+    "headline": "주장은 관광객이 포함된 단순 평균('중문동' 우위)으로만 맞고, 도민 실생활 기준으로는 반대입니다: 교란 제거 후 '중문동' 11,619 vs '대륜동' 14,486.",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 26,
+     "grounded": 26,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'중문동': 25091.08786231884, '대륜동': 14572.930027173914}",
+    "elapsed_ms": 60.3,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'중문동': 25091.08786231884, '대륜동': 14572.930027173914}",
+    "elapsed_ms": 59.7,
+    "pass": false
+   },
+   "oracle": {
+    "pair": [
+     "중문동",
+     "대륜동"
+    ],
+    "window_hours": [
+     18,
+     19,
+     20,
+     21,
+     22
+    ],
+    "values": {
+     "중문동": {
+      "naive_24h": 25036.315670289856,
+      "resident_window": 11628.825
+     },
+     "대륜동": {
+      "naive_24h": 14557.366394927536,
+      "resident_window": 14435.369565217392
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.4185499741001229,
+    "window_margin": 0.19442138647976662
+   }
+  },
+  {
+   "id": "T2",
+   "split": "test",
+   "category": "A",
+   "question": "일도1동이랑 삼도1동 중에 밤 9시 이후에 사람 사는 동네 같은 곳은 어디야?",
+   "expected": [
+    "reversal"
+   ],
+   "rationale": "일도1동은 직장·여가·관광 유입이 크지만 거주 2,500에 야간 계수 0.35(야간 공동화).",
+   "ours": {
+    "verdict": "reversal",
+    "pass": true,
+    "detail": "판정 reversal",
+    "elapsed_ms": 348.4,
+    "headline": "단순 평균으로는 '일도1동'이 앞서 보이지만, 교란을 걷어낸 도민 실생활 기준으로는 '삼도1동'이 앞섭니다(순위 역전).",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 11,
+     "grounded": 11,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'일도1동': 12549.112545289856, '삼도1동': 11502.603940217392}",
+    "elapsed_ms": 50.7,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'일도1동': 5243.333333333333, '삼도1동': 11183.050724637682}",
+    "elapsed_ms": 51.8,
+    "pass": false
+   },
+   "oracle": {
+    "pair": [
+     "일도1동",
+     "삼도1동"
+    ],
+    "window_hours": [
+     21,
+     22,
+     23
+    ],
+    "values": {
+     "일도1동": {
+      "naive_24h": 12537.257472826086,
+      "resident_window": 4028.7373188405795
+     },
+     "삼도1동": {
+      "naive_24h": 11472.707880434782,
+      "resident_window": 10729.438405797102
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.08491088220040667,
+    "window_margin": 0.6245155462504115
+   }
+  },
+  {
+   "id": "T3",
+   "split": "test",
+   "category": "A",
+   "question": "노형동이랑 외도동 중 퇴근 후 생활하기 어디가 나아?",
+   "expected": [
+    "no_reversal"
+   ],
+   "rationale": "역전 없음 대조군: 두 지역 모두 관광 비중이 낮고 노형동 거주 규모가 커서 교란을 걷어내도 순위 유지.",
+   "ours": {
+    "verdict": "no_reversal",
+    "pass": true,
+    "detail": "판정 no_reversal",
+    "elapsed_ms": 308.8,
+    "headline": "교란을 걷어내도 '노형동'이 계속 앞섭니다.",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 23,
+     "grounded": 23,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 57942.65285326087, '외도동': 18579.562952898552}",
+    "elapsed_ms": 20.6,
+    "pass": true
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'노형동': 66108.99184782608, '외도동': 20489.971467391304}",
+    "elapsed_ms": 21.1,
+    "pass": true
+   },
+   "oracle": {
+    "pair": [
+     "노형동",
+     "외도동"
+    ],
+    "window_hours": [
+     18,
+     19,
+     20,
+     21,
+     22
+    ],
+    "values": {
+     "노형동": {
+      "naive_24h": 57825.02694746377,
+      "resident_window": 58319.85760869565
+     },
+     "외도동": {
+      "naive_24h": 18557.049139492752,
+      "resident_window": 20057.43804347826
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.6790827411744652,
+    "window_margin": 0.6560787548890099
+   }
+  },
+  {
+   "id": "T4",
+   "split": "test",
+   "category": "A",
+   "question": "외도동이랑 삼화지구 중에 퇴근하고 버스로 귀가하기 어디가 편해?",
+   "expected": [
+    "no_reversal",
+    "reversal",
+    "boundary"
+   ],
+   "rationale": "배차 설계상 대기만 보면 21시, 혼잡 가산 포함 시 20시에 유불리가 바뀜.",
+   "ours": {
+    "verdict": "no_reversal",
+    "pass": true,
+    "detail": "귀가 경계 20시 (정답 [20, 21])",
+    "elapsed_ms": 383.6,
+    "headline": "교란을 걷어내도 '삼화지구'가 계속 앞섭니다. 다만 결론 역전 경계: 20시. 그 전에는 '삼화지구', 그 이후에는 '외도동'이 귀가에 유리합니다.",
+    "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 22,
+     "grounded": 22,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'외도동': 18579.562952898552, '삼화지구': 21793.211163949276}",
+    "elapsed_ms": 59.7,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'외도동': 20489.971467391304, '삼화지구': 23418.961277173912}",
+    "elapsed_ms": 63.1,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T5",
+   "split": "test",
+   "category": "A",
+   "question": "작년 겨울 아라동이랑 노형동 중 밤에 어디가 더 붐볐어?",
+   "expected": [
+    "abstain"
+   ],
+   "rationale": "시간대별 유동인구 보유 기간 2026.05~10 밖(2025년 겨울) -> 판정 보류.",
+   "ours": {
+    "verdict": "abstain",
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "elapsed_ms": 53.4,
+    "headline": "판정 보류: 요청 시점이 보유 자료 기간(2026.05~2026.10) 밖입니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+    "field_question": "해당 기간 원자료를 제주데이터허브에서 내려받아 data/raw/ 에 넣고 다시 분석해 볼까요?",
+    "number_audit": {
+     "checked": 9,
+     "grounded": 9,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'아라동': 34085.229166666664, '노형동': 57942.65285326087}",
+    "elapsed_ms": 32.5,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'아라동': 36318.49275362319, '노형동': 63704.5018115942}",
+    "elapsed_ms": 35.1,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T6",
+   "split": "test",
+   "category": "A",
+   "question": "애월읍 아파트 월세 시세는 어느 정도야?",
+   "expected": [
+    "abstain"
+   ],
+   "rationale": "월세·부동산 컬럼 없음 -> 판정 보류.",
+   "ours": {
+    "verdict": "abstain",
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "elapsed_ms": 62.9,
+    "headline": "판정 보류: '부동산 가격'을(를) 측정한 컬럼이 공식 데이터에 없습니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+    "field_question": "해당 동네 최근 실거래가를 국토교통부 실거래가 공개시스템에서 확인해 볼 수 있을까요?",
+    "number_audit": {
+     "checked": 8,
+     "grounded": 8,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'애월읍': 44393.54144021739, '조천읍': 32395.666213768116}",
+    "elapsed_ms": 45.7,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'애월읍': 44393.54144021739, '조천읍': 32395.666213768116}",
+    "elapsed_ms": 46.0,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T7",
+   "split": "test",
+   "category": "B",
+   "question": "함덕 버스 정류소가 평소엔 한산한데 숨은 혼잡 시간대가 있어?",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H3: 7~8월 주말 14~18시 x2.2.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "함덕해수욕장 정류소 승하차 · 7~8월 주말 · 06~23시 (2.09배)",
+    "elapsed_ms": 297.4,
+    "headline": "평균만 보면 평범하지만 '함덕해수욕장 정류소 승하차 · 7~8월 주말 · 06~23시'에는 같은 시각 평소의 2.09배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "함덕해수욕장 정류소에서 7~8월 주말 06~23시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 16,
+     "grounded": 16,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 81.7,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 81.1,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T8",
+   "split": "test",
+   "category": "B",
+   "question": "노형오거리 정류소는 평균 이용객이 많지 않아 심야 증편이 필요 없다는 시 답변, 근거 있어?",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H4: 금요일 21~23시 x1.8.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "노형오거리 정류소 승하차 · 금요일 · 21~23시 (1.80배)",
+    "elapsed_ms": 320.2,
+    "headline": "평균만 보면 평범하지만 '노형오거리 정류소 승하차 · 금요일 · 21~23시'에는 같은 시각 평소의 1.80배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "노형오거리 정류소에서 금요일 21~23시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 13,
+     "grounded": 13,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 112.7,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 117.9,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T9",
+   "split": "test",
+   "category": "B",
+   "question": "제주공항 버스 정류소는 언제 제일 붐벼? 평균 말고 숨은 시간대",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H5: 일요일 17~20시 x1.7.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "제주국제공항 정류소 승하차 · 일요일 · 17~20시 (1.54배)",
+    "elapsed_ms": 251.4,
+    "headline": "평균만 보면 평범하지만 '제주국제공항 정류소 승하차 · 일요일 · 17~20시'에는 같은 시각 평소의 1.54배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "제주국제공항 정류소에서 일요일 17~20시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 12,
+     "grounded": 12,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 44.0,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 43.3,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T10",
+   "split": "test",
+   "category": "B",
+   "question": "동문시장 앞 정류소는 이용객이 평균적이라 혼잡 민원이 과장이라는데, 숨은 혼잡 시간대가 있어?",
+   "expected": [
+    "masked_overload"
+   ],
+   "rationale": "심어 둔 은폐 구간 H6: 토요일 15~18시 x1.6.",
+   "ours": {
+    "verdict": "inconclusive",
+    "pass": false,
+    "detail": "판정 inconclusive (정답 ['masked_overload'])",
+    "elapsed_ms": 335.7,
+    "headline": "확보한 근거로는 어느 쪽으로도 단정하기 어렵습니다(판정 유보).",
+    "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 12,
+     "grounded": 12,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "none",
+    "note": "월·연 평균 승하차만 비교",
+    "elapsed_ms": 125.5,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "none",
+    "note": "시간대별 평균(요일·날씨 구분 없음)만 조회",
+    "elapsed_ms": 124.3,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T11",
+   "split": "test",
+   "category": "B",
+   "question": "외도동 외도부영 정류소는 화요일 오전에 평소보다 붐빈다는데 맞아?",
+   "expected": [
+    "inconclusive",
+    "refuted",
+    "masked_overload",
+    "none",
+    "no_reversal"
+   ],
+   "rationale": "오경보 대조군: 화요일 효과를 설계하지 않음 -> '사실 확인(confirmed)'이면 오경보.",
+   "ours": {
+    "verdict": "masked_overload",
+    "pass": true,
+    "detail": "판정 masked_overload",
+    "elapsed_ms": 297.3,
+    "headline": "평균만 보면 평범하지만 '외도부영 정류소 승하차 · 비 오는 평일 · 10~10시'에는 같은 시각 평소의 1.32배로 붐빕니다(평균에 가려진 과부하).",
+    "field_question": "외도부영 정류소에서 비 오는 평일 10~10시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 26,
+     "grounded": 26,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "조건(시간대) 필터 평균을 전체 평균과 비교(같은 시각 기준선 없음)",
+    "elapsed_ms": 85.8,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "조건(시간대) 필터 평균을 전체 평균과 비교(같은 시각 기준선 없음)",
+    "elapsed_ms": 86.7,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T12",
+   "split": "test",
+   "category": "B",
+   "question": "첨단과학기술단지 정류소는 오일장 장날에 평소보다 붐빈다던데 사실이야?",
+   "expected": [
+    "inconclusive",
+    "refuted",
+    "masked_overload",
+    "none",
+    "no_reversal"
+   ],
+   "rationale": "오경보 대조군: 장날 효과는 오일장 정류소에만 설계 -> '사실 확인'이면 오경보.",
+   "ours": {
+    "verdict": "confirmed",
+    "pass": false,
+    "detail": "금지 판정 confirmed(오경보)",
+    "elapsed_ms": 415.0,
+    "headline": "주장은 원자료와 일치합니다(정상 주장): 교란 제거 후 '아라동' 685 vs '오일장' 39.",
+    "field_question": "해당 정류소에서 퇴근 시간대 버스가 만차로 통과한 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 25,
+     "grounded": 25,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "refuted",
+    "note": "조건(시간대) 필터 평균을 전체 평균과 비교(같은 시각 기준선 없음)",
+    "elapsed_ms": 89.9,
+    "pass": true
+   },
+   "baseline_lookup": {
+    "verdict": "refuted",
+    "note": "조건(시간대) 필터 평균을 전체 평균과 비교(같은 시각 기준선 없음)",
+    "elapsed_ms": 92.0,
+    "pass": true
+   },
+   "oracle": null
+  },
+  {
+   "id": "T13",
+   "split": "test",
+   "category": "C",
+   "question": "전기차 충전 대기시간이 평균 20분이라는 보도, 믿어도 돼?",
+   "expected": [
+    "thin_denominator"
+   ],
+   "rationale": "사용자 제공 사례 구조: 2,447행 중 대기시간 계산 가능 113행.",
+   "ours": {
+    "verdict": "insufficient_area",
+    "pass": false,
+    "detail": "판정 insufficient_area (정답 ['thin_denominator'])",
+    "elapsed_ms": 139.0,
+    "headline": "질문에서 제주 지역명을 찾지 못했습니다. 동네 이름(예: 노형동, 신제주, 삼화지구)을 함께 적어 주세요.",
+    "field_question": "충전 요청 시각이 비어 있는 행이 앱 미사용 현장 충전인지 운영사에 확인할 수 있을까요?",
+    "number_audit": {
+     "checked": 2,
+     "grounded": 2,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음) / 대기시간 평균을 가능한 행(173행)으로 계산",
+    "elapsed_ms": 51.8,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "보도·주장의 수치를 표에서 그대로 확인(집계 변경·인과·분모 점검 없음)",
+    "elapsed_ms": 49.8,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T14",
+   "split": "test",
+   "category": "C",
+   "question": "비가 많이 와서 연동 카드 매출이 줄었다는데 맞아?",
+   "expected": [
+    "unmeasured_cause"
+   ],
+   "rationale": "카드는 월 단위, 기상은 일 단위라 비를 원인으로 연결할 수 없음(시간 단위 불일치).",
+   "ours": {
+    "verdict": "unmeasured_cause",
+    "pass": true,
+    "detail": "판정 unmeasured_cause",
+    "elapsed_ms": 274.1,
+    "headline": "수치 변화 자체는 확인되지만, 주장한 원인은 원자료 컬럼으로 측정되지 않아 단정할 수 없습니다.",
+    "field_question": "'비(강수)'가 카드 매출에 영향을 줬는지 보려면 같은 기간의 비(강수) 관련 수치를 관계 기관에서 받아 볼 수 있을까요?",
+    "number_audit": {
+     "checked": 3,
+     "grounded": 3,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'연동': 52792.16213768116, '노형동': 57942.65285326087}",
+    "elapsed_ms": 51.0,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "no_reversal",
+    "note": "관광객 포함 체류 평균 비교: {'연동': 52792.16213768116, '노형동': 57942.65285326087}",
+    "elapsed_ms": 51.4,
+    "pass": false
+   },
+   "oracle": null
+  },
+  {
+   "id": "T15",
+   "split": "test",
+   "category": "C",
+   "question": "아라동은 저녁 시간에 도민이 삼양동보다 많다던데 맞아?",
+   "expected": [
+    "confirmed"
+   ],
+   "rationale": "정상 주장 대조군: 아라동 거주 38,000·직장 11,000 > 삼양동 27,000·2,500.",
+   "ours": {
+    "verdict": "confirmed",
+    "pass": true,
+    "detail": "판정 confirmed",
+    "elapsed_ms": 375.7,
+    "headline": "주장은 원자료와 일치합니다(정상 주장): 교란 제거 후 '아라동' 34,898 vs '삼양동' 23,352.",
+    "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+    "number_audit": {
+     "checked": 24,
+     "grounded": 24,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'아라동': 34085.229166666664, '삼양동': 21892.031476449276}",
+    "elapsed_ms": 47.7,
+    "pass": true
+   },
+   "baseline_lookup": {
+    "verdict": "confirmed",
+    "note": "관광객 포함 체류 평균 비교: {'아라동': 35751.39809782609, '삼양동': 23893.051630434784}",
+    "elapsed_ms": 50.1,
+    "pass": true
+   },
+   "oracle": {
+    "pair": [
+     "아라동",
+     "삼양동"
+    ],
+    "window_hours": [
+     18,
+     19,
+     20,
+     21
+    ],
+    "values": {
+     "아라동": {
+      "naive_24h": 34023.192481884056,
+      "resident_window": 34889.80027173913
+     },
+     "삼양동": {
+      "naive_24h": 21844.588994565216,
+      "resident_window": 23326.364130434784
+     }
+    },
+    "label_consistent": true,
+    "naive_margin": 0.3579500510953945,
+    "window_margin": 0.33142741005229465
+   }
+  },
+  {
+   "id": "T16",
+   "split": "test",
+   "category": "C",
+   "question": "2024년 삼화지구 버스 이용객이 2025년보다 늘었다는데 맞아?",
+   "expected": [
+    "abstain"
+   ],
+   "rationale": "버스 이용 자료 보유 기간 2026.05~10 밖 -> 판정 보류.",
+   "ours": {
+    "verdict": "abstain",
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "elapsed_ms": 62.2,
+    "headline": "판정 보류: 요청 시점이 보유 자료 기간(2026.05~2026.10) 밖입니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+    "field_question": "해당 기간 원자료를 제주데이터허브에서 내려받아 data/raw/ 에 넣고 다시 분석해 볼까요?",
+    "number_audit": {
+     "checked": 12,
+     "grounded": 12,
+     "ungrounded": [],
+     "ratio": 1.0
+    }
+   },
+   "baseline_mean": {
+    "verdict": "refuted",
+    "note": "관광객 포함 체류 평균 비교: {'삼화지구': 21793.211163949276, '노형동': 57942.65285326087}",
+    "elapsed_ms": 50.3,
+    "pass": false
+   },
+   "baseline_lookup": {
+    "verdict": "refuted",
+    "note": "관광객 포함 체류 평균 비교: {'삼화지구': 21793.211163949276, '노형동': 57942.65285326087}",
+    "elapsed_ms": 48.4,
+    "pass": false
+   },
+   "oracle": null
+  }
+ ]
+}

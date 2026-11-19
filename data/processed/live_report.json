@@ -1,0 +1,4250 @@
+{
+ "generated_by": "scripts/run_live_test.py",
+ "generated_at": "2026-11-19 01:02:29",
+ "dry_run": false,
+ "model": "claude-opus-5-5",
+ "summary": {
+  "questions": 40,
+  "passed": 34,
+  "runtime_errors": 0,
+  "modes": {
+   "claude": 38,
+   "local": 2
+  },
+  "fallback_reasons": [
+   "자동 폴백: 응답 지연(3.5초 내 첫 응답 없음)",
+   "자동 폴백: 응답 지연(3.5초 내 첫 응답 없음)"
+  ],
+  "checks": {
+   "claude_mode": 38,
+   "sections": 40,
+   "numbers": 37,
+   "verdict": 39
+  },
+  "benchmark_claude": "23 / 24",
+  "benchmark_local": "23 / 24",
+  "verdict_same_as_local": "40 / 40",
+  "numbers": "878 / 881",
+  "seconds_median": 34.6,
+  "seconds_p95": 57.6,
+  "seconds_min": 3.6,
+  "seconds_max": 70.5,
+  "input_tokens": 890364,
+  "output_tokens": 142388,
+  "requests": 130
+ },
+ "rows": [
+  {
+   "id": "B-D1",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "애월이 아라동보다 살기 활기찬 동네라던데, 도민 기준으로도 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "refuted",
+   "local_verdict": "refuted",
+   "gold": {
+    "expected": [
+     "refuted",
+     "reversal"
+    ],
+    "pass": true,
+    "detail": "판정 refuted",
+    "local_pass": true,
+    "local_detail": "판정 refuted"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 32,
+    "grounded": 32,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 25,
+    "grounded": 25,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 38.7,
+   "claude": {
+    "rounds": 3,
+    "seconds": 38.6,
+    "model": "claude-opus-5-5",
+    "input_tokens": 18723,
+    "output_tokens": 3386,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "애월읍",
+        "아라동"
+       ],
+       "topic": "living",
+       "question": "애월이 아라동보다 살기 활기찬 동네라던데, 도민 기준으로도 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "애월읍",
+        "아라동"
+       ],
+       "topic": "living",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "애월읍",
+        "아라동"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "claim": "애월이 아라동보다 살기 활기찬 동네라던데, 도민 기준으로도 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "애월읍",
+        "아라동"
+       ],
+       "topic": "living",
+       "variable": "visit_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장은 관광객이 포함된 단순 평균('애월읍' 우위)으로만 맞고, 도민 실생활 기준으로는 반대입니다: 교란 제거 후 '애월읍' 30,383 vs '아라동' 35,101.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 도민 기준으로는 맞지 않습니다. 관광객까지 합친 전체 평균에서는 애월읍 사람이 더 많지만, 도외 거주자(관광객 등)를 빼고 보니 저녁 시간대 도민 체류 인구, 밤까지 남는 비율, 비 오는 날의 안정성 모두 아라동이 앞섰습니다.\n\n※ 이번 분석에 쓴 유동인구·카드·버스·날씨 자료는 공식 서식은 그대로 따랐지만 값은 시연용으로 합성한 데이터입니다. 실제 수치와 다를 수 있습니다.\n\n[원자료로 확인된 수치 사실]\n- **관광객 포함 하루 평균(시간당 체류 인구)**: 애월읍 44,394명, 아라동 34,085명입니다. 이 숫자만 보면 \"애월이 더 활기차다\"는 말이 맞아 보입니다.\n- **도외 거주자(관광객) 비중**: 애월읍 35.6%, 아라동 3.0%입니다. 애월 인구의 상당 부분이 도외 거주자였습니다.\n- **저녁(18~22시) 도민 체류 인구**: 애월읍 30,383명, 아라동 35,101명입니다.\n- **밤 잔류율(낮 12~17시 도민 대비 밤 21~23시 도민)**: 애월읍 101.2%, 아라동 117.3%입니다. 아라동이 밤에 도민이 더 많이 남는 동네입니다.\n- **카드 이용액 중 제주도민 비중**: 애월읍 36.0%, 아라동 93.3%입니다.\n- **비 오는 날 저녁 도민 체류 변화**: 애월읍 -4.1%, 아라동 -0.1%입니다(비 온 날 52일, 안 온 날 132일 비교). 주변 정류소의 평일 저녁 승차는 비 오는 날 애월읍 -10.0%, 아라동 +27.3%였습니다.\n\n[교란 제거 후 역전 구간]\n- **관광객 효과를 빼면 순위가 바뀝니다.** 전체 평균 1위는 애월읍이었지만, 도외 거주자를 빼자 아라동이 1위가 됐습니다. 비 오는 날 조건을 더해도 아라동이 계속 앞섰습니다.\n- **방문 시각을 바꿔도 다시 뒤집히지 않습니다.** 평일 기준 대기와 혼잡을 합친 체감 지수는 아래와 같습니다. 아라동이 같거나 낮아서 결론이 바뀌는 시각이 없었습니다.\n\n| 시각 | 애월읍 | 아라동 |\n|---|---|---|\n| 8시 | 5.8분 | 5.8분 |\n| 11시 | 8.0분 | 6.8분 |\n| 20시 | 7.8분 | 6.5분 |\n\n- **평균에 가려진 붐비는 시간대(아라동)**: 제주대학교 정류소 승하차는 평소 시간당 145명이지만, 비 오는 평일(05~23시)에는 196명으로 1.35배가 됩니다(35일 해당). 첨단과학기술단지 정류소도 비 오는 평일 19~23시에 60.4명으로, 같은 시각 평소 45.3명의 1.33배였습니다. 아라동은 비 오는 평일에 버스 이용이 몰린다는 점을 감안하셔야 합니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **'활기'는 자료로 직접 잴 수 없습니다.** 자료가 보여주는 것은 그 시간에 동네에 머문 사람 수와 카드 사용 비중뿐입니다. 가게가 얼마나 다양한지, 동네 분위기가 어떤지, 주민이 얼마나 만족하는지는 담겨 있지 않습니다.\n- **'도민'에는 다른 동네에서 온 도민 방문객도 섞여 있습니다.** 자료는 도내 거주자와 도외 거주자만 나눕니다. 그래서 다른 동네 도민이 애월 카페에 들른 경우나, 아라동 주민이 아닌 학생·직장인도 모두 도민으로 집계됐을 수 있습니다. 이 수치만으로 \"실제 주민이 사는 맛\"까지 판단할 수는 없습니다.\n- **현장 확인 질문**: 애월읍 중심가에서 평일 저녁 18~22시 손님 중 동네 주민이 얼마나 되는지 상인분들께 직접 여쭤볼 수 있을까요?\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?"
+  },
+  {
+   "id": "B-D2",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "삼화지구로 이사 가면 퇴근 버스 괜찮을까? 아라동이랑 비교해 줘",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 5회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": {
+    "expected": [
+     "no_reversal",
+     "reversal",
+     "boundary"
+    ],
+    "pass": true,
+    "detail": "귀가 경계 20시 (정답 [20, 21])",
+    "local_pass": true,
+    "local_detail": "귀가 경계 20시 (정답 [20, 21])"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 30,
+    "grounded": 30,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 18,
+    "grounded": 18,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 49.4,
+   "claude": {
+    "rounds": 4,
+    "seconds": 49.4,
+    "model": "claude-opus-5-5",
+    "input_tokens": 25152,
+    "output_tokens": 5187,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "아라동"
+       ],
+       "topic": "commute",
+       "question": "삼화지구로 이사 가면 퇴근 버스 괜찮을까? 아라동이랑 비교해 줘"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "아라동"
+       ],
+       "topic": "commute",
+       "hour_from": 17,
+       "hour_to": 19,
+       "day_type": "weekday",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "아라동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "아라동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "아라동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '아라동'이 계속 앞섭니다. 다만 결론 역전 경계: 20시. 그 전에는 '삼화지구', 그 이후에는 '아라동'이 귀가에 유리합니다.",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 평일 19시 전에 퇴근한다면 삼화지구의 버스 귀가가 아라동보다 오히려 수월합니다. 하지만 20시 이후 퇴근이 잦거나 비 오는 날 18시 이후에 버스를 타야 한다면 아라동이 낫습니다. 특히 비 오는 평일 저녁 삼화지구 정류소는 평균 수치에 가려진 혼잡 시간대가 있습니다.\n\n※ 이번 분석에 쓴 버스·유동인구·날씨 자료는 공식 형식을 따라 만든 시연용 가상 데이터입니다. 실제 이사 결정 전에는 실제 자료로 다시 확인하셔야 합니다.\n\n[원자료로 확인된 수치 사실]\n- **퇴근길 불편 정도(평일, 날씨 무관)**: 버스 기다리는 시간과 혼잡을 분 단위로 합친 값으로, 낮을수록 편합니다.\n  - 삼화지구: 17시 4.1분, 20시 8.0분, 23시 33.5분\n  - 아라동: 17시 5.5분, 20시 6.5분, 23시 15.0분\n- **비 오는 평일의 불편 정도**:\n  - 삼화지구: 17시 5.6분, 20시 8.7분, 23시 34.6분\n  - 아라동: 17시 6.5분, 20시 7.3분, 23시 15.7분\n- **삼화지구 정류소 이용객**: 평소에는 시간당 평균 89.5명이 타고 내립니다. 비 오는 평일 17~19시에는 303명으로, 맑은 날 같은 시각(170명)의 1.78배입니다(해당 35일).\n- **비 오는 날 평일 17~19시 승차 증가율**: 삼화지구 주변 정류소는 +61.9%, 아라동 주변 정류소는 +27.6%로 삼화지구 쪽이 더 크게 늘어납니다.\n- **관광객 영향**: 머무는 사람 중 다른 지역 거주자(관광객) 비율이 삼화지구 2.7%, 아라동 3.0%로 둘 다 낮습니다. 관광객 때문에 수치가 부풀려질 걱정은 크지 않습니다.\n- **평일 17~19시 도민 수**: 삼화지구 21,438명, 아라동 34,209명입니다.\n\n[교란 제거 후 역전 구간]\n- **동네 규모**: 관광객, 시간대 쏠림, 날씨의 영향을 차례로 빼도 머무는 도민 수는 아라동이 계속 많습니다. 이 부분은 순위가 바뀌지 않습니다. 다만 사람이 많다고 해서 버스가 더 편하다는 뜻은 아닙니다.\n- **퇴근 시각에 따라 뒤집힘(평일, 날씨 무관)**: 17~19시에는 삼화지구가, 20시부터는 아라동이 귀가에 유리합니다. 경계는 20시입니다.\n- **비 오는 평일**: 경계가 18시로 앞당겨집니다. 17시에만 삼화지구가 유리하고 18시부터는 아라동이 낫습니다.\n- **늦은 밤**: 23시 기준 삼화지구는 33.5분, 아라동은 15.0분입니다. 야근이 잦다면 삼화지구 쪽 부담이 큽니다.\n- **평균에 가려진 혼잡**: 삼화지구 정류소의 비 오는 평일 17~19시가 대표적입니다. 화북주공 정류소도 비 오는 평일에는 하루 종일 평소의 1.36배로 붐빕니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **실제 시간표·만차 여부는 자료에 없음**: 불편 정도는 승하차와 운행 자료로 추정한 값입니다. 실제 막차 시각과 배차 간격, 버스가 꽉 차서 정류소를 그냥 지나친 경우는 자료에 없습니다. 이 분석은 집 근처 정류소 기준이라 회사 위치나 환승 여부도 반영하지 못했습니다.\n- **비 오는 날 이용객이 늘어난 이유는 모름**: 우천과 함께 나타난 현상(연관)일 뿐입니다. 평소 차로 다니던 사람이 버스로 옮겨 탔는지 등은 자료로 확인할 수 없습니다.\n- 현장 확인 질문: 삼화지구·화북주공 정류소를 지나는 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-D3",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": true,
+    "detail": "제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시 (2.24배)",
+    "local_pass": true,
+    "local_detail": "제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시 (2.24배)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 16,
+    "grounded": 16,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 23,
+    "grounded": 23,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 30.5,
+   "claude": {
+    "rounds": 4,
+    "seconds": 30.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 23269,
+    "output_tokens": 3154,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "도두동",
+        "오일장"
+       ],
+       "topic": "commute",
+       "question": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "market",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시'에는 같은 시각 평소의 2.24배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "제주민속오일장 정류소에서 장날(2·7일) 09~13시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 이 주장은 근거가 부족합니다. 전체 평균으로 보면 이용객이 적어 보이지만, 장날(2·7일) 오전에는 같은 시각 평일보다 이용객이 2배 넘게 많아서 평균만으로 증편이 필요 없다고 판단할 수는 없습니다.\n\n※ 이 분석은 공식 데이터 형식에 맞춰 만든 합성(시연용) 데이터를 바탕으로 했습니다. 실제 정책 판단에는 실제 원자료로 다시 확인해야 합니다.\n\n[원자료로 확인된 수치 사실]\n- 제주민속오일장 정류소의 승하차 인원은 전체 평균으로 시간당 28.5명입니다. 장날 오전 9시~오후 1시에는 시간당 120명으로, 같은 시각 평소의 53.6명보다 2.24배 많습니다. 장날 36일을 분석했습니다.\n- 장날 이 정류소의 승하차 인원은 오전 9시에 133명으로 하루 중 가장 많습니다.\n- 도두동 체류 인구는 전체 평균으로 시간당 6,010명입니다. 장날 오전 10시~오후 2시에는 11,713명으로, 같은 시각 평소의 8,652명보다 1.35배 많습니다.\n- 장날 대기와 혼잡을 합친 체감 지수는 오전 11시에 13.6분입니다. 오전 8시는 6.0분, 저녁 8시는 8.6분입니다.\n- 도두동에 머무는 사람 중 관광객 등 다른 지역 거주자는 39.5%입니다. 따라서 장날 인파가 모두 도민이라고 볼 수는 없습니다.\n\n[교란 제거 후 역전 구간]\n- **평균에 가려진 혼잡 구간**: 장날 오전 9시~오후 1시입니다. 이 시간의 승하차가 하루 24시간 평균(시간당 28.5명) 속에 섞이면서 실제 혼잡이 묻혀 버립니다.\n- **경계 시각은 오후 2시**입니다. 장날이라도 오후 2시 이후에는 승하차가 가장 붐비는 오전 9시의 60% 이하로 떨어집니다. 그래서 증편을 검토한다면 하루 종일이 아니라 장날 오전 시간대에 집중해서 보는 것이 합리적입니다.\n- 참고로 자동으로 비교한 옆 동네 이호동과 장날 저녁 5~7시 도민 체류 인구를 비교했을 때는 순위가 바뀌지 않았습니다. 하지만 이 비교는 오전 버스 혼잡 문제와는 따로 봐야 합니다.\n- 더 정확한 표현은 이렇습니다. \"도두동 오일장 정류소는 평균 이용객은 적지만, 장날 오전에는 평소보다 이용이 크게 늘어 시간대별 증편 검토가 필요하다.\"\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 원자료에는 실제로 버스를 탄 사람만 기록됩니다. 버스가 꽉 차서 못 탄 사람이나 택시·자가용으로 바꾼 사람은 집계되지 않아, 실제 필요는 이 수치보다 클 수도 있습니다. 반대로 지금 있는 버스로 충분히 감당하고 있을 가능성도 이 데이터만으로는 배제할 수 없습니다.\n- 장날 이용객 증가는 장날과 함께 나타나는 현상일 뿐입니다. 승객이 시장에 가려고 탔는지는 원자료에 없어서 시장 때문이라고 단정할 수 없습니다.\n- 현장 확인 질문: 장날 오전 9시 전후에 이 정류소에서 버스가 꽉 차서 그냥 지나간 적이 있는지 버스 기사님이나 이용자께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-D4",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "비 오는 평일 퇴근길에 삼화지구 정류소가 언제 붐벼?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": true,
+    "detail": "삼화지구 정류소 승하차 · 비 오는 평일 · 17~19시 (1.78배)",
+    "local_pass": true,
+    "local_detail": "삼화지구 정류소 승하차 · 비 오는 평일 · 17~19시 (1.78배)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 33,
+    "grounded": 33,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 23,
+    "grounded": 23,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 47.2,
+   "claude": {
+    "rounds": 3,
+    "seconds": 47.2,
+    "model": "claude-opus-5-5",
+    "input_tokens": 15451,
+    "output_tokens": 4981,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "question": "비 오는 평일 퇴근길에 삼화지구 정류소가 언제 붐벼?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "hour_from": 17,
+       "hour_to": 19,
+       "weather": "rain",
+       "day_type": "weekday"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "weather": "rain",
+       "day_type": "weekday",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '삼화지구 정류소 승하차 · 비 오는 평일 · 17~19시'에는 같은 시각 평소의 1.78배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "삼화지구 정류소에서 비 오는 평일 17~19시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 비 오는 평일에는 17~19시 퇴근 시간대에 삼화지구 정류소가 붐빕니다. 이 시간대 승하차는 시간당 303명으로, 같은 시각 평소의 170명보다 1.78배 많습니다. 하루 전체 평균(89.5명)만 보면 이 혼잡이 보이지 않습니다.\n\n※ 이번 분석은 공식 데이터 양식(컬럼 구조)을 그대로 따른 시연용 합성 데이터로 계산했습니다. 실제 통계와 다를 수 있습니다.\n\n[원자료로 확인된 수치 사실]\n- **삼화지구 정류소 승하차**\n  - 하루 전체 평균: 시간당 89.5명\n  - 비 오는 평일 17~19시: 시간당 303명(평소 같은 시각 170명의 1.78배)\n  - 비 온 평일 35일 기준입니다.\n- **삼화지구 근처 정류소 승차(평일 17~19시)**\n  - 비 오는 날 승차: +61.9%\n  - 같은 시간 동네에 머무는 도민 수: -0.8%로 거의 그대로\n  - 비 온 날 35일과 안 온 날 96일을 비교했습니다.\n- **화북주공 정류소**: 비 오는 평일에는 퇴근 시간만이 아니라 하루 종일(05~23시) 붐빕니다. 시간당 90.9명으로 평소 67.0명의 1.36배입니다.\n- **관광객 영향은 작습니다**: 삼화지구에 머무는 사람 중 다른 지역 거주자(관광객 등)는 2.7%, 카드 이용액 중 도민 비중은 93.1%입니다.\n- **집에 가기 불편한 정도(대기+혼잡, 분)**: 17시 5.6분, 20시 8.7분, 23시 34.6분으로 늦을수록 커집니다.\n\n[교란 제거 후 역전 구간]\n- **노형동과 비교해 보니 순위는 그대로입니다.**\n  - 비교 대상으로 노형동을 자동으로 붙였습니다.\n  - 관광객, 시간대 쏠림, 날씨 영향을 차례로 걷어내도 순위가 뒤집히지 않았습니다.\n  - 17~23시 모든 귀가 시각에서 노형동이 계속 유리했고, 유불리가 바뀌는 시각은 없었습니다.\n  - 노형동은 비 오는 날 승차 증가가 +4.6%에 그쳤고, 불편 정도는 17시 2.1분, 20시 2.0분, 23시 3.1분이었습니다.\n- **평균에 가려진 혼잡이 드러났습니다.** 하루 평균으로는 한산한 정류소지만, 비 오는 평일 17~19시에만 사람이 몰립니다.\n- **'줄이 긴 때'와 '집에 가기 힘든 때'는 다릅니다.** 이번에 확인된 정류소 혼잡 구간은 17~19시입니다. 반면 대기와 혼잡을 합친 불편은 늦게 귀가할수록 커져 23시(34.6분)에 가장 큽니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **몇 시가 가장 붐비는지 모릅니다.** 이번 결과는 17~19시를 묶은 값이라 17시대, 18시대, 19시대를 따로 비교하지 못했습니다.\n- **승차가 늘어난 이유를 단정할 수 없습니다.**\n  - 비 오는 날 승차가 +61.9% 늘었지만, 자가용이나 도보 대신 버스를 탄 사람이 늘어서인지는 알 수 없습니다. 이동수단을 바꿨는지 기록한 항목이 없어 '함께 늘었다'고만 말할 수 있습니다.\n  - 정류소 승하차 인원은 버스 안이 얼마나 붐비는지, 만차로 못 탄 사람이 있는지는 보여주지 않습니다.\n- **현장 확인 질문**: 해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 삼화지구 정류소에서 비 오는 평일 17~19시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-D5",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "한림읍 음식물쓰레기가 2019년 12월에 10월보다 58.69배 폭증했다. 관광객 때문이다.",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "unmeasured_cause",
+   "local_verdict": "unmeasured_cause",
+   "gold": {
+    "expected": [
+     "unmeasured_cause",
+     "structural_break"
+    ],
+    "pass": true,
+    "detail": "단절 월 ['201911'] (정답 201911)",
+    "local_pass": true,
+    "local_detail": "단절 월 ['201911'] (정답 201911)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 12,
+    "grounded": 12,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 25,
+    "grounded": 25,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 38.8,
+   "claude": {
+    "rounds": 3,
+    "seconds": 38.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 18067,
+    "output_tokens": 3790,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "한림읍"
+       ],
+       "topic": "waste",
+       "question": "한림읍 음식물쓰레기가 2019년 12월에 10월보다 58.69배 폭증했다. 관광객 때문이다."
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "한림읍"
+       ],
+       "topic": "waste",
+       "claim": "한림읍 음식물쓰레기가 2019년 12월에 10월보다 58.69배 폭증했다. 관광객 때문이다.",
+       "mode": "all"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "한림읍"
+       ],
+       "topic": "waste"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "한림읍"
+       ],
+       "topic": "waste"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "수치 변화 자체는 확인되지만, 주장한 원인은 원자료 컬럼으로 측정되지 않아 단정할 수 없습니다. 또한 2019-11 월초 집계 단절이 감지되었습니다.",
+   "field_question": "2019년 11월 전후로 한림읍에 RFID 배출함이 몇 대 새로 설치됐는지 읍사무소 기록으로 확인할 수 있을까요?",
+   "narrative": "**결론**: '58.69배'라는 숫자는 원자료와 맞습니다. 다만 실제로 쓰레기가 그만큼 폭증했다기보다 2019년 11월 초 계량 방식이 바뀐 영향일 가능성이 큽니다. '관광객 때문'이라는 부분은 이 자료로 확인할 수 없습니다.\n\n※ 이 분석은 공식 스키마를 바탕으로 만든 합성(시연용) 데이터를 사용했습니다.\n\n[원자료로 확인된 수치 사실]\n- 한림읍 하루 평균 음식물쓰레기 배출량은 2019년 10월 1,045.23에서 12월 61,346.42가 되었습니다. 이를 다시 계산해도 58.69배로, 주장 속 숫자와 일치합니다.\n- 증가는 11월 초에 한 번에 일어났습니다. 10월 1,045에서 11월 61,044로 뛰었고(58.40배), 12월은 61,346.42로 11월과 거의 같은 수준입니다.\n- 변화 전후 3개월 평균을 비교해도 59.54배입니다. 잠깐 솟았다 내려온 것이 아니라 계단처럼 한 번 올라간 뒤 그 높이를 유지한 모양입니다.\n- 집계 방식 변경 기록을 보면, 바로 그 2019년 11월에 수거 방식이 바뀌었습니다. 일부 배출함만 무게를 재던 RFID(전자태그) 계량에서 모든 배출함을 재는 전면 계량으로 전환되었습니다.\n- 참고로 다른 기간의 유동인구 자료에서 한림읍 체류 인구 중 도외 거주자(관광객) 비중은 19.5%입니다. 비교 대상인 애월읍은 35.6%입니다. 기간이 달라 2019년 증가와 직접 연결할 수는 없습니다.\n\n[교란 제거 후 역전 구간]\n- 이번 경우 관광객·시간대·날씨 같은 교란보다 '집계 단절'이 결론을 뒤집습니다. 10월(일부만 계량)과 11~12월(전면 계량)은 측정한 범위가 달라서 같은 기준으로 비교할 수 없습니다.\n- 경계 시점은 2019년 11월 초입니다. 그 전후를 잇는 '배율'은 실제 배출 변화를 보여 준다고 보기 어렵습니다. 같은 방식으로 잰 11월과 12월만 비교하면 거의 차이가 없습니다.\n- 관광객·시간대·날씨를 차례로 걷어내고 애월읍과 비교해도 체류 인구 순위가 바뀌지 않았습니다(역전 없음). 그러나 이 비교로 쓰레기 증가의 원인을 설명할 수는 없습니다.\n- 바로잡은 표현을 제안하면 다음과 같습니다. \"한림읍의 음식물쓰레기 집계량이 2019년 11월부터 크게 늘었다. 같은 시점에 계량 방식이 전면 계량으로 바뀌었으며, 관광객 영향은 추가 자료로 검증이 필요하다.\"\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 관광객 원인: 쓰레기 자료에는 관광객을 측정하는 항목이 없습니다. 관광객을 볼 수 있는 유동인구 자료는 2019년과 기간이 겹치지 않아 연결할 수 없습니다. 그래서 '관광객 때문'은 맞다고도 틀렸다고도 판정할 수 없습니다.\n- 증가분 나누기: 전면 계량 전후에 계량 대상 배출함이 몇 개였는지 기록하는 항목이 없습니다. 그래서 늘어난 양 중 얼마가 계량 범위 확대 때문이고 얼마가 실제 배출 증가인지 나눌 수 없습니다.\n- 현장 확인 질문: 2019년 11월 한림읍에서 RFID 계량이 전체 배출함으로 넓어지기 전에 실제로 계량되던 배출함은 몇 곳이었는지, 읍사무소나 클린하우스 담당 부서에서 확인해 주실 수 있을까요?"
+  },
+  {
+   "id": "B-D6",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "제주 공공와이파이 이용자가 2020년 10월에 반토막 났다던데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 5회",
+   "verdict": "structural_break",
+   "local_verdict": "structural_break",
+   "gold": {
+    "expected": [
+     "structural_break"
+    ],
+    "pass": true,
+    "detail": "단절 월 ['202010'] (정답 202010)",
+    "local_pass": true,
+    "local_detail": "단절 월 ['202010'] (정답 202010)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 7,
+    "grounded": 7,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 8,
+    "grounded": 8,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 33.1,
+   "claude": {
+    "rounds": 5,
+    "seconds": 33.1,
+    "model": "claude-opus-5-5",
+    "input_tokens": 28273,
+    "output_tokens": 3170,
+    "requests": 5,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "제주"
+       ],
+       "topic": "wifi",
+       "question": "제주 공공와이파이 이용자가 2020년 10월에 반토막 났다던데 맞아?"
+      },
+      "ok": false
+     },
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "wifi",
+       "question": "제주 공공와이파이 이용자가 2020년 10월에 반토막 났다던데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "wifi",
+       "mode": "all",
+       "claim": "제주 공공와이파이 이용자가 2020년 10월에 반토막 났다던데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "wifi",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "wifi",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "2020년 10월 초에 계단식 집계 단절이 있어, 이 변화를 실제 증감으로 단정할 수 없습니다(집계변경 이력 일치: 집계단위 전환(AP 단위 접속 집계 -> 장소 단위 집계)).",
+   "field_question": "2020년 10월 전환 시점에 같은 기간을 두 방식으로 함께 집계한 병행 자료가 있는지 운영기관에 확인할 수 있을까요?",
+   "narrative": "**결론**: 숫자만 보면 맞습니다. 2020년 10월 이용자 수는 9월의 0.55배로 줄었습니다. 다만 이달에 집계 기준이 바뀌었기 때문에, 이 감소를 실제로 와이파이를 쓰는 사람이 절반으로 줄었다는 뜻으로 해석하면 안 됩니다.\n\n※ 아래 수치는 공식 스키마를 바탕으로 만든 합성(시연용) 데이터입니다. 공식 예시 시트의 10개 항목 중 2개만 쓴 월별 합계 자료라서, 제주 전체 단위로만 확인했습니다.\n\n[원자료로 확인된 수치 사실]\n- 제주 전체 공공와이파이 월 이용자: 2020년 9월 629,536명, 10월 346,948명\n- 9월에서 10월로 바뀌며 0.55배가 됐습니다.\n- 바뀐 시점 전후 각각 3개월 평균을 비교하면 0.50배입니다. 한 달만 튄 것이 아니라 이후에도 낮은 수준이 이어졌습니다.\n- 감소는 서서히 일어나지 않았습니다. 10월 초에 계단처럼 한 번에 떨어졌습니다.\n\n[교란 제거 후 역전 구간]\n- 집계 변경 기록을 맞춰 보니 2020년 10월에 집계 단위가 바뀌었습니다. 접속 장비(AP)마다 세던 방식에서 와이파이 설치 장소마다 세는 방식으로 전환됐고, 시점이 감소 시점과 정확히 겹칩니다.\n- 그래서 '반토막'은 실제 이용이 줄었다는 증거라기보다, 세는 방식이 바뀐 것과 함께 나타난 변화로 보는 것이 맞습니다.\n- 이 자료에는 시간대·날씨·관광객 구분이 없는 월별 합계만 있습니다. 그래서 다른 주제에서 하던 관광객·시간대·날씨 효과를 걷어내는 비교는 할 수 없었습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 줄어든 폭 가운데 집계 방식 변경 때문인 부분과 실제 이용 감소인 부분을 나눌 수 없습니다. 바뀌기 전과 후의 기준으로 같은 달을 함께 센 자료가 없기 때문입니다. 그래서 \"기준 변경 때문에 줄었다\"고 단정할 수도, \"실제로 반토막 났다\"고 단정할 수도 없습니다.\n- 같은 시기에 설치 장소나 장비 수가 실제로 늘거나 줄었는지는 원자료에 항목이 없어 확인할 수 없습니다.\n- 현장 확인 질문: 2020년 10월 집계 기준이 바뀌기 전후로 공공와이파이 설치 장소와 장비 수가 실제로 달라졌는지, 그리고 기준이 바뀌기 전과 후 방식으로 같은 달을 함께 집계한 자료가 있는지 담당 부서에 확인할 수 있을까요?\n\n**기사나 민원에 인용하실 때는 이렇게 쓰시길 권합니다**: \"2020년 10월 공공와이파이 월 이용자는 629,536명에서 346,948명으로 줄었지만, 같은 달 집계 단위가 장비 기준에서 장소 기준으로 바뀌어 이전 수치와 바로 비교하기 어렵다.\""
+  },
+  {
+   "id": "B-D7",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "노형동은 저녁에 도민 유동인구가 연동보다 많다는데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "confirmed",
+   "local_verdict": "confirmed",
+   "gold": {
+    "expected": [
+     "confirmed"
+    ],
+    "pass": true,
+    "detail": "판정 confirmed",
+    "local_pass": true,
+    "local_detail": "판정 confirmed"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 26,
+    "grounded": 26,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 21,
+    "grounded": 21,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 39.0,
+   "claude": {
+    "rounds": 4,
+    "seconds": 39.0,
+    "model": "claude-opus-5-5",
+    "input_tokens": 23408,
+    "output_tokens": 3856,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "living",
+       "question": "노형동은 저녁에 도민 유동인구가 연동보다 많다는데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "living",
+       "hour_from": 18,
+       "hour_to": 21,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "claim": "노형동은 저녁에 도민 유동인구가 연동보다 많다는데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "living",
+       "variable": "visit_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장은 원자료와 일치합니다(정상 주장): 교란 제거 후 '노형동' 58,534 vs '연동' 49,137.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 맞습니다. 저녁 6~9시에 도민 유동인구는 노형동이 58,534명, 연동이 49,137명으로 노형동이 더 많습니다. 관광객, 시간대, 비 오는 날의 영향을 차례로 빼고 봐도 노형동이 계속 앞섭니다. 다만 이 수치는 실제 데이터가 아니라 공식 데이터와 같은 형식으로 만든 시연용 합성 데이터라서, 실제 상황을 확인한 결과로 보시면 안 됩니다.\n\n**[원자료로 확인된 수치 사실]**\n- **저녁(18~21시) 도민 체류 인구**: 노형동 58,534명, 연동 49,137명입니다. 조사 기간 184일 전체 요일 기준입니다.\n- **관광객(제주 밖 거주자) 비중**: 노형동 12.9%, 연동 17.5%입니다. 관광객이 섞이는 정도는 연동이 더 커서, 관광객을 빼면 노형동이 오히려 더 유리해집니다.\n- **카드 이용액 중 도민 비중**: 노형동 76.9%, 연동 62.1%입니다.\n- **밤까지 남는 비율**: 밤 9~11시 도민 체류를 낮 12~5시와 비교한 값이 노형동 121.9%, 연동 103.3%입니다. 두 동 모두 낮보다 밤에 도민이 더 많고, 노형동 쪽이 그 정도가 더 큽니다.\n- **비 오는 날 저녁 도민 체류**: 노형동은 2.6%, 연동은 2.3% 늘었습니다. 비 온 52일과 안 온 132일을 비교한 값입니다. 비 오는 날만 봐도 노형동 59,605명, 연동 49,946명으로 순위는 같습니다.\n\n**[교란 제거 후 역전 구간]**\n- **순위가 뒤집히는 구간은 없습니다.** 관광객, 시간대, 비 오는 날을 차례로 걷어내도 노형동이 계속 앞섭니다.\n- **평균에 가려진 혼잡 구간이 하나 있습니다.** 노형오거리 정류소는 금요일 밤 9~11시에 승하차가 시간당 196명으로, 같은 시각 평소 108명의 1.80배입니다(해당 금요일 27일). 다만 이 정류소는 노형동과 연동 양쪽의 이용 범위에 함께 들어가 있어서, 어느 한 동의 수치로 볼 수는 없습니다.\n- **방문 시각 기준(평일)**: 저녁 8시 이후에는 정류소 승하차가 가장 붐비는 아침 8시의 60% 이하로 줄어듭니다. 저녁 8시의 혼잡 지수(정류장 대기와 혼잡을 분 단위로 환산한 값)는 노형동 1.8분, 연동 2.4분입니다.\n\n**[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]**\n- 이 데이터는 '그 동에 머문 사람 수'를 셉니다. 그래서 저녁에 노형동 숫자가 큰 것이 상가를 오가는 사람이 많아서인지, 집에 들어와 머무는 주민이 많아서인지는 구분할 수 없습니다. \"유동인구가 많다\"는 말을 \"거리가 더 북적인다\"는 뜻으로 받아들이면 지나친 해석일 수 있습니다.\n- 두 동은 면적과 주거 형태가 다를 수 있지만, 원자료에는 면적이나 가구 수 같은 항목이 없습니다. 그래서 같은 면적으로 맞춰서는 비교하지 못했습니다.\n- 현장 확인 질문: 노형동에서 저녁 6~9시에 상가와 거리를 오가는 사람이 많은지, 아니면 아파트 단지로 들어가 머무는 주민이 대부분인지 상인이나 주민께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-D8",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "노형동 집값 비싸?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 3회",
+   "verdict": "abstain",
+   "local_verdict": "abstain",
+   "gold": {
+    "expected": [
+     "abstain"
+    ],
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "local_pass": true,
+    "local_detail": "판정 보류 + 현장 확인 질문"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 16,
+    "grounded": 16,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 8,
+    "grounded": 8,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 24.3,
+   "claude": {
+    "rounds": 3,
+    "seconds": 24.3,
+    "model": "claude-opus-5-5",
+    "input_tokens": 14536,
+    "output_tokens": 2341,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "living",
+       "question": "노형동 집값 비싸?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "living",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "living",
+       "mode": "causal",
+       "claim": "노형동 집값 비싸?",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude"
+   },
+   "headline": "판정 보류: '부동산 가격'을(를) 측정한 컬럼이 공식 데이터에 없습니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+   "field_question": "해당 동네 최근 실거래가를 국토교통부 실거래가 공개시스템에서 확인해 볼 수 있을까요?",
+   "narrative": "**결론**: 노형동 집값이 비싼지는 이 데이터로 판단할 수 없습니다. 사용할 수 있는 공공데이터 4종(유동인구, 카드 이용, 버스 정류소 이용, 날씨)에는 매매가·전월세 같은 집값 항목이 없습니다. 대신 살기와 관련된 생활 지표를 근처 연동과 비교해 보면, 관광객·시간대·날씨 영향을 걷어내도 노형동이 도민 생활 인구가 더 많은 동네로 나옵니다.\n\n※ 아래 수치는 공식 데이터 형식을 그대로 따라 만든 합성(시연용) 데이터입니다. 실제 통계 값이 아닙니다.\n\n[원자료로 확인된 수치 사실]\n- 한 시간에 머무는 평균 인구(관광객 포함, 하루 24시간 기준): 노형동 57,943명, 연동 52,792명\n- 머무는 인구 중 도외 거주자(관광객 등) 비중: 노형동 12.9%, 연동 17.5%\n- 저녁 6~10시에 머무는 도민: 노형동 58,471명, 연동 48,666명\n- 밤에 남는 비율(밤 9~11시 도민 수를 낮 12~5시 도민 수로 나눈 값): 노형동 121.9%, 연동 103.3%. 노형동은 밤에 오히려 사람이 늘어 주거지 성격이 강하게 나타납니다.\n- 카드 이용액 중 제주도민 비중: 노형동 76.9%, 연동 62.1%\n- 비 오는 날 저녁 6~10시 도민 체류 변화: 노형동 +2.5%(비 온 날 52일, 안 온 날 132일 비교)\n\n[교란 제거 후 역전 구간]\n- 역전은 없습니다. 관광객을 빼고, 저녁 시간대만 보고, 비 오는 날만 따로 봐도 도민이 머무는 인구는 계속 노형동이 연동보다 많습니다.\n- 다만 이 결과는 '사람이 얼마나 머물고 생활하는가'를 비교한 것입니다. 집값 순위가 아닙니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 데이터에 매매가, 전월세, 실거래 항목이 없습니다. 그래서 노형동 집값이 비싸다거나 싸다고 말할 수 없습니다.\n- 사람이 많다는 것과 도민 비중이 높다는 것은 집값과 관련이 있을 수는 있습니다. 하지만 이 데이터로는 그 관계를 확인할 수 없어서 인구 지표로 집값을 짐작하면 안 됩니다.\n- 현장 확인 질문: 국토교통부 실거래가 공개시스템이나 동네 공인중개사에서 노형동과 연동의 같은 면적·같은 연식 아파트 최근 거래가를 비교하면 어느 쪽이 높은가요?"
+  },
+  {
+   "id": "B-T1",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "중문동이 대륜동보다 사람이 훨씬 많아서 살기 활기찬 동네라던데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "refuted",
+   "local_verdict": "refuted",
+   "gold": {
+    "expected": [
+     "refuted",
+     "reversal"
+    ],
+    "pass": true,
+    "detail": "판정 refuted",
+    "local_pass": true,
+    "local_detail": "판정 refuted"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 32,
+    "grounded": 32,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 26,
+    "grounded": 26,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 37.8,
+   "claude": {
+    "rounds": 3,
+    "seconds": 37.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 18865,
+    "output_tokens": 4036,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "중문동",
+        "대륜동"
+       ],
+       "topic": "living",
+       "question": "중문동이 대륜동보다 사람이 훨씬 많아서 살기 활기찬 동네라던데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "중문동",
+        "대륜동"
+       ],
+       "topic": "living",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "중문동",
+        "대륜동"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "claim": "중문동이 대륜동보다 사람이 훨씬 많아서 살기 활기찬 동네라던데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "중문동",
+        "대륜동"
+       ],
+       "topic": "living",
+       "variable": "return_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장은 관광객이 포함된 단순 평균('중문동' 우위)으로만 맞고, 도민 실생활 기준으로는 반대입니다: 교란 제거 후 '중문동' 11,619 vs '대륜동' 14,486.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 이 말은 관광객까지 합친 평균에서만 맞습니다. 도민만 따로 세면 저녁 시간대에는 대륜동에 사람이 더 많아서 순위가 뒤집힙니다. 중문동에 머무는 사람의 절반 이상이 제주 밖에 사는 사람이라, 사람이 많다는 이유로 '살기에 활기찬 동네'라고 하기는 어렵습니다.\n\n※ 아래 수치는 실제 데이터가 아닙니다. 공공데이터 공식 양식을 바탕으로 만든 시연용 데이터에서 나온 값입니다.\n\n[원자료로 확인된 수치 사실]\n- **하루 전체 평균(관광객 포함)**: 한 시간에 동네에 머무는 사람이 중문동 25,091명, 대륜동 14,573명입니다. 소문은 이 숫자를 근거로 한 것으로 보입니다.\n- **제주 밖에 사는 사람(관광객 등)의 비중**: 중문동 54.2%, 대륜동 7.1%입니다.\n- **저녁 6~10시 도민만 센 인원**: 중문동 11,620명, 대륜동 14,486명입니다.\n- **밤에 남아 있는 도민 비율**(밤 9~11시 인원을 낮 12~5시 인원과 비교): 중문동 96.3%, 대륜동 110.9%입니다. 대륜동은 낮보다 밤에 도민이 더 많습니다.\n- **카드 결제액 중 도민 비중**: 중문동 21.1%, 대륜동 83.4%입니다.\n- **비 오는 날 저녁 도민 인원 변화**: 중문동 -3.0%, 대륜동 -1.0%입니다. 같은 날 근처 정류소 저녁 승차 인원은 중문동 -15.0%, 대륜동 +21.9%였습니다.\n\n[교란 제거 후 역전 구간]\n- **관광객을 빼면 순위가 바뀝니다.** 1위가 중문동에서 대륜동으로 바뀌고, 저녁 시간대나 비 오는 날로 조건을 바꿔도 대륜동이 1위입니다. 조건을 넓히지 않고 원래 조건 그대로 분석했습니다.\n- **평균에 가려진 혼잡한 때**\n  - 중문관광단지 정류소: 7~8월 주말에는 아침 6시~밤 11시 내내 한 시간에 98.6명이 타고 내립니다. 평소 같은 시각에는 67.3명으로, 1.46배입니다(해당 날짜 18일).\n  - 서귀포혁신도시 정류소: 비 오는 평일 저녁 6시대에는 129명입니다. 평소 같은 시각에는 98.4명으로, 1.31배입니다(해당 날짜 34일).\n- **평일 귀가 편의**(버스 대기와 혼잡을 합친 불편 정도, 분 단위로 낮을수록 편함)\n  - 오후 5시: 대륜동 5.1분, 중문동 6.1분으로 대륜동이 편합니다.\n  - 저녁 6~7시: 중문동이 편합니다.\n  - 밤 8시 이후: 다시 대륜동이 편합니다. 8시에는 대륜동 7.0분, 중문동 7.1분으로 거의 같고, 밤 11시에는 대륜동 17.6분, 중문동 20.0분입니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 원자료는 '몇 명이 머물렀는지'만 보여줍니다. 주민이 느끼는 활기, 동네 가게의 종류, 소음, 생활 만족도는 측정하지 않았기 때문에 어느 동네가 '살기 좋다'고 단정할 수는 없습니다.\n- 제주 밖에 사는 사람 안에 관광객 말고 출장자나 단기 근로자가 얼마나 섞여 있는지는 원자료로 구분할 수 없습니다.\n- 현장 확인 질문: 평일 저녁 8~9시에 두 동네 주택가 상가(마트·식당·학원 등)에서 실제로 문을 연 가게와 오가는 주민은 어느 쪽이 더 많은가요?"
+  },
+  {
+   "id": "B-T2",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "일도1동이랑 삼도1동 중에 밤 9시 이후에 사람 사는 동네 같은 곳은 어디야?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "reversal",
+   "local_verdict": "reversal",
+   "gold": {
+    "expected": [
+     "reversal"
+    ],
+    "pass": true,
+    "detail": "판정 reversal",
+    "local_pass": true,
+    "local_detail": "판정 reversal"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 20,
+    "grounded": 20,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 35.5,
+   "claude": {
+    "rounds": 4,
+    "seconds": 35.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 21692,
+    "output_tokens": 3614,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "일도1동",
+        "삼도1동"
+       ],
+       "topic": "night",
+       "question": "일도1동이랑 삼도1동 중에 밤 9시 이후에 사람 사는 동네 같은 곳은 어디야?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "일도1동",
+        "삼도1동"
+       ],
+       "topic": "night",
+       "hour_from": 21,
+       "hour_to": 23,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "일도1동",
+        "삼도1동"
+       ],
+       "topic": "night",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "일도1동",
+        "삼도1동"
+       ],
+       "topic": "night",
+       "variable": "return_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "단순 평균으로는 '일도1동'이 앞서 보이지만, 교란을 걷어낸 도민 실생활 기준으로는 '삼도1동'이 앞섭니다(순위 역전).",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 밤 9시 이후에도 사람 사는 동네 같은 곳은 **삼도1동**이에요. 하루 평균 인구만 보면 일도1동이 더 많지만, 관광객을 빼고 밤 시간대만 보면 삼도1동에 남아 있는 도민이 훨씬 많아서 결과가 뒤집혀요.\n\n※ 이 분석에 쓴 자료는 공식 공공데이터 형식에 맞춰 만든 **합성(시연용) 데이터**예요. 실제 현황과는 다를 수 있어요.\n\n**[원자료로 확인된 수치 사실]**\n- **하루 평균 인구(관광객 포함, 24시간 평균)**: 일도1동 12,549명, 삼도1동 11,503명. 이 기준으로는 일도1동이 앞서요.\n- **도외 거주자(관광객 등) 비중**: 일도1동 30.3%, 삼도1동 8.8%. 일도1동의 인구에는 관광객이 크게 섞여 있어요.\n- **밤 9~11시 도민 인구**: 일도1동 4,040명, 삼도1동 10,779명.\n- **밤에 남는 비율(밤 9~11시 도민 ÷ 낮 12~5시 도민)**: 일도1동 27.1%, 삼도1동 101.9%. 일도1동은 밤이 되면 낮 인원의 3분의 1도 남지 않아요. 삼도1동은 낮과 비슷한 수준이 밤까지 유지돼요.\n- **비 오는 날 밤 9~11시 도민 인구 변화**(비 온 날 52일, 안 온 날 132일 비교): 일도1동 -3.6%, 삼도1동 -0.8%. 삼도1동은 날씨 영향도 거의 받지 않아요.\n- **카드 사용액 중 도민 비중**: 일도1동 68.1%, 삼도1동 81.8%.\n\n**[교란 제거 후 역전 구간]**\n- **관광객을 빼자마자 순위가 바뀌어요.** 일도1동이 많아 보였던 건 관광객 몫이 컸기 때문이에요. 도민만 세면 삼도1동이 앞서요. 밤 시간대로 좁혀도, 비 오는 날만 따로 봐도 삼도1동이 계속 앞서요.\n- **평일 버스 귀가는 밤 9시가 경계예요.** 버스 대기와 혼잡을 합친 귀가 불편 지수는 다음과 같아요.\n  - 오후 8시: 일도1동 2.4분, 삼도1동 2.6분 → 일도1동이 약간 유리\n  - 오후 11시: 일도1동 6.2분, 삼도1동 3.9분 → 삼도1동이 유리\n  - 즉 밤 9시 전에는 일도1동, 9시 이후에는 삼도1동이 버스로 귀가하기 더 편해요.\n- **숨은 함정은 없었어요.** 평균에서는 안 보이다가 특정 요일·시간대에만 몰리는 구간이나, 집계 방식이 바뀐 흔적은 이번 자료에서 나오지 않았어요.\n\n**[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]**\n- 이 자료는 그 동네에 머문 도민 수일 뿐, 실제로 그 동네에 사는 주민 수가 아니에요. 삼도1동의 밤 인구에는 주민뿐 아니라 다른 동네에서 저녁 약속이나 버스 환승으로 들른 도민도 섞여 있을 수 있는데, 자료로는 둘을 나눌 수 없어요. 삼도1동 인근 정류장에는 제주버스터미널과 제주시청이 포함돼 있어요.\n- 주택가 불빛, 밤늦게 여는 동네 가게, 골목 치안처럼 사람 사는 느낌을 좌우하는 요소는 측정되지 않았어요. 귀가 불편 지수도 실제 막차 시간표가 아니라 시연용 운행 자료로 계산한 값이에요.\n- 현장 확인 질문: 평일 밤 9시 이후 삼도1동 주택가 골목에 실제로 불 켜진 집과 문 연 동네 가게가 일도1동보다 많은지 직접 걸어서 확인해 볼 수 있을까요?"
+  },
+  {
+   "id": "B-T3",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "노형동이랑 외도동 중 퇴근 후 생활하기 어디가 나아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": {
+    "expected": [
+     "no_reversal"
+    ],
+    "pass": true,
+    "detail": "판정 no_reversal",
+    "local_pass": true,
+    "local_detail": "판정 no_reversal"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 31,
+    "grounded": 31,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 43.9,
+   "claude": {
+    "rounds": 3,
+    "seconds": 43.9,
+    "model": "claude-opus-5-5",
+    "input_tokens": 16112,
+    "output_tokens": 4636,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동",
+        "외도동"
+       ],
+       "topic": "living",
+       "question": "노형동이랑 외도동 중 퇴근 후 생활하기 어디가 나아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동",
+        "외도동"
+       ],
+       "topic": "living",
+       "hour_from": 18,
+       "hour_to": 21,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동",
+        "외도동"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형동",
+        "외도동"
+       ],
+       "topic": "living",
+       "variable": "return_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '노형동'이 계속 앞섭니다.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 저녁 생활 편의와 버스 귀가를 기준으로 하면 **노형동이 낫습니다.** 관광객, 시간대, 비라는 세 가지 착시 요인을 하나씩 빼고 다시 비교해도 순위는 바뀌지 않았습니다. 다만 관광객이 적고 도민 위주인 동네를 원하시면 외도동이 더 맞습니다.\n\n[원자료로 확인된 수치 사실]\n※ 이번 분석에 쓴 자료는 공식 스키마를 바탕으로 만든 합성(시연용) 데이터입니다.\n- **저녁 6~9시 동네에 머문 도민 수(184일 평균)**: 노형동 58,534명, 외도동 19,879명\n- **관광객 등 다른 지역 거주자의 비중**: 노형동 12.9%, 외도동 3.9%\n- **카드 이용액 중 도민이 쓴 비중**: 노형동 76.9%, 외도동 89.2%\n- **밤 머무름 정도**: 밤 9~11시 도민 수를 낮 12~5시 도민 수로 나눈 값입니다. 노형동 121.9%, 외도동 137.3%로, 낮보다 밤에 도민이 더 많이 남는 경향은 외도동이 더 큽니다.\n- **평일 버스 귀가 불편 정도(대기와 혼잡을 분으로 환산)**\n  - 노형동: 오후 5시 2.0분, 밤 8시 1.8분, 밤 11시 3.1분\n  - 외도동: 오후 5시 5.6분, 밤 8시 7.5분, 밤 11시 18.0분\n- **비 오는 날 저녁 6~9시 변화(비 온 날 52일, 안 온 날 132일 비교)**\n  - 도민 수: 노형동 +2.6%, 외도동 −0.9%\n  - 동네 근처 정류소의 평일 승차 인원: 노형동 +5.0%, 외도동 +19.4%\n\n[교란 제거 후 역전 구간]\n- **역전 없음**: 관광객을 빼고, 시간을 저녁 6~9시로 좁히고, 비 오는 날만 따로 봐도 노형동이 계속 앞섰습니다.\n- **경계 시각 없음**: 평일 귀가 시각을 오후 5시부터 밤 11시까지 바꿔 봐도 모든 시각에서 노형동이 유리했습니다. 늦게 귀가할수록 불편 정도가 벌어집니다(밤 11시 노형동 3.1분, 외도동 18.0분).\n- **평균에 가려진 혼잡**\n  - **노형동**: 노형오거리 정류소는 금요일 밤 9~11시 승하차가 시간당 196명입니다. 같은 시각 평소에는 108명이라 1.80배 수준입니다(해당 금요일 27일). 금요일 늦은 귀가 때는 혼잡을 감안하시는 게 좋습니다.\n  - **외도동**: 외도부영 정류소는 비 오는 평일에 1.3배 정도 붐빕니다. 다만 오전 10시대와 오후 3시대라 퇴근 시간과는 겹치지 않습니다. 저녁 시간에는 앞의 비 오는 날 승차 +19.4%가 더 참고할 만합니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 원자료에는 사람이 얼마나 머무는지, 돈이 얼마나 쓰이는지만 있습니다. 가게·병원의 종류, 소음, 주차, 치안 같은 생활의 질은 없어서 \"사람이 많으니 살기 좋다\"고 단정할 수는 없습니다. 조용한 저녁을 원하시면 외도동이 더 맞을 수도 있습니다.\n- 귀가 불편 정도는 승하차와 운행 자료로 추정한 값입니다. 실제 막차 시각과 배차 간격은 원자료에 없습니다. 연결된 정류소도 노형동은 3곳(노형오거리, 한라병원, 제주민속오일장)이지만 외도동은 1곳(외도부영)뿐이라, 외도동 전체를 대표하기에는 한계가 있습니다.\n- 현장 확인 질문: 해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-T4",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "외도동이랑 삼화지구 중에 퇴근하고 버스로 귀가하기 어디가 편해?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": {
+    "expected": [
+     "no_reversal",
+     "reversal",
+     "boundary"
+    ],
+    "pass": true,
+    "detail": "귀가 경계 20시 (정답 [20, 21])",
+    "local_pass": true,
+    "local_detail": "귀가 경계 20시 (정답 [20, 21])"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 20,
+    "grounded": 20,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 18,
+    "grounded": 18,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 31.1,
+   "claude": {
+    "rounds": 3,
+    "seconds": 31.1,
+    "model": "claude-opus-5-5",
+    "input_tokens": 15970,
+    "output_tokens": 3204,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "외도동",
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "question": "외도동이랑 삼화지구 중에 퇴근하고 버스로 귀가하기 어디가 편해?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "외도동",
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "hour_from": 18,
+       "hour_to": 21,
+       "day_type": "weekday",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "외도동",
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "외도동",
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '삼화지구'가 계속 앞섭니다. 다만 결론 역전 경계: 20시. 그 전에는 '삼화지구', 그 이후에는 '외도동'이 귀가에 유리합니다.",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 저녁 7시대까지 버스를 타면 삼화지구가 조금 더 편하고, 8시부터는 외도동이 더 편해요. 밤늦게 귀가할수록 외도동이 확실히 유리하고, 밤 11시에는 차이가 꽤 벌어집니다.\n\n※ 이 분석에 쓴 자료는 공식 데이터 형식을 그대로 따라 만든 **시연용 합성 데이터**예요. 실제 현장 값과 다를 수 있어요.\n※ 삼화지구는 화북동·삼양동을 합쳐 계산했어요. 정류소는 삼화지구·화북주공 2곳이고, 외도동은 외도부영 정류소 1곳 기준이에요.\n\n[원자료로 확인된 수치 사실]\n- 귀가 불편 지수는 버스를 기다리는 시간과 혼잡을 합쳐 분으로 나타낸 값이에요. 낮을수록 편합니다.\n  - 17시: 외도동 5.6분, 삼화지구 4.1분\n  - 20시: 외도동 7.5분, 삼화지구 8.0분\n  - 23시: 외도동 18.0분, 삼화지구 33.5분\n- 평일 18~21시에 머무는 도민은 외도동 19,842명, 삼화지구 22,978명이에요.\n- 머무는 사람 중 관광객 등 도외 거주자 비중은 외도동 3.9%, 삼화지구 2.7%로 둘 다 낮아요. 관광객 때문에 결과가 부풀려졌을 가능성은 작습니다.\n- 비 오는 날 평일 18~21시 정류소 승차는 외도동 +19.4%, 삼화지구 +45.5%로 늘었어요.\n\n[교란 제거 후 역전 구간]\n- 관광객, 시간대 쏠림, 날씨 영향을 차례로 빼도 두 지역의 기본 순서는 바뀌지 않았어요.\n- 대신 **귀가 시각에서 결론이 뒤집혀요**.\n  - 17~19시: 삼화지구가 유리해요.\n  - 20시부터 23시: 외도동이 유리해요.\n  - 경계는 **20시**예요.\n- **평균에 가려진 혼잡 구간**: 삼화지구 정류소 승하차는 평소 평균이 시간당 89.5명이에요. 그런데 **비 오는 평일 17~19시**에는 303명이었어요. 같은 시각 평소에는 170명이라 1.78배 많은 셈이에요(해당 35일). 그래서 정시에 퇴근하더라도 비 오는 날에는 삼화지구가 생각보다 붐빌 수 있어요.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 원자료에는 정류소별 시간대 승하차 인원만 있어요. 노선별 실제 막차 시각이나 배차 간격은 없어요. 그래서 밤 11시에 삼화지구가 크게 불리하게 나온 이유가 막차·배차 때문이라고 단정할 수는 없어요.\n- 비 오는 날 승차가 는 것도 날씨와 함께 나타난 '연관'일 뿐이에요. 자가용 대신 버스를 탄 사람이 늘어서인지 등 실제 이유는 측정되지 않았어요. 또 외도동은 정류소 1곳만 기준이라, 동네 전체 사정과 다를 수 있어요.\n- 현장 확인 질문: 해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-T5",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "작년 겨울 아라동이랑 노형동 중 밤에 어디가 더 붐볐어?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 2회",
+   "verdict": "abstain",
+   "local_verdict": "abstain",
+   "gold": {
+    "expected": [
+     "abstain"
+    ],
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "local_pass": true,
+    "local_detail": "판정 보류 + 현장 확인 질문"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 21,
+    "grounded": 21,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 9,
+    "grounded": 9,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 28.3,
+   "claude": {
+    "rounds": 3,
+    "seconds": 28.3,
+    "model": "claude-opus-5-5",
+    "input_tokens": 13972,
+    "output_tokens": 2724,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "아라동",
+        "노형동"
+       ],
+       "topic": "crowd",
+       "question": "작년 겨울 아라동이랑 노형동 중 밤에 어디가 더 붐볐어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "아라동",
+        "노형동"
+       ],
+       "topic": "crowd",
+       "hour_from": 21,
+       "hour_to": 23,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude"
+   },
+   "headline": "판정 보류: 요청 시점이 보유 자료 기간(2026.05~2026.10) 밖입니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+   "field_question": "해당 기간 원자료를 제주데이터허브에서 내려받아 data/raw/ 에 넣고 다시 분석해 볼까요?",
+   "narrative": "**결론**: 보유 자료는 2026년 5~10월(184일)분뿐이어서, 작년 겨울 밤에 아라동과 노형동 중 어디가 더 붐볐는지는 답할 수 없습니다. 참고로 이 기간 밤 9~11시에는 노형동이 아라동보다 계속 붐볐습니다. 관광객 효과와 날씨 효과를 걷어내도 마찬가지였습니다. 다만 이 결과를 겨울에도 똑같이 적용할 수는 없습니다.\n\n※ 아래 수치는 모두 공식 양식을 바탕으로 만든 시연용 데이터입니다. 실제 측정값이 아닙니다.\n\n[원자료로 확인된 수치 사실] (2026년 5~10월, 184일 기준)\n- **밤 9~11시 도민 체류 인구(관광객 제외)**: 노형동은 시간당 평균 58,020명, 아라동은 35,924명입니다.\n- **하루 전체 평균(관광객 포함)**: 노형동은 시간당 57,943명, 아라동은 34,085명입니다.\n- **체류 인구 중 다른 지역 거주자(관광객) 비율**: 노형동 12.9%, 아라동 3.0%입니다.\n- **밤 시간대 잔류율**: 낮(12~17시)과 비교한 밤(21~23시) 도민 체류 인구의 비율입니다. 노형동 121.9%, 아라동 117.3%로 두 곳 모두 밤에 오히려 사람이 더 많았습니다.\n- **비 오는 날 밤 도민 체류 변화**: 노형동 +1.9%, 아라동 +0.3%로 큰 차이가 없었습니다. 비 온 날 52일, 비 오지 않은 날 132일을 비교했습니다.\n\n[교란 제거 후 역전 구간]\n- 관광객 효과, 시간대 쏠림, 비 오는 날 효과를 차례로 걷어내도 순위는 바뀌지 않았습니다. 이 기간의 밤 시간대는 노형동이 계속 앞섰습니다.\n- 자료가 5~10월에만 있어서 겨울철에 순위가 뒤집히는지는 확인할 수 없습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 겨울에는 대학 방학이나 해가 지는 시각처럼 밤 유동인구에 영향을 줄 만한 조건이 달라질 수 있습니다. 하지만 보유 자료에 겨울 기간이 없어서 그 영향이 얼마나 되는지 알 수 없습니다. 같은 형식의 12~2월 자료가 확보되면 같은 방식으로 다시 비교할 수 있습니다.\n- 체류 인구 자료는 사람이 얼마나 많았는지만 보여 줍니다. 왜 그 시간에 머물렀는지(거주, 업무, 상권 방문 등)는 알려 주지 않습니다.\n- 현장 확인 질문: 올겨울(12~2월) 평일 밤 9~11시에 노형오거리 정류소와 제주대학교 정류소 주변을 직접 보면, 5~10월처럼 노형동 쪽이 더 붐비나요?"
+  },
+  {
+   "id": "B-T6",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "애월읍 아파트 월세 시세는 어느 정도야?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 1회",
+   "verdict": "abstain",
+   "local_verdict": "abstain",
+   "gold": {
+    "expected": [
+     "abstain"
+    ],
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "local_pass": true,
+    "local_detail": "판정 보류 + 현장 확인 질문"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 11,
+    "grounded": 11,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 8,
+    "grounded": 8,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 19.9,
+   "claude": {
+    "rounds": 2,
+    "seconds": 19.9,
+    "model": "claude-opus-5-5",
+    "input_tokens": 7873,
+    "output_tokens": 1962,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "애월읍"
+       ],
+       "topic": "general",
+       "question": "애월읍 아파트 월세 시세는 어느 정도야?"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude"
+   },
+   "headline": "판정 보류: '부동산 가격'을(를) 측정한 컬럼이 공식 데이터에 없습니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+   "field_question": "해당 동네 최근 실거래가를 국토교통부 실거래가 공개시스템에서 확인해 볼 수 있을까요?",
+   "narrative": "**결론**: 지금 연결된 제주 공공데이터에는 월세·전세·매매가 같은 집값 항목이 없습니다. 그래서 애월읍 아파트 월세 시세는 숫자로 알려드릴 수 없습니다. 근거 없이 추정한 금액을 알려드리지는 않겠습니다.\n\n[원자료로 확인된 수치 사실]\n- 애월읍은 행정동 1곳, 법정동 1곳으로 확인됐습니다. 기준 정류소는 애월환승정류장, 가장 가까운 기상관측소는 제주(184) 관측소입니다.\n- 애월읍에 쓸 수 있는 데이터는 4종입니다.\n  - 내국인 유동인구(읍면동): 공식 예시 시트 컬럼 11/11개\n  - 버스 정류소별 이용 현황: 컬럼 9/9개\n  - 카드 이용 현황(시간대): 컬럼 13/13개\n  - 일일 날씨 정보: 컬럼 14/14개\n- 위 4종 어디에도 임대료, 보증금, 관리비, 아파트 단지 정보 같은 부동산 컬럼은 없습니다.\n- 4종 모두 공식 양식을 바탕으로 만든 시연용 합성 데이터입니다. 기준일은 2026-11-05입니다.\n\n[교란 제거 후 역전 구간]\n- 해당 없음: 비교할 월세 수치가 없어 관광객·시간대·날씨 영향을 걷어내는 분석은 하지 않았습니다.\n- 대신 이사를 고민하신다면 위 데이터로 생활 여건은 확인할 수 있습니다. 예를 들면 이런 것들입니다.\n  - 애월환승정류장의 출퇴근 시간대 버스 이용 현황\n  - 관광객을 뺀 평일 밤 생활 인구\n  - 비 오는 날 생활 여건의 변화\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 지금 데이터로는 애월읍 월세 수준은 물론, 신제주·구제주 등 다른 지역보다 비싼지 싼지도 판단할 수 없습니다.\n- 유동인구나 카드 사용이 많다고 월세가 높다고 볼 수도 없습니다. 두 가지의 관계는 원자료로 측정된 적이 없습니다.\n- 현장 확인 질문: 관심 있는 애월읍 아파트 단지의 실제 계약 조건(보증금·월세·관리비)을 인근 공인중개사나 국토교통부 실거래가 공개시스템에서 확인해 보셨나요?\n\n이런 질문도 이어서 해 보실 수 있습니다.\n1. 애월읍에서 제주시내로 평일 출퇴근하면 버스 이용 여건이 어떤가요?\n2. 관광객을 빼면 애월읍의 평일 밤은 얼마나 한산한가요?\n3. 비 오는 날 애월읍의 생활 여건은 맑은 날과 얼마나 다른가요?"
+  },
+  {
+   "id": "B-T7",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "함덕 버스 정류소가 평소엔 한산한데 숨은 혼잡 시간대가 있어?",
+   "passed": false,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": false,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": true,
+    "detail": "함덕해수욕장 정류소 승하차 · 7~8월 주말 · 하루 종일(06~23시) (2.09배)",
+    "local_pass": true,
+    "local_detail": "함덕해수욕장 정류소 승하차 · 7~8월 주말 · 하루 종일(06~23시) (2.09배)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 18,
+    "grounded": 17,
+    "ungrounded": [
+     "38.6"
+    ],
+    "ratio": 0.9444
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 35.0,
+   "claude": {
+    "rounds": 4,
+    "seconds": 35.0,
+    "model": "claude-opus-5-5",
+    "input_tokens": 22056,
+    "output_tokens": 3405,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "함덕"
+       ],
+       "topic": "commute",
+       "question": "함덕 버스 정류소가 평소엔 한산한데 숨은 혼잡 시간대가 있어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "함덕"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "함덕"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "함덕"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "weekend",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '함덕해수욕장 정류소 승하차 · 7~8월 주말 · 하루 종일(06~23시)'에는 같은 시각 평소의 2.09배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "함덕해수욕장 정류소에서 7~8월 주말 하루 종일(06~23시)에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 네, 있습니다. 함덕해수욕장 정류소는 1년 평균으로 보면 한산하지만 **7~8월 주말**에는 하루 종일 이용객이 평소의 약 2배이고, 주말에는 **오후 2시 전후**가 가장 붐빕니다. 주말에 붐비는 시간을 피하려면 **저녁 7시 이후**에 이용하시는 게 좋습니다.\n\n※ 아래 수치는 실제 측정값이 아닙니다. 공식 데이터 양식(컬럼 구성)은 그대로 따르되 시연용으로 만든 데이터라서, 실제 상황과 다를 수 있습니다.\n\n[원자료로 확인된 수치 사실]\n- 함덕해수욕장 정류소에서 버스를 타고 내린 사람은 1년 평균 **시간당 64.6명**입니다. 그래서 평소엔 한산해 보입니다.\n- **7~8월 주말**에는 아침 6시부터 밤 11시까지 **시간당 142명**입니다. 같은 시간대 평소 68.1명의 **2.09배**입니다. 다만 이 결과는 해당하는 18일치 자료만으로 계산한 값입니다.\n- 주말을 시간대별로 보면 **14시가 192명으로 가장 많습니다**.\n- 기다리는 시간과 붐비는 정도를 합쳐 분으로 나타낸 혼잡 지수는 8시 6.2분, 11시 15.0분, 20시 9.2분입니다. 이 중 오전 11시 무렵이 가장 불편합니다.\n- 함덕(조천읍)에 머무는 사람 중 관광객 등 다른 지역에 사는 사람의 비중은 26.7%입니다.\n- 비 오는 평일 저녁 5~7시에는 함덕 인근 정류소 승차가 맑은 날보다 38.6% 적습니다.\n\n[교란 제거 후 역전 구간]\n- **평균에 숨은 혼잡**: 1년 평균(64.6명)은 한산하지만 7~8월 주말에는 시간당 142명으로 뛰어오릅니다. 비수기의 한산한 날들이 평균을 끌어내려 여름 주말의 혼잡이 가려진 것입니다.\n- **시간대 경계**: 주말에는 **19시 이후**부터 정류소 이용객이 가장 붐비는 14시의 60% 이하로 줄어듭니다. 오전 8시 무렵도 혼잡 지수가 6.2분으로 낮은 편입니다.\n- **애월읍과 비교**: 비교 대상으로 애월읍을 붙여 봤습니다. 관광객, 시간대, 날씨 요인을 하나씩 걷어내도 머무는 사람 수는 애월읍이 계속 더 많아 순위가 바뀌지 않았습니다. 그러니 함덕은 '평소엔 한산하다'는 말 자체는 맞고, 여름 주말이라는 특정 조각에서만 혼잡이 두드러진다고 보시면 됩니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 여름 주말에 이용객이 늘어나는 것과 해수욕철이 겹치기는 하지만, 정류소 자료에는 이용객이 관광객인지 도민인지, 어디에 가려는지가 없습니다. 그래서 '해수욕객 때문'이라고 단정할 수는 없고, 둘이 함께 나타난다는 것까지만 말할 수 있습니다.\n- 승하차 인원은 실제로 버스를 탄 사람만 셉니다. 버스가 꽉 차서 그냥 지나가 못 탄 사람이나 정류소에서 기다린 시간은 원자료로 확인할 수 없습니다. 위의 혼잡 지수도 직접 잰 대기시간이 아니라 계산으로 추정한 값입니다.\n- 현장 확인 질문: 함덕 주변 정류소에서 14시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?\n\n함께 물어보실 만한 질문:\n- 함덕 비 오는 장날에는 몇 시가 덜 붐벼?\n- 비 오는 날에는 어떻게 달라져?\n- 애월읍과 시간대별로 비교해 줘"
+  },
+  {
+   "id": "B-T8",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "노형오거리 정류소는 평균 이용객이 많지 않아 심야 증편이 필요 없다는 시 답변, 근거 있어?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": true,
+    "detail": "노형오거리 정류소 승하차 · 금요일 · 21~23시 (1.80배)",
+    "local_pass": true,
+    "local_detail": "노형오거리 정류소 승하차 · 금요일 · 21~23시 (1.80배)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 24,
+    "grounded": 24,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 16,
+    "grounded": 16,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 55.3,
+   "claude": {
+    "rounds": 4,
+    "seconds": 55.2,
+    "model": "claude-opus-5-5",
+    "input_tokens": 22907,
+    "output_tokens": 5228,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형오거리"
+       ],
+       "topic": "night",
+       "question": "노형오거리 정류소는 평균 이용객이 많지 않아 심야 증편이 필요 없다는 시 답변, 근거 있어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형오거리"
+       ],
+       "topic": "night",
+       "hour_from": 22,
+       "hour_to": 23,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형오거리"
+       ],
+       "topic": "night",
+       "mode": "all",
+       "claim": "노형오거리 정류소는 평균 이용객이 많지 않아 심야 증편이 필요 없다",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형오거리"
+       ],
+       "topic": "night",
+       "variable": "return_hour",
+       "day_type": "금",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '노형오거리 정류소 승하차 · 금요일 · 21~23시'에는 같은 시각 평소의 1.80배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "노형오거리 정류소에서 금요일 21~23시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 시가 \"평균 이용객이 많지 않다\"는 이유로 증편이 필요 없다고 한 건 근거가 부족합니다. 평균만 보면 가려지지만, 금요일 21~23시에는 같은 시각 평소보다 1.80배 많은 승하차가 몰립니다. 다만 이 자료만으로 \"증편이 꼭 필요하다\"고 단정할 수는 없습니다. 대신 금요일 밤 이용량을 따로 떼어 다시 검토해 달라고 요구할 근거로는 충분합니다.\n\n※ 아래 수치는 모두 공식 스키마 기반 합성(시연용) 데이터입니다. 비교 대상으로는 바로 옆 생활권인 연동이 자동으로 붙었습니다.\n\n[원자료로 확인된 수치 사실]\n- **금요일 밤 승하차 증가**: 노형오거리 정류소의 하루 평균 승하차는 시간당 188명입니다. 금요일 21~23시에는 196명으로, 같은 시각 평소(108명)의 1.80배입니다(금요일 27일치 기준). 금요일 밤에는 하루 평균보다도 많습니다.\n- **밤에 남아 있는 도민이 낮보다 많음**: 21~23시 도민 체류를 낮 12~17시와 비교한 값(야간 잔류율)이 노형은 121.9%, 연동은 103.3%입니다.\n- **22~23시 도민 체류 인구**: 노형 56,937명, 연동 45,695명입니다.\n- **심야 수요는 주로 도민**: 관광객 등 도외 거주자 비중은 12.9%이고, 카드 이용액의 76.9%가 도민입니다.\n- **비 오는 날**: 비 오는 평일 22~23시에는 인근 정류소 승차가 7.6% 늘어납니다.\n- **금요일 귀가 불편 지수(대기+혼잡 시간)**: 노형은 20시 1.8분에서 23시 3.1분으로 늘어납니다. 연동은 23시 6.7분입니다.\n\n[교란 제거 후 역전 구간]\n- **숨어 있던 구간은 금요일 21~23시입니다.** 시 답변이 전체 평균이나 심야 평균만 봤다면 이 구간이 그대로 묻힙니다.\n- **노형이 계속 앞서고, 순위는 뒤집히지 않습니다.** 관광객, 시간대 쏠림, 날씨를 차례로 빼도 밤에 남아 있는 도민은 노형이 연동보다 많습니다. 주변 생활권과 비교하면 \"이용객이 많지 않다\"는 전제는 맞지 않습니다.\n- **다만 균형을 위해 짚을 점이 있습니다.** 귀가 시각을 17시부터 23시까지 바꿔 봐도 노형이 연동보다 덜 불편하다는 결과는 그대로였습니다. 23시 불편 지수도 3.1분 수준입니다. 그래서 \"금요일 밤에 사람이 몰린다\"는 건 확인되지만, \"지금 배차로는 감당이 안 된다\"는 이 지수만으로는 뚜렷하지 않습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **못 탄 사람은 기록에 없습니다.** 승하차 기록은 실제로 탄 사람만 셉니다. 버스가 꽉 차 그냥 지나간 경우나, 배차 간격이 길어 택시·자가용으로 돌린 사람은 원자료에 없습니다. 그래서 평균 이용객이 적은 게 수요가 적어서인지, 배차가 적어 덜 타는 것인지 구분할 수 없습니다.\n- **금요일 밤에 몰리는 이유는 측정되지 않았습니다.** 금요일 밤에 사람이 많다는 건 확인되지만, 그 이유를 단정할 수는 없습니다.\n- **현장 확인 질문**: 금요일 밤 노형오거리를 지나는 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 노형오거리 정류소에서 금요일 21~23시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-T9",
+   "group": "benchmark",
+   "workspace": "life",
+   "question": "제주공항 버스 정류소는 언제 제일 붐벼? 평균 말고 숨은 시간대",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": true,
+    "detail": "제주국제공항 정류소 승하차 · 일요일 · 17~20시 (1.54배)",
+    "local_pass": true,
+    "local_detail": "제주국제공항 정류소 승하차 · 일요일 · 17~20시 (1.54배)"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 17,
+    "grounded": 17,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 15,
+    "grounded": 15,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 33.8,
+   "claude": {
+    "rounds": 4,
+    "seconds": 33.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 22168,
+    "output_tokens": 3201,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "제주공항"
+       ],
+       "topic": "commute",
+       "question": "제주공항 버스 정류소는 언제 제일 붐벼? 평균 말고 숨은 시간대"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "제주공항"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "제주공항"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "제주공항"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "일",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '제주국제공항 정류소 승하차 · 일요일 · 17~20시'에는 같은 시각 평소의 1.54배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "제주국제공항 정류소에서 일요일 17~20시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 제주공항 정류소는 **일요일 오후 5시~8시**에 가장 붐빕니다. 전체 평균으로 보면 시간당 396명이라 한산해 보이지만, 이 시간대에는 785명이 타고 내려 평균에 가려진 과부하 구간이 드러납니다. (이번 분석은 공식 데이터와 항목 구성이 같은 합성(시연용) 데이터를 썼습니다.)\n\n[원자료로 확인된 수치 사실]\n- 정류소 승하차는 전체 평균이 시간당 **396명**입니다. 일요일 17~20시에는 **785명**으로, 다른 날 같은 시간대(510명)의 **1.54배**입니다. 일요일 26일치를 바탕으로 했습니다.\n- 일요일만 시간대별로 보면 정류소 한 곳당 승하차는 **18시(702명)**에 가장 많습니다. 위 785명과는 집계 방식이 달라 숫자가 그대로 맞지는 않지만, 둘 다 '일요일 저녁 6시 전후'를 가리킵니다.\n- 기다리는 시간과 혼잡을 합친 체감 지수는 오전 8시 5.0분, 오전 11시 6.7분, 저녁 8시 6.8분입니다. 결과로 나온 시각 가운데 저녁 8시가 가장 높습니다.\n- 공항 일대에 머무는 사람 중 도외 거주자(관광객 등) 비중은 **39.4%**입니다. 같은 기준으로 비교한 연동은 17.5%입니다.\n- 비가 와도 승차 인원은 거의 그대로입니다. 평일 17~19시 승차 인원의 변화는 **+0.5%**에 그칩니다(비 온 날 52일, 안 온 날 132일). 날씨보다는 요일과 시각을 기준으로 피하는 편이 맞습니다.\n\n[교란 제거 후 역전 구간]\n- **숨은 과부하 구간: 일요일 17~20시, 정점은 18시 전후입니다.** 연평균이나 월평균만 보면 보이지 않는 구간입니다.\n- 일요일 안에서는 덜 붐비는 시각과 더 붐비는 시각이 뒤바뀌는 경계가 없었습니다. 그래서 '몇 시 이후면 괜찮다'는 선을 긋기는 어렵습니다. 일요일에는 저녁 시간대를 통째로 피하는 편이 안전합니다.\n- 비교 기준으로 붙인 연동과 견주면, 관광객·저녁 시간대·궂은 날씨 영향을 차례로 빼도 연동이 계속 더 붐볐습니다. 순위가 뒤바뀌지 않았습니다. 다만 공항 정류소 자체의 일요일 저녁 쏠림과는 별개의 이야기입니다.\n- 표본이 부족해 조건을 넓힌 경우는 없습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 원자료에는 타고 내린 사람 수만 있습니다. 실제로 버스가 꽉 차서 못 탔는지, 줄을 얼마나 오래 섰는지는 측정되지 않아 '못 탈 정도'라고 단정할 수 없습니다.\n- 일요일 저녁에 왜 몰리는지도 알 수 없습니다. 항공편 도착 시간표나 이용자가 도민인지 관광객인지를 보여주는 항목이 버스 자료에 없어서, 관광객이 돌아가는 시간과 겹친다는 것은 추정일 뿐입니다.\n- 현장 확인 질문: 제주공항 정류소에서 일요일 저녁 6시 전후에 버스가 만차로 그냥 지나간 적이 있는지, 기사님이나 이용자께 확인할 수 있을까요?\n\n**이어서 물어보면 좋은 질문**\n- 비 오는 일요일에는 몇 시가 덜 붐벼?\n- 평일 저녁이랑 일요일 저녁을 비교해 줘\n- 연동 정류소랑 붐비는 시간대를 비교해 줘"
+  },
+  {
+   "id": "B-T10",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "동문시장 앞 정류소는 이용객이 평균적이라 혼잡 민원이 과장이라는데, 숨은 혼잡 시간대가 있어?",
+   "passed": false,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": false
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 8회",
+   "verdict": "inconclusive",
+   "local_verdict": "inconclusive",
+   "gold": {
+    "expected": [
+     "masked_overload"
+    ],
+    "pass": false,
+    "detail": "판정 inconclusive (정답 ['masked_overload'])",
+    "local_pass": false,
+    "local_detail": "판정 inconclusive (정답 ['masked_overload'])"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 31,
+    "grounded": 31,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 15,
+    "grounded": 15,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 70.5,
+   "claude": {
+    "rounds": 6,
+    "seconds": 70.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 43735,
+    "output_tokens": 7138,
+    "requests": 6,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "question": "동문시장 앞 정류소는 이용객이 평균적이라 혼잡 민원이 과장이라는데, 숨은 혼잡 시간대가 있어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "동문시장 앞 정류소는 이용객이 평균적이라 혼잡 민원이 과장이다",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "crowd",
+       "mode": "all",
+       "claim": "동문시장 앞 정류소는 이용객이 평균적이라 혼잡 민원이 과장이다",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "variable": "wait_minutes",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "weekend",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "동문시장"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "확보한 근거로는 어느 쪽으로도 단정하기 어렵습니다(판정 유보).",
+   "field_question": "동문시장 주변 정류소에서 8시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: \"평균적이니 민원은 과장\"이라는 주장은 절반만 맞습니다. 요일·시간대·날씨를 잘게 나눠 봐도 평소엔 조용하다가 특정 조건에서만 갑자기 몰리는 구간은 나오지 않았습니다. 다만 하루 평균에 묻히는 시간대별 쏠림은 분명히 있어서, 평균이 평범하다는 이유만으로 민원을 과장이라고 보기는 어렵습니다.\n\n※ 이번 분석에 쓴 자료는 공식 스키마를 바탕으로 만든 시연용 합성 데이터입니다. 동문시장은 일도1동, 정류소는 동문로터리 1곳으로 연결했습니다.\n\n[원자료로 확인된 수치 사실]\n- **평일**: 정류소 한 곳에서 타고 내리는 사람은 아침 8시에 가장 많고 263명입니다. 비 오는 평일에도 8시 262명으로 거의 같습니다.\n- **주말**: 가장 붐비는 시각이 저녁 18시로 바뀌고, 이때 192명입니다.\n- **대기+혼잡 지수(분)**: 기다리는 시간과 붐비는 정도를 합친 값입니다.\n  - 평일: 8시 2.3분, 11시 2.7분, 20시 2.4분\n  - 주말: 8시 1.9분, 11시 2.5분, 20시 2.7분\n- **저녁 귀가 시간대 같은 지수**: 17시 2.0분, 20시 2.4분, 23시 6.2분\n- **동네 체류 인구(일도1동)**: 시간당 평균 12,549명이고, 이 중 도외 거주자(관광객 등)가 30.3%입니다.\n- **비의 영향**: 비 오는 날 평일 17~19시 정류소 승차는 -0.6%로 거의 그대로입니다. 같은 시간 도민 체류는 -5.7%입니다.\n\n[교란 제거 후 역전 구간]\n- **숨은 폭증 구간**: 찾지 못했습니다. 집계 방식이 바뀐 흔적도 없었습니다.\n- **시간대 쏠림**: 평일은 8시, 주말은 18시가 가장 붐빕니다. 20시가 지나면 승하차 인원이 가장 붐빌 때의 60% 이하로 떨어집니다. 그래서 24시간 평균에서는 이 피크가 희석되어 보입니다.\n- **사람이 줄어도 부담은 남는 시간대**:\n  - 주말 20시는 승하차가 줄어드는 시간인데도 지수는 2.7분으로, 아침 8시(1.9분)보다 높습니다.\n  - 저녁 지수는 23시에 6.2분까지 올라갑니다.\n- **관광객 효과(동네 체류 인구 기준)**:\n  - 단순 평균으로는 동문시장(12,549명)이 비교 지역인 삼도2동(12,438명)보다 많습니다.\n  - 관광객을 빼면 순위가 뒤집혀 삼도2동이 앞섭니다.\n  - 비 오는 날 17~19시만 보면 다시 동문시장 12,175명, 삼도2동 11,592명으로 동문시장이 앞섭니다.\n- **밤 시간 잔류율**: 낮(12~17시) 대비 밤(21~23시)에 남아 있는 도민 비율은 동문시장 27.1%, 삼도2동 63.3%입니다. 저녁 이후 사람이 빠지는 동네라는 뜻이고, 20시 이후 정류소가 한산해지는 것과 같은 방향입니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **'혼잡' 자체를 재는 항목이 없습니다.** 자료에는 타고 내린 인원만 있고, 버스 안 혼잡도, 만차로 그냥 지나간 횟수, 정류소 대기 줄 길이는 없습니다. 그래서 민원이 말하는 혼잡이 실제로 있었는지, 과장인지는 자료만으로 판정할 수 없습니다. 밤에 지수가 오르는 것도 대기 때문인지 혼잡 때문인지 이 지수로는 구분되지 않습니다.\n- **관광객 비율 30.3%는 정류소 승객이 아니라 동네 체류 인구 기준입니다.** 정류소 승하차 자료는 관광객과 도민을 나누지 않습니다. 또 동문로터리 1곳만 연결됐으므로, 민원 속 '시장 앞 정류소'가 다른 정류소라면 이번 분석에는 빠져 있습니다.\n- **현장 확인 질문**: 평일 아침 8시 전후와 주말 저녁 6시 전후에 동문로터리 정류소에서 버스가 만차로 그냥 지나간 적이 있는지, 기사님이나 이용자께 확인할 수 있을까요?\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 동문시장 주변 정류소에서 8시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-T11",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "외도동 외도부영 정류소는 화요일 오전에 평소보다 붐빈다는데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "inconclusive",
+   "local_verdict": "inconclusive",
+   "gold": {
+    "expected": [
+     "inconclusive",
+     "refuted",
+     "masked_overload",
+     "none",
+     "no_reversal"
+    ],
+    "pass": true,
+    "detail": "판정 inconclusive",
+    "local_pass": true,
+    "local_detail": "판정 inconclusive"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 23,
+    "grounded": 23,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 22,
+    "grounded": 22,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 51.6,
+   "claude": {
+    "rounds": 4,
+    "seconds": 51.6,
+    "model": "claude-opus-5-5",
+    "input_tokens": 23552,
+    "output_tokens": 5031,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "외도동"
+       ],
+       "topic": "commute",
+       "question": "외도동 외도부영 정류소는 화요일 오전에 평소보다 붐빈다는데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "외도동"
+       ],
+       "topic": "commute",
+       "day_type": "화",
+       "hour_from": 7,
+       "hour_to": 11,
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "외도동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "외도동 외도부영 정류소는 화요일 오전에 평소보다 붐빈다는데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "외도동"
+       ],
+       "topic": "commute",
+       "day_type": "화",
+       "variable": "visit_hour",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장한 조건(요일·장날·날씨·시간대)에서 '평소보다 붐빈다'는 근거는 원자료에서 확인되지 않습니다. 확인되지 않은 효과를 사실로 인정하지 않습니다.",
+   "field_question": "외도동 주변 정류소에서 18시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 자료에서는 외도부영 정류소가 화요일 오전에만 따로 더 붐빈다는 근거를 찾지 못했습니다. 대신 요일과 상관없이 **비 오는 평일 오전 10시대**에 평소보다 붐비는 구간이 확인됐습니다. 그래서 화요일에 붐빈다고 느낀 날이 비 오는 날이었을 수도 있지만, 아직 확인된 것은 아닙니다.\n\n※ 이번 수치는 공식 데이터 형식에 맞춰 시연용으로 만든 합성 데이터입니다. 실제 통계로 받아들이시면 안 됩니다.\n\n[원자료로 확인된 수치 사실]\n- 외도부영 정류소의 승하차 인원은 하루 전체 평균으로 시간당 58.2명입니다.\n- 비 오는 평일 10시대에는 시간당 59.6명이 타고 내립니다. 같은 시각 평소에는 45.2명이라 약 1.32배입니다(해당하는 날 35일).\n- 화요일에 승하차가 가장 많은 시각은 오전이 아니라 **18시(127명)**입니다.\n- 화요일 시간대별 혼잡 지수(기다리는 시간과 붐빔을 합쳐 분으로 나타낸 값)는 8시 5.4분, 11시 5.7분, 20시 7.5분입니다. 오전이 저녁보다 낮습니다.\n- 평일 7~11시에 비가 오면 인근 정류소 승차는 +21.5% 늘지만, 같은 시간대 외도동의 도민 체류 인구는 -1.3%로 거의 변하지 않습니다(비 온 날 52일, 안 온 날 132일).\n- 외도동에 머무는 사람 중 관광객 등 다른 지역 거주자는 3.9%라서, 관광객 때문에 수치가 부풀려졌을 가능성은 작습니다.\n\n[교란 제거 후 역전 구간]\n- **화요일 오전만의 급증 구간: 없음.** 요일·시간대·날씨를 잘게 나눠 평소보다 튀는 조각을 찾았지만, 상위에 화요일 오전은 없었습니다.\n- **평균에 가려져 있던 붐비는 구간(모두 비 오는 평일)**:\n  - 10시대: 59.6명, 평소 45.2명의 1.32배\n  - 15시대: 59.3명, 평소 45.1명의 1.31배\n  - 17시대: 123명, 평소 94.6명의 1.30배\n- **화요일에 한산해지는 시각**: 20시 이후 승하차가 가장 붐비는 18시의 60% 이하로 줄어듭니다. 다만 20시 혼잡 지수는 7.5분으로 오전보다 높습니다. 사람은 적어도 기다리는 부담은 더 클 수 있다는 점을 함께 보셔야 합니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 정류소 자료에는 타고 내린 인원만 있습니다. 붐비는 이유(예: 화요일마다 있는 특정 일정)나 버스 안 혼잡, 만차로 그냥 지나간 일은 기록되지 않습니다. 비 오는 날 승차가 늘어나는 것도 비와 함께 나타나는 현상일 뿐, 비 때문이라고 단정할 수는 없습니다.\n- 이번 분석은 평소보다 크게 튀는 구간을 찾는 방식입니다. 화요일 오전이 다른 요일보다 조금 더 많은 정도라면 결과에 드러나지 않았을 수 있습니다.\n- 현장 확인 질문: 화요일 오전 10시 전후 외도부영 정류소가 붐볐던 날이 비 오는 날이었는지, 아니면 맑은 화요일에도 같은 혼잡이 되풀이되는지 정류소 이용자분들께 확인해 주실 수 있을까요?"
+  },
+  {
+   "id": "B-T12",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "첨단과학기술단지 정류소는 오일장 장날에 평소보다 붐빈다던데 사실이야?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 6회",
+   "verdict": "inconclusive",
+   "local_verdict": "inconclusive",
+   "gold": {
+    "expected": [
+     "inconclusive",
+     "refuted",
+     "masked_overload",
+     "none",
+     "no_reversal"
+    ],
+    "pass": true,
+    "detail": "판정 inconclusive",
+    "local_pass": true,
+    "local_detail": "판정 inconclusive"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 29,
+    "grounded": 29,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 23,
+    "grounded": 23,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 57.7,
+   "claude": {
+    "rounds": 5,
+    "seconds": 57.7,
+    "model": "claude-opus-5-5",
+    "input_tokens": 39082,
+    "output_tokens": 6147,
+    "requests": 5,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "첨단과학기술단지",
+        "아라동"
+       ],
+       "topic": "commute",
+       "question": "첨단과학기술단지 정류소는 오일장 장날에 평소보다 붐빈다던데 사실이야?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "첨단과학기술단지"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "첨단과학기술단지"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "첨단과학기술단지 정류소는 오일장 장날에 평소보다 붐빈다던데 사실이야?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "첨단과학기술단지"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "variable": "visit_hour",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "첨단과학기술단지"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "weather": "any",
+       "hour_from": 17,
+       "hour_to": 19
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "첨단과학기술단지"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "variable": "visit_hour",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장한 조건(요일·장날·날씨·시간대)에서 '평소보다 붐빈다'는 근거는 원자료에서 확인되지 않습니다. 확인되지 않은 효과를 사실로 인정하지 않습니다.",
+   "field_question": "첨단과학기술단지(아라동) 주변 정류소에서 장날 8시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 자료로는 \"장날에 더 붐빈다\"는 말이 확인되지 않습니다. 장날의 정류소 이용은 평소 평일과 비슷하거나 조금 적었습니다. 평균에 가려져 있던 실제 혼잡 조건은 장날이 아니라 **비 오는 평일**이었습니다.\n\n※ 이번 분석에 쓴 자료는 공식 형식을 따라 만든 시연용 합성 데이터입니다(기준일 2026-11-05).\n\n[원자료로 확인된 수치 사실]\n- 첨단과학기술단지 주변 정류소는 장날과 평소 평일 모두 오전 8시에 가장 붐빕니다. 이때 정류소 1곳당 타고 내린 사람은 **장날 161명, 평소 평일 180명**입니다.\n- 기다림과 붐빔을 합친 혼잡 지수(분)도 장날이 조금 낮습니다.\n  - 장날: 8시 5.3분, 11시 6.3분, 20시 6.1분\n  - 평소 평일: 8시 5.8분, 11시 6.8분, 20시 6.5분\n- 오후 5~7시 아라동 전체에 머무는 도민 수는 장날(2·7일, 36일) 33,467명, 모든 요일(184일) 33,355명으로 거의 같습니다.\n- 관광객(제주 밖 거주자) 비중은 3.0%로, 관광객 때문에 수치가 부풀려진 영향은 작습니다.\n\n[교란 제거 후 역전 구간]\n- **장날 효과는 뒤집히지 않았습니다.** 장날에 평소보다 붐비는 시간대는 찾지 못했습니다.\n- 평균에 숨어 있던 혼잡 구간은 비 오는 평일이었습니다.\n  - 첨단과학기술단지 정류소, 비 오는 평일 오전 5시~오후 3시: 시간당 85.0명(같은 시간대 평소 63.8명, 1.33배, 35일)\n  - 같은 정류소, 비 오는 평일 저녁 7~11시: 60.4명(평소 45.3명, 1.33배)\n  - 옆 제주대학교 정류소, 비 오는 평일 하루 종일: 196명(평소 145명, 1.35배)\n- 비 오는 날 오후 5~7시 동네에 머무는 도민 수는 거의 그대로(-1.8%)입니다. 그런데 주변 정류소의 평일 같은 시간대 승차는 +27.6% 늘었습니다. 사람 수보다 버스 이용이 함께 늘어난 모습입니다.\n- 장날이든 평일이든 **밤 8시 이후**에는 타고 내리는 인원이 가장 붐비는 8시의 60% 이하로 내려갑니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 장날(2·7일)은 요일과 상관없이 돌아와 주말이 섞여 있는데, 비교 대상은 평소 평일이었습니다. 장날 수치가 조금 낮은 이유가 주말이 섞였기 때문인지 장날 자체 때문인지는 이 자료로 가를 수 없습니다.\n- 정류소 자료에는 타고 내린 인원만 있습니다. 이용 목적이나 목적지, 만차로 버스가 그냥 지나갔는지는 기록되지 않습니다. 그래서 장날 이용객이 오일장 때문에 움직였는지, 비 오는 날 승차가 왜 늘었는지 단정할 수 없습니다.\n- 현장 확인 질문: 첨단과학기술단지 정류소에서 버스가 만차로 그냥 지나가는 일은 장날 아침 8시 전후와 비 오는 평일 아침 중 어느 쪽에 더 잦은지, 기사님이나 이용자께 확인할 수 있을까요?"
+  },
+  {
+   "id": "B-T13",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "전기차 충전 대기시간이 평균 20분이라는 보도, 믿어도 돼?",
+   "passed": false,
+   "checks": {
+    "claude_mode": false,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "local",
+   "mode_reason": "자동 폴백: 응답 지연(3.5초 내 첫 응답 없음)",
+   "verdict": "thin_denominator",
+   "local_verdict": "thin_denominator",
+   "gold": {
+    "expected": [
+     "thin_denominator"
+    ],
+    "pass": true,
+    "detail": "판정 thin_denominator",
+    "local_pass": true,
+    "local_detail": "판정 thin_denominator"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 3.6,
+   "claude": {
+    "rounds": null,
+    "seconds": null,
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0,
+    "tool_calls": null
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local",
+    "excavate_masked_slice": "local",
+    "simulate_reversal_boundary": "local"
+   },
+   "headline": "주장된 평균은 전체 2,447행 중 113행으로만 계산 가능해 제주 전체 대표값으로 쓸 수 없습니다(분모 함정).",
+   "field_question": "충전 요청 시각이 비어 있는 행이 앱 미사용 현장 충전인지 운영사에 확인할 수 있을까요?",
+   "narrative": "**결론**: 주장된 평균은 전체 2,447행 중 113행으로만 계산 가능해 제주 전체 대표값으로 쓸 수 없습니다(분모 함정).\n\n[원자료로 확인된 수치 사실]\n- 전기차 충전 기록 2,447행 중 미충전 154행, 대기시간 계산 가능(요청·시작 시각 유효) 113행(4.6%)\n- 유효 113행 기준 평균 대기 18.5분, 중앙값 16.0분\n\n[교란 제거 후 역전 구간]\n- 분모 함정: 대기시간 평균은 전체의 4.6%인 113행으로만 계산되어 제주 전체 대표값으로 쓸 수 없습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 한계: 대기시간은 요청·시작 시각이 모두 유효한 113행에서만 계산 가능(전체 2,447행의 4.6%)\n- 한계: 강수량이 일 단위라 특정 시각(예: 18시 퇴근길)의 비 여부를 알 수 없음\n- 현장 확인 질문: 충전 요청 시각이 비어 있는 행이 앱 미사용 현장 충전인지 운영사에 확인할 수 있을까요?\n\n_데이터: 공식 예시데이터 스키마를 보존한 시드 고정 합성(시연용) 데이터 기준이며, data/raw 에 원자료를 넣으면 같은 절차로 재계산됩니다._"
+  },
+  {
+   "id": "B-T14",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "비가 많이 와서 연동 카드 매출이 줄었다는데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "unmeasured_cause",
+   "local_verdict": "unmeasured_cause",
+   "gold": {
+    "expected": [
+     "unmeasured_cause"
+    ],
+    "pass": true,
+    "detail": "판정 unmeasured_cause",
+    "local_pass": true,
+    "local_detail": "판정 unmeasured_cause"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 12,
+    "grounded": 12,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 6,
+    "grounded": 6,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 44.1,
+   "claude": {
+    "rounds": 3,
+    "seconds": 44.1,
+    "model": "claude-opus-5-5",
+    "input_tokens": 15446,
+    "output_tokens": 4501,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "연동"
+       ],
+       "topic": "spending",
+       "question": "비가 많이 와서 연동 카드 매출이 줄었다는데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "연동"
+       ],
+       "topic": "spending",
+       "weather": "any",
+       "day_type": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "연동"
+       ],
+       "topic": "spending",
+       "mode": "all",
+       "claim": "비가 많이 와서 연동 카드 매출이 줄었다는데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "연동"
+       ],
+       "topic": "spending",
+       "variable": "rain",
+       "weather": "any",
+       "day_type": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "수치 변화 자체는 확인되지만, 주장한 원인은 원자료 컬럼으로 측정되지 않아 단정할 수 없습니다.",
+   "field_question": "'비(강수)'가 카드 매출에 영향을 줬는지 보려면 같은 기간의 비(강수) 관련 수치를 관계 기관에서 받아 볼 수 있을까요?",
+   "narrative": "**결론**: \"비가 많이 와서 연동 카드 매출이 줄었다\"는 말은 지금 자료로는 맞다고 확인할 수 없습니다. 카드 매출 자료는 한 달 단위로만 집계되고 비 자료는 하루 단위라서 둘을 바로 이을 수 없습니다. 오히려 비 오는 날 저녁에도 연동에 머무는 사람과 근처 버스 승객은 줄지 않았습니다.\n\n※ 아래 수치는 공식 자료 양식을 그대로 따라 만든 합성(시연용) 데이터입니다.\n\n[원자료로 확인된 수치 사실]\n- 연동 카드 이용 자료(시간대별·요일별)는 월 단위로 집계됩니다. 날씨는 일 단위(제주 관측소)라서 \"비 온 날의 매출\"만 따로 떼어 볼 수 없습니다.\n- 분석 기간에 비 온 날은 52일, 안 온 날은 132일이었습니다. 비 오는 날 연동 저녁(18~21시)에 머문 도민은 안 온 날보다 2.3% 많았습니다.\n- 같은 비 오는 평일 18~21시에 연동 근처 정류소(한라병원, 노형오거리) 버스 승차도 11.1% 늘었습니다.\n- 연동 카드 이용액 중 제주도민 몫은 62.1%이고, 연동에 머무는 사람 중 도외 거주자(관광객 등) 비중은 17.5%입니다.\n- 이번 분석에서는 매출이 언제, 얼마나 줄었는지를 보여주는 수치가 나오지 않았습니다. 그래서 감소 자체도 확인되지 않은 상태입니다.\n\n[교란 제거 후 역전 구간]\n- **날씨**: \"비가 오면 사람이 안 나온다\"는 전제가 이 자료에서는 맞지 않았습니다. 비 오는 날 저녁 체류(+2.3%)와 버스 승차(+11.1%)가 모두 늘었습니다. 다만 이것은 함께 나타난 연관일 뿐이고, 매출이 줄지 않았다는 증거는 아닙니다.\n- **이웃 동네 비교**: 비교를 위해 노형동을 함께 봤습니다. 비 오는 날 저녁 도민 체류 변화는 노형동 +2.6%, 연동 +2.3%로 두 동네 모두 늘었습니다.\n- 관광객, 시간대, 날씨의 영향을 차례로 빼고 봐도 순위는 바뀌지 않았습니다. 저녁 도민 체류는 노형동 58,534명, 연동 49,137명입니다. 비 때문에 연동만 유독 사람이 빠졌다고 볼 만한 구간도 나오지 않았습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 카드 매출(월 단위)과 비(일 단위)는 집계 단위가 달라서 인과관계를 따질 수 없습니다. 이번 분석은 비가 왔는지 안 왔는지만 나눴고, 비가 얼마나 많이 왔는지(강수량)에 따라 나눠 보지는 않았습니다. 확인된 범위에서 정확하게 바꾸면 이렇습니다: \"연동의 카드 매출이 변했다(원인 미확인, 비 영향은 추가 자료로 검증 필요).\"\n- 매출이 실제로 줄었더라도 원인을 가려낼 수 없습니다. 관광객 결제가 줄었는지, 계절·행사 때문인지, 가게 구성이 바뀌었는지를 보여주는 항목이 자료에 없기 때문입니다.\n- 현장 확인 질문: 매출이 줄었다는 그 달의 연동 카드 매출을 날짜별로 받아(상인회나 카드사 등), 비 온 날과 안 온 날을 나란히 비교할 수 있을까요?"
+  },
+  {
+   "id": "B-T15",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "아라동은 저녁 시간에 도민이 삼양동보다 많다던데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "confirmed",
+   "local_verdict": "confirmed",
+   "gold": {
+    "expected": [
+     "confirmed"
+    ],
+    "pass": true,
+    "detail": "판정 confirmed",
+    "local_pass": true,
+    "local_detail": "판정 confirmed"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 31,
+    "grounded": 31,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 24,
+    "grounded": 24,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 39.9,
+   "claude": {
+    "rounds": 4,
+    "seconds": 39.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 23514,
+    "output_tokens": 4037,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "아라동",
+        "삼양동"
+       ],
+       "topic": "living",
+       "question": "아라동은 저녁 시간에 도민이 삼양동보다 많다던데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "아라동",
+        "삼양동"
+       ],
+       "topic": "living",
+       "hour_from": 18,
+       "hour_to": 21,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "아라동",
+        "삼양동"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "claim": "아라동은 저녁 시간에 도민이 삼양동보다 많다던데 맞아?",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "아라동",
+        "삼양동"
+       ],
+       "topic": "living",
+       "variable": "visit_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장은 원자료와 일치합니다(정상 주장): 교란 제거 후 '아라동' 34,898 vs '삼양동' 23,352.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 맞습니다. 저녁 18~21시에 아라동에 머무는 도민은 34,898명, 삼양동은 23,352명으로 아라동이 더 많습니다. 관광객, 시간대, 날씨 영향을 차례로 빼고 봐도 순서는 바뀌지 않았습니다. 다만 낮보다 밤에 사람이 얼마나 남는지를 보면 삼양동이 더 높고, 비 오는 평일 저녁 정류장 혼잡에서는 삼양동 쪽이 더 두드러집니다.\n\n※ 이 분석은 공식 데이터 양식을 그대로 따라 만든 시연용 합성 데이터를 사용했습니다. 조사 기간 184일(비 온 날 52일, 비 안 온 날 132일)로 표본이 충분해서 조건을 넓히지 않았습니다.\n\n[원자료로 확인된 수치 사실]\n- **저녁 18~21시 도민 체류 인구**: 아라동 34,898명, 삼양동 23,352명입니다.\n- **관광객 포함 하루 평균(시간당)**: 아라동 34,085명, 삼양동 21,892명입니다.\n- **관광객 등 도외 거주자 비중**: 아라동 3.0%, 삼양동 2.9%로 둘 다 낮습니다. 관광객 때문에 수치가 부풀려진 것은 아닙니다.\n- **비 오는 날 저녁 도민 체류 변화**: 아라동 -0.1%, 삼양동 -0.6%로 날씨 영향은 거의 없었습니다.\n- **카드 이용액 중 도민 비중**: 아라동 93.3%, 삼양동 91.6%입니다.\n\n[교란 제거 후 역전 구간]\n- **인원 순위는 바뀌지 않음**: 관광객, 시간대, 비 오는 날을 차례로 빼도 저녁 도민 인원은 계속 아라동이 많습니다.\n- **밤에 남는 비율은 반대**: 낮(12~17시) 대비 밤(21~23시) 도민 체류 비율이 아라동 117.3%, 삼양동 144.7%입니다. 인원은 아라동이 많지만, 저녁이 되면 사람이 더 모이는 동네는 삼양동입니다.\n- **정류장 혼잡은 저녁 8시에 역전**: 버스 대기와 혼잡을 합친 지수가 아침 8시에는 아라동 5.8분, 삼양동 3.2분입니다. 저녁 8시에는 아라동 6.5분, 삼양동 7.3분으로 삼양동이 더 붐빕니다.\n- **평균에 가려진 붐비는 시간**: 삼화지구 정류소(삼양동 쪽)는 하루 평균 시간당 89.5명이 타고 내립니다. 그런데 비 오는 평일 17~19시에는 303명으로, 같은 시각 평소 170명의 1.78배입니다(해당 35일). 비 오는 평일 18~21시 승차도 삼양동 쪽은 +58.3%, 아라동 쪽은 +27.4% 늘었습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **어느 동 주민인지 모름**: 원자료는 도민과 도외 거주자만 나눕니다. 그래서 저녁에 아라동에 있던 도민이 아라동 주민인지, 다른 동에서 통학·통근으로 온 도민인지는 구분할 수 없습니다.\n- **동 크기 차이를 반영 못 함**: 동별 상주인구나 면적 정보가 없어서 주민 수 대비 비교는 할 수 없습니다. 아라동 인원이 많은 것이 동 자체가 커서인지, 저녁에 사람이 모여서인지는 이 자료만으로 단정할 수 없습니다.\n- **현장 확인 질문**: 저녁 18~21시에 아라동에 머무는 사람 중 아라동 주민이 아니라 다른 동에서 통학·통근으로 왔다가 남아 있는 도민이 어느 정도인지, 동주민센터나 인근 상인께 체감으로라도 확인해 주실 수 있을까요?\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?"
+  },
+  {
+   "id": "B-T16",
+   "group": "benchmark",
+   "workspace": "lawyer",
+   "question": "2024년 삼화지구 버스 이용객이 2025년보다 늘었다는데 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 2회",
+   "verdict": "abstain",
+   "local_verdict": "abstain",
+   "gold": {
+    "expected": [
+     "abstain"
+    ],
+    "pass": true,
+    "detail": "판정 보류 + 현장 확인 질문",
+    "local_pass": true,
+    "local_detail": "판정 보류 + 현장 확인 질문"
+   },
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 13,
+    "grounded": 13,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 12,
+    "grounded": 12,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 23.9,
+   "claude": {
+    "rounds": 2,
+    "seconds": 23.9,
+    "model": "claude-opus-5-5",
+    "input_tokens": 9032,
+    "output_tokens": 2473,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "question": "2024년 삼화지구 버스 이용객이 2025년보다 늘었다는데 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "claim": "2024년 삼화지구 버스 이용객이 2025년보다 늘었다는데 맞아?",
+       "mode": "all",
+       "topic": "commute",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "excavate_masked_slice": "claude"
+   },
+   "headline": "판정 보류: 요청 시점이 보유 자료 기간(2026.05~2026.10) 밖입니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+   "field_question": "해당 기간 원자료를 제주데이터허브에서 내려받아 data/raw/ 에 넣고 다시 분석해 볼까요?",
+   "narrative": "**결론**: 판단할 수 없습니다. 이 서비스에는 2024년과 2025년 삼화지구 버스 이용객 수치가 없어서, 이 주장이 맞는지 틀린지 데이터로 확인할 수 없습니다. 참고로 이 자료는 2026년 11월 5일 기준으로 만든 공식 스키마 기반 합성(시연용) 데이터입니다.\n\n[원자료로 확인된 수치 사실]\n- 이 서비스에서 삼화지구는 화북동·삼양동 두 행정동과 정류소 2곳(삼화지구, 화북주공)으로 묶입니다. 날씨는 제주(184) 관측소 자료를 씁니다.\n- 버스 정류소 자료는 공식 예시 시트 '버스 정류소별 이용 현황'과 컬럼 9개가 모두 같습니다. 하지만 2024년과 2025년을 연도별로 비교한 결과는 나오지 않았습니다. 자료 기간도 2026년 5~10월로 안내되어 있어, 질문하신 두 해는 아예 들어 있지 않습니다.\n- 대신 보유 기간 안에서 확인된 사실은 이렇습니다. 삼화지구 정류소는 전체 평균이 시간당 89.5명입니다. 그런데 비 오는 평일 17~19시에는 303명으로, 같은 시각 평소 170명의 1.78배였습니다(해당 35일).\n- 화북주공 정류소는 전체 평균이 시간당 67.0명입니다. 비 오는 평일에는 하루 종일(05~23시) 90.9명으로, 평소 67.0명의 1.36배였습니다(해당 35일).\n\n[교란 제거 후 역전 구간]\n- 연도 비교는 자료가 없어 역전이 있는지 판단할 수 없습니다.\n- 대신 보유 기간 안에서는 평균에 가려진 혼잡 구간이 드러났습니다. 삼화지구 정류소는 비 오는 평일 퇴근 시간(17~19시)에, 화북주공 정류소는 비 오는 평일 하루 종일 사람이 크게 몰립니다. 그래서 같은 해 안에서도 비 온 날이 많았는지에 따라 연간 이용객 수가 달라질 수 있습니다. 나중에 연도별 수치를 비교하실 때도 날씨 차이를 함께 보셔야 합니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 2024년과 2025년 수치가 없어서 이용객이 늘었는지 줄었는지 말할 수 없습니다. 또 주장에서 \"2024년이 2025년보다 늘었다\"는 표현은 앞뒤가 바뀐 것 같습니다. 보통은 뒤 해(2025년)를 앞 해(2024년)와 비교하니까요. 어느 해를 기준으로 비교한 주장인지 원문이나 기사를 먼저 확인해 보시길 권합니다.\n- 연도별 수치가 생기더라도 그해 비 온 날의 수, 정류소 신설·폐지, 노선 개편이 함께 바뀌었다면 이용객 증감을 그중 어느 한 가지 때문이라고 단정할 수 없습니다. 이런 요인은 동시에 일어난 일 정도로만 볼 수 있습니다.\n- 현장 확인 질문: 이 주장의 출처(기사·민원 등)는 2024년과 2025년 이용객 수를 어떤 기준(삼화지구·화북주공 두 정류소만인지, 화북동·삼양동 전체인지)으로, 몇 월부터 몇 월까지 집계한 것인가요?"
+  },
+  {
+   "id": "S01",
+   "group": "scenario",
+   "workspace": "life",
+   "question": "동문시장 쪽 일도1동이랑 이도1동 중에 밤 9시 이후 생활하기 어디가 나아?",
+   "passed": false,
+   "checks": {
+    "claude_mode": false,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "local",
+   "mode_reason": "자동 폴백: 응답 지연(3.5초 내 첫 응답 없음)",
+   "verdict": "reversal",
+   "local_verdict": "reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 15,
+    "grounded": 15,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 15,
+    "grounded": 15,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 10.4,
+   "claude": {
+    "rounds": null,
+    "seconds": null,
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0,
+    "tool_calls": null
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local",
+    "decompose_confounders": "local",
+    "excavate_masked_slice": "local",
+    "simulate_reversal_boundary": "local"
+   },
+   "headline": "단순 평균으로는 '동문시장'이 앞서 보이지만, 교란을 걷어낸 도민 실생활 기준으로는 '이도1동'이 앞섭니다(순위 역전).",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 단순 평균으로는 '동문시장'이 앞서 보이지만, 교란을 걷어낸 도민 실생활 기준으로는 '이도1동'이 앞섭니다(순위 역전).\n\n[원자료로 확인된 수치 사실]\n- 동문시장 시간당 평균 체류 인구(관광객 포함·24시간): 12,549명\n- 동문시장 도외 거주자(관광객) 체류 비중: 30.3%\n- 동문시장 도민 체류(전체 요일 21~23시): 4,040명\n- 동문시장 야간 잔류율(도민 21~23시 ÷ 12~17시): 27.1%\n- 동문시장 비 오는 날 21~23시 도민 체류 변화: -3.6%(우천 52일 / 비우천 132일)\n- 동문시장 인근 정류소 평일 21~23시 승차, 비 오는 날 변화: +0.8%\n- 동문시장 귀가 불편 지수(대기+혼잡, 분): 17시 2.0분, 20시 2.4분, 23시 6.2분\n\n[교란 제거 후 역전 구간]\n- ① 관광객(도외 거주자) 거품 제거 단계에서 1위가 '동문시장' -> '이도1동'으로 바뀝니다.\n- 검토한 17~23시 전 구간에서 '이도1동'이 계속 유리합니다(경계 없음).\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 한계: 강수량이 일 단위라 특정 시각(예: 18시 퇴근길)의 비 여부를 알 수 없음\n- 한계: 통신 기반 추정 인구로 거주 만족도·치안·소음 같은 생활 품질은 측정하지 않음\n- 현장 확인 질문: 이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?\n\n_데이터: 공식 예시데이터 스키마를 보존한 시드 고정 합성(시연용) 데이터 기준이며, data/raw 에 원자료를 넣으면 같은 절차로 재계산됩니다._"
+  },
+  {
+   "id": "S02",
+   "group": "scenario",
+   "workspace": "life",
+   "question": "오일장 장날 몇 시에 가면 덜 붐벼? 어르신 모시고 가려고",
+   "passed": false,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": false,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "boundary",
+   "local_verdict": "boundary",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 23,
+    "grounded": 22,
+    "ungrounded": [
+     "4.8"
+    ],
+    "ratio": 0.9565
+   },
+   "local_number_audit": {
+    "checked": 18,
+    "grounded": 18,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 36.8,
+   "claude": {
+    "rounds": 3,
+    "seconds": 36.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 15441,
+    "output_tokens": 3839,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "오일장"
+       ],
+       "topic": "crowd",
+       "question": "오일장 장날 몇 시에 가면 덜 붐벼? 어르신 모시고 가려고"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "오일장"
+       ],
+       "topic": "crowd",
+       "day_type": "market",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "오일장"
+       ],
+       "topic": "crowd",
+       "mode": "all",
+       "user_group": "어르신",
+       "claim": ""
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "오일장"
+       ],
+       "topic": "crowd",
+       "day_type": "market",
+       "user_group": "어르신",
+       "variable": "visit_hour",
+       "weather": "any"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "방문 시각 경계: 14시 이후 방문하면 정류소 승하차가 최대 혼잡(9시)의 60% 이하로 떨어집니다.",
+   "field_question": "오일장 주변 정류소에서 장날 9시 전후에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 장날(끝자리 2·7일)에는 오전 9시부터 오후 1시 사이가 가장 붐빕니다. 어르신과 가신다면 **오후 2시 이후**가 가장 덜 붐비고, 오전에 꼭 가셔야 한다면 **오전 8시대**가 11시 무렵보다 낫습니다.\n\n[원자료로 확인된 수치 사실]\n※ 아래 수치는 공식 데이터 형식을 그대로 따라 만든 시연용 합성 데이터입니다. 실제 현장과 다를 수 있습니다.\n- 오일장 근처 정류소에서 버스를 타고 내리는 사람은 **오전 9시에 133명**으로 가장 많습니다.\n- 정류소 대기와 혼잡을 합쳐 분으로 나타낸 혼잡 지수는 **8시 6.0분, 11시 13.6분, 20시 8.6분**입니다. 오전 일찍 가는 쪽이 한낮보다 훨씬 수월합니다.\n- 제주민속오일장 정류소에서 버스를 타는 어르신은 장날 9~13시에 **시간당 23.7명**입니다. 장날이 아닌 날 같은 시각에는 8.0명으로, 장날에 **2.94배**로 늘어납니다. 전체 평균은 3.8명뿐이라 평균만 보면 이 쏠림이 보이지 않습니다.\n- 오일장에 머무는 인구는 장날 10~14시에 **시간당 11,713명**입니다. 장날이 아닌 날 같은 시각에는 8,652명으로, 장날에 **1.35배**로 늘어납니다. 전체 평균은 6,010명입니다.\n- 오일장에 머무는 사람 중 **39.5%**는 제주도 밖에 사는 사람(관광객 등)입니다.\n\n[교란 제거 후 역전 구간]\n- **방문 시각 경계는 오후 2시입니다.** 이 시각 이후에는 정류소 승하차 인원이 가장 붐비는 9시의 60% 이하로 떨어집니다.\n- **평균의 착시가 있습니다.** 관광객을 포함한 하루 전체 평균으로 비교하면 이웃 이호동(시간당 6,534명)이 오일장(6,010명)보다 더 붐비는 것처럼 보입니다. 그런데 장날 낮(8~20시)의 도민만 따로 보면 오일장 4,899명, 이호동 4,474명으로 순위가 뒤집힙니다. 장날 낮에는 평균 수치보다 실제로 더 붐빈다고 보셔야 합니다.\n- 비가 오면 장날 낮(8~20시)에 오일장에 머무는 도민이 **4.8% 줄어듭니다.** 비 온 날 11일과 비 안 온 날 25일을 비교한 결과입니다. 하지만 줄어드는 폭이 작아서, 비 오는 날을 골라도 오전 혼잡은 크게 달라지지 않을 수 있습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 이 데이터는 정류소 승하차와 지역 전체 체류 인구 기준입니다. **시장 안 통로나 주차장이 얼마나 붐비는지, 자가용으로 오는 사람이 얼마나 되는지**는 측정되지 않았습니다.\n- 오후 2시 이후에 상인들이 일찍 정리하는지, 물건이 남아 있는지도 데이터에 없습니다. 덜 붐비는 시간이 장보기에 좋은 시간인지는 따로 확인하셔야 합니다.\n- 현장 확인 질문: 오일장 주변 정류소에서 장날 9시 전후에 버스가 꽉 차서 그냥 지나간 적이 있는지, 기사님이나 이용자께 확인할 수 있을까요?\n\n원하시면 비 오는 장날에는 몇 시가 덜 붐비는지도 따로 확인해 드릴 수 있습니다."
+  },
+  {
+   "id": "S03",
+   "group": "scenario",
+   "workspace": "life",
+   "question": "신제주랑 구제주 중 퇴근 후 저녁 생활 어디가 나아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 28,
+    "grounded": 28,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 32.1,
+   "claude": {
+    "rounds": 3,
+    "seconds": 32.0,
+    "model": "claude-opus-5-5",
+    "input_tokens": 16177,
+    "output_tokens": 3352,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "living",
+       "question": "신제주랑 구제주 중 퇴근 후 저녁 생활 어디가 나아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "living",
+       "hour_from": 18,
+       "hour_to": 21,
+       "day_type": "weekday",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "living",
+       "mode": "all",
+       "user_group": "일반",
+       "claim": ""
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "living",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '신제주'가 계속 앞섭니다.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 평일 퇴근 후 저녁(18~21시)에 활기와 귀갓길 편의를 기준으로 보면 신제주(연동·노형동)가 앞섭니다. 관광객, 시간대 쏠림, 비 오는 날의 영향을 하나씩 걷어내도 순위는 바뀌지 않았습니다. 다만 금요일 밤 노형오거리는 평소보다 많이 붐빕니다. 조용한 저녁을 원하면 구제주가 맞을 수 있습니다.\n\n※ 이번 분석에 쓴 자료는 실제 공공데이터 양식(컬럼)을 그대로 따른 **합성(시연용) 데이터**입니다. 실제 현황과 다를 수 있습니다.\n\n[원자료로 확인된 수치 사실]\n- **평일 18~21시 도민 체류 인구**: 신제주 53,625명, 구제주 17,707명\n- **관광객(도외 거주자) 비중**: 신제주 15.1%, 구제주 14.1%로 비슷합니다. 신제주가 앞서는 이유를 관광객 때문이라고 보기는 어렵습니다.\n- **밤 시간 잔류율**(오후 12~17시 대비 21~23시에 남아 있는 도민 비율): 신제주 112.8%, 구제주 93.0%. 신제주는 낮보다 밤에 도민이 더 많습니다.\n- **비 오는 날 18~21시 도민 체류 변화**(비 온 날 35일, 안 온 날 96일 비교): 신제주 +2.2%, 구제주 -0.9%\n- **귀가 불편 지수**(버스 대기와 혼잡을 분으로 환산): 신제주는 20시 2.1분, 23시 4.3분이고 구제주는 20시 3.2분, 23시 5.2분입니다.\n- **카드 이용액 중 도민 비중**: 신제주 68.7%, 구제주 72.9%. 구제주 쪽이 도민 위주로 소비하는 비중이 조금 더 높습니다.\n\n[교란 제거 후 역전 구간]\n- **역전 없음**: 관광객 거품, 시간대 쏠림, 비 오는 날을 차례로 걷어내도 신제주가 계속 앞섭니다.\n- **귀가 시각을 늦춰도 마찬가지**: 귀가 시각을 17시부터 23시까지 바꿔 봐도 모든 구간에서 신제주가 유리했습니다. 결론이 뒤집히는 시각은 없었습니다.\n- **평균에 가려진 혼잡**: 노형오거리 정류소는 전체 평균이 시간당 188명입니다. 그런데 금요일 21~23시에는 196명으로, 같은 시각 평소(108명)의 1.80배입니다(해당 금요일 27일). 금요일 밤에 신제주에서 늦게 귀가한다면 이 시간대 혼잡은 감안하셔야 합니다.\n- **함께 잡힌 공항 정류소 혼잡**: 제주국제공항 정류소는 일요일 17~20시 승하차가 785명으로, 같은 시각 평소(510명)의 1.54배였습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- **'사람이 많음'이 곧 '생활이 낫다'는 뜻은 아닙니다.** 원자료에는 식당 종류, 가격대, 소음, 주차 같은 저녁 생활의 질을 보여 주는 컬럼이 없습니다. 북적이는 저녁이 좋은지 한적한 저녁이 좋은지는 개인 취향에 따라 결론이 갈릴 수 있습니다.\n- **두 권역은 묶인 동의 수가 다릅니다.** 신제주는 2개 동, 구제주는 9개 동을 묶었습니다. 그래서 체류 인구 규모만으로 동네 하나하나의 분위기를 단정하기는 어렵습니다.\n- **현장 확인 질문**: 집 근처 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?\n\n이어서 \"퇴근 시간을 밤 9시 이후로 바꾸면?\", \"비 오는 날에는 어떻게 달라져?\", \"한림읍이랑 비교해 줘\" 같은 질문도 할 수 있습니다.\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n- 현장 확인 질문: 이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?"
+  },
+  {
+   "id": "S04",
+   "group": "scenario",
+   "workspace": "lawyer",
+   "question": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장, 반박할 근거 있어?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 5회",
+   "verdict": "masked_overload",
+   "local_verdict": "masked_overload",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 18,
+    "grounded": 18,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 23,
+    "grounded": 23,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 34.7,
+   "claude": {
+    "rounds": 4,
+    "seconds": 34.7,
+    "model": "claude-opus-5-5",
+    "input_tokens": 24226,
+    "output_tokens": 3481,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "도두동",
+        "오일장"
+       ],
+       "topic": "commute",
+       "question": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다는 주장, 반박할 근거 있어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "도두동 오일장 정류소는 평균 이용객이 적어서 버스 증편이 필요 없다",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "variable": "visit_hour",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "도두동"
+       ],
+       "topic": "commute",
+       "day_type": "market",
+       "variable": "wait_minutes",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "평균만 보면 평범하지만 '제주민속오일장 정류소 승하차 · 장날(2·7일) · 09~13시'에는 같은 시각 평소의 2.24배로 붐빕니다(평균에 가려진 과부하).",
+   "field_question": "제주민속오일장 정류소에서 장날(2·7일) 09~13시에 버스가 만차로 그냥 지나간 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 반박할 근거는 있어요. '평균 이용객이 적다'는 말은 숫자로는 맞지만, 장날(2·7일) 오전에는 이 정류소 이용객이 평소 같은 시각의 2배를 넘어요. 평균만 보면 이 오전 혼잡이 가려져서 증편이 필요 없다는 결론이 나오는 거예요.\n\n※ 이 분석은 공식 데이터 형식을 그대로 따른 합성(시연용) 데이터로 했어요. 실제 정책 논의에 쓰려면 실제 데이터로 다시 확인해야 해요.\n\n[원자료로 확인된 수치 사실]\n- 제주민속오일장 정류소 승하차 인원은 전체 평균이 시간당 28.5명이에요. 주장에서 말하는 '적다'는 바로 이 숫자예요.\n- 장날(2·7일) 오전 9~13시에는 시간당 120명이에요. 장날이 아닌 날 같은 시간대(53.6명)의 2.24배예요. 장날 36일치를 분석했어요.\n- 장날 중 가장 붐비는 때는 오전 9시로, 133명이 타고 내려요.\n- 장날 대기와 혼잡을 합친 체감 시간은 11시 13.6분이에요. 8시 6.0분, 저녁 8시 8.6분과 비교하면 늦은 오전이 가장 길어요.\n- 도두동에 머무는 사람도 함께 늘어요. 평균은 시간당 6,010명인데 장날 10~14시에는 11,713명이에요. 평소 같은 시간대(8,652명)의 1.35배예요.\n\n[교란 제거 후 역전 구간]\n- **평균에 가려진 과부하:** 정류소 승하차는 장날 9~13시, 동네에 머무는 인구는 장날 10~14시에 몰려요. 평균은 이 몇 시간을 하루 24시간과 장날이 아닌 날들에 섞어 버려서 혼잡이 묽어 보여요.\n- **혼잡이 풀리는 시각:** 오후 2시 이후에는 승하차가 가장 붐빌 때(9시)의 60% 이하로 떨어져요. 그래서 하루 종일 증편할 근거는 약해요. 반박할 때는 '장날 오전 9시~오후 2시 전후에만 늘리자'로 범위를 좁히는 게 설득력이 있어요.\n- **이웃 이호동과의 비교:** 관광객, 시간대, 날씨 영향을 차례로 빼고 도민 체류 인구를 비교해도 순위는 바뀌지 않았어요(이호동이 계속 앞서요). 그래서 이 비교는 반박 근거로 쓰기 어려워요. 핵심 근거는 장날 오전 혼잡 하나예요.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 이 데이터는 타고 내린 사람 수만 기록해요. 버스가 꽉 차서 못 타고 그냥 보낸 승객이나 차 안이 얼마나 붐볐는지는 없어요. 그래서 '지금 배차로는 감당이 안 된다'고 단정할 수는 없어요. 말할 수 있는 건 '장날 오전에 수요가 2배 넘게 몰린다'까지예요.\n- 동네 체류 인구 중 관광객(도외 거주자) 비중은 39.5%예요. 하지만 버스 이용객 중 도민과 관광객이 각각 몇 명인지는 데이터로 구분되지 않아요. 장 보러 온 어르신 등 도민의 불편이 얼마나 큰지는 따로 확인해야 해요.\n- 현장 확인 질문: 장날 오전 9시 전후에 이 정류소에서 버스가 꽉 차서 그냥 지나간 적이 있는지 기사님이나 이용객께 확인할 수 있을까요?"
+  },
+  {
+   "id": "S05",
+   "group": "scenario",
+   "workspace": "lawyer",
+   "question": "버스 이용이 줄어든 건 전기차 보급 때문이라는 기사 맞아?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 6회",
+   "verdict": "unmeasured_cause",
+   "local_verdict": "unmeasured_cause",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 27,
+    "grounded": 27,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 9,
+    "grounded": 9,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 48.8,
+   "claude": {
+    "rounds": 5,
+    "seconds": 48.8,
+    "model": "claude-opus-5-5",
+    "input_tokens": 33752,
+    "output_tokens": 4895,
+    "requests": 5,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [],
+       "topic": "commute",
+       "question": "버스 이용이 줄어든 건 전기차 보급 때문이라는 기사 맞아?"
+      },
+      "ok": false
+     },
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "commute",
+       "question": "버스 이용이 줄어든 건 전기차 보급 때문이라는 기사 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "ev",
+       "question": "버스 이용이 줄어든 건 전기차 보급 때문이라는 기사 맞아?"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "claim": "버스 이용이 줄어든 건 전기차 보급 때문이라는 기사 맞아?",
+       "mode": "all",
+       "topic": "commute",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "commute",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주"
+       ],
+       "topic": "commute",
+       "variable": "rain",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "수치 변화 자체는 확인되지만, 주장한 원인은 원자료 컬럼으로 측정되지 않아 단정할 수 없습니다.",
+   "field_question": "'전기차 보급'이 버스 이용자 수에 영향을 줬는지 보려면 같은 기간의 전기차 보급 관련 수치를 관계 기관에서 받아 볼 수 있을까요?",
+   "narrative": "**결론**: 이 기사가 맞는지는 지금 자료로 확인할 수 없습니다. 원자료에 '전기차 보급'(예: 전기차 등록 대수)을 측정한 항목이 없습니다. 그래서 버스 이용이 줄어든 원인이 전기차라고 말할 근거가 없습니다. 기사 문장은 \"버스 이용자 수가 변했다(원인은 확인되지 않음)\" 정도로 읽는 것이 정확합니다.\n\n※ 질문에 지역이 없어서 생활권 두 곳을 대표로 골라 점검했습니다. 신제주는 연동·노형동, 구제주는 일도·이도·삼도·용담·건입동 등 9개 동입니다. 아래 수치는 공식 자료와 같은 양식으로 만든 **합성(시연용) 데이터**입니다.\n\n[원자료로 확인된 수치 사실]\n- **전기차 관련 자료는 충전 기록뿐입니다.** 전체 2,447건 중 대기시간을 계산할 수 있는 기록은 113건(4.6%)입니다. 이 113건만 보면 평균 대기는 18.5분, 중앙값은 16.0분입니다. 이 자료는 '충전 대기'를 잰 것이라 '보급'의 근거가 될 수 없습니다. 또 전체의 4.6%로만 계산한 값이라 제주 전체의 대표값으로도 쓸 수 없습니다.\n- **평균만 보면 시간대별 쏠림이 가려집니다.**\n  - 노형오거리 정류소: 전체 평균은 시간당 188명입니다. 금요일 21~23시에는 196명으로, 평소 같은 시각(108명)의 1.80배입니다(해당 27일).\n  - 제주국제공항 정류소: 전체 평균은 시간당 396명입니다. 일요일 17~20시에는 785명으로, 평소 같은 시각(510명)의 1.54배입니다(해당 26일).\n- **날씨에 따라서도 버스 이용이 달라집니다.** 비 오는 날 평일 17~19시 승차는 신제주 인근 정류소에서 +6.9%, 구제주 인근 정류소에서 +1.9%였습니다(비 온 날 52일, 안 온 날 132일).\n- **관광객 등 제주 밖 거주자가 체류 인구에 섞여 있습니다.** 그 비중은 신제주 15.1%, 구제주 14.1%입니다.\n\n[교란 제거 후 역전 구간]\n- 신제주와 구제주를 비교할 때 관광객, 시간대 쏠림, 날씨를 차례로 걷어내도 순위는 바뀌지 않았습니다(**역전 없음**).\n- 평일 비 오는 날 17~23시 귀가 불편(대기+혼잡) 비교에서도 결과가 뒤바뀌는 시각은 없었습니다.\n  - 신제주: 17시 2.2분, 23시 4.3분\n  - 구제주: 17시 3.1분, 23시 5.2분\n- 다만 금요일 밤 노형오거리나 일요일 저녁 공항 정류소처럼 평균에 가려진 혼잡 구간이 있습니다. 따라서 \"줄었다\"는 판단도 평균만으로 내리면 안 되고, 요일·시간대·날씨별로 나눠서 봐야 합니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 전기차 보급을 잰 항목이 없어서 버스 이용 변화와 비교할 수 없습니다. 나중에 등록 대수 자료를 붙여 두 값이 함께 움직이더라도, 그것은 '연관'일 뿐 '원인'으로 단정할 수 없습니다.\n- 이번 결과에는 버스 이용이 '얼마나 줄었는지'를 보여주는 수치가 나오지 않았습니다. 기사가 말한 감소 시기·지역이 이번에 본 신제주·구제주와 같은지도 확인되지 않았습니다.\n- 현장 확인 질문: 기사가 근거로 든 전기차 등록 대수 자료와 버스 이용 감소 수치가 **같은 지역, 같은 기간**의 것인지 출처를 확인할 수 있을까요?"
+  },
+  {
+   "id": "S06",
+   "group": "scenario",
+   "workspace": "lawyer",
+   "question": "전기차 충전 대기시간은 평균 17분이라 짧다는 기사 맞아?",
+   "passed": false,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": false,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 5회",
+   "verdict": "thin_denominator",
+   "local_verdict": "thin_denominator",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 21,
+    "grounded": 20,
+    "ungrounded": [
+     "95"
+    ],
+    "ratio": 0.9524
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 41.1,
+   "claude": {
+    "rounds": 5,
+    "seconds": 41.1,
+    "model": "claude-opus-5-5",
+    "input_tokens": 30701,
+    "output_tokens": 4226,
+    "requests": 5,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [],
+       "question": "전기차 충전 대기시간은 평균 17분이라 짧다는 기사 맞아?",
+       "topic": "ev"
+      },
+      "ok": false
+     },
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주",
+        "애월",
+        "삼화지구"
+       ],
+       "question": "전기차 충전 대기시간은 평균 17분이라 짧다는 기사 맞아?",
+       "topic": "ev"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주",
+        "애월",
+        "삼화지구"
+       ],
+       "topic": "ev",
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주",
+        "애월",
+        "삼화지구"
+       ],
+       "topic": "ev",
+       "claim": "전기차 충전 대기시간은 평균 17분이라 짧다는 기사 맞아?",
+       "mode": "all",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "신제주",
+        "구제주",
+        "애월",
+        "삼화지구"
+       ],
+       "topic": "ev",
+       "variable": "wait_minutes",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "주장된 평균은 전체 2,447행 중 113행으로만 계산 가능해 제주 전체 대표값으로 쓸 수 없습니다(분모 함정).",
+   "field_question": "충전 요청 시각이 비어 있는 행이 앱 미사용 현장 충전인지 운영사에 확인할 수 있을까요?",
+   "narrative": "**결론**: 기사 속 \"평균 17분\"은 원자료 값과 거의 같습니다(평균 18.5분, 중앙값 16.0분). 그런데 이 평균은 전체 충전 기록의 4.6%인 113건만으로 계산된 값이라, \"제주 전기차 충전 대기시간은 짧다\"는 결론의 근거로 쓰기엔 부족합니다.\n\n[원자료로 확인된 수치 사실]\n- 전기차 충전 기록은 모두 2,447건이고, 그중 154건은 실제로 충전하지 않은 기록입니다.\n- 충전 요청 시각과 시작 시각이 모두 제대로 남아 있어 대기시간을 계산할 수 있는 기록은 113건(전체의 4.6%)뿐입니다.\n- 이 113건의 평균 대기는 18.5분, 중앙값은 16.0분입니다. 중앙값은 기록을 순서대로 세웠을 때 한가운데 오는 값입니다.\n- 기사가 말한 17분은 원자료의 평균(18.5분)과 중앙값(16.0분) 사이에 있습니다. 숫자만 보면 크게 어긋나지 않습니다.\n- 질문에 지역이 없어서 신제주·구제주·애월·삼화지구를 예시로 넣어 봤습니다. 하지만 대기시간은 지역별로 나뉘지 않고 한 덩어리 값으로만 나왔습니다.\n- 참고로 이번 분석은 공식 스키마를 바탕으로 만든 합성(시연용) 데이터를 썼습니다. 실제 통계와 다를 수 있습니다.\n\n[교란 제거 후 역전 구간]\n- 이번 검증의 핵심 함정은 시간대나 날씨가 아니라 분모입니다. 전체 기록의 95% 이상은 대기시간을 계산할 수 없어 빠져 있고, 남은 4.6%만으로 낸 평균이 제주 전체를 대표한다고 볼 수 없습니다.\n- 평균(18.5분)이 중앙값(16.0분)보다 높습니다. 대기가 유난히 길었던 일부 기록이 평균을 끌어올렸을 수 있다는 뜻이라, \"평균 17분\"만으로는 길게 기다리는 경우가 가려질 수 있습니다.\n- 시간대·요일·날씨별 충전 대기시간은 이번 결과에 나오지 않았습니다. 그래서 퇴근 시간이나 비 오는 날 같은 특정 상황에서 결론이 뒤집히는 시각은 확인하지 못했습니다. \"역전 있음\"도 \"역전 없음\"도 판단할 수 없는 상태입니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 시각이 빠진 나머지 기록들의 대기가 더 길었는지 짧았는지는 원자료로 알 수 없습니다. 빠진 기록이 붐비는 시간대에 몰려 있다면 실제 체감 대기는 달라질 수 있습니다.\n- 몇 분이면 \"짧다\"고 볼지에 대한 기준이나 이용자 체감 자료가 원자료에 없습니다. \"짧다\"는 표현은 기사의 해석이지 데이터로 확인된 사실이 아닙니다.\n- 현장 확인 질문: 기사 속 17분이 몇 건의 충전 기록으로 계산됐는지, 요청·시작 시각이 빈 기록은 뺐는지 기사를 낸 곳이나 데이터 제공 기관에 확인해 볼 수 있을까요?"
+  },
+  {
+   "id": "P01",
+   "group": "previous_live",
+   "workspace": "life",
+   "question": "노형똥 퇴근 버스 어때?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 21,
+    "grounded": 21,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 27.7,
+   "claude": {
+    "rounds": 4,
+    "seconds": 27.7,
+    "model": "claude-opus-5-5",
+    "input_tokens": 21614,
+    "output_tokens": 2774,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "question": "노형똥 퇴근 버스 어때?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "hour_from": 17,
+       "hour_to": 19,
+       "day_type": "weekday",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '노형동'이 계속 앞섭니다.",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 노형동(‘노형똥’을 노형동으로 이해했습니다)의 평일 퇴근 시간 버스 이용은 비교적 편한 편입니다. 가까운 연동과 비교하면 퇴근 시간인 17시부터 밤 23시까지 계속 노형동이 유리했습니다. 다만 **금요일 밤 21~23시 노형오거리 정류소**는 평소보다 이용객이 크게 늘어서, 평균만 봐서는 이 구간이 드러나지 않습니다.\n\n※ 아래 수치는 공식 데이터 양식을 본떠 만든 **시연용 합성 데이터**입니다. 실제 현황과 다를 수 있습니다.\n\n[원자료로 확인된 수치 사실]\n- 버스 귀가 불편 정도(기다리는 시간과 혼잡을 합쳐 분으로 나타낸 값)\n  - 노형동: 17시 2.0분, 20시 1.8분, 23시 3.1분\n  - 연동: 17시 2.0분, 20시 2.4분, 23시 6.7분\n- 평일 17~19시에 머무는 도민 수: 노형동 55,254명, 연동 49,057명\n- 관광객 등 도외 거주자 비중: 노형동 12.9%, 연동 17.5%로 노형동이 낮아 관광객 거품이 덜합니다.\n- 비 오는 날 평일 17~19시 인근 정류소 승차 변화: 노형동 +4.6%, 연동 +10.3%\n  - 비 온 날 35일, 비 안 온 날 96일을 비교했고, 표본이 적어 조건을 넓힌 경우는 없었습니다.\n- 노형오거리 정류소 승하차\n  - 전체 평균: 시간당 188명\n  - 금요일 21~23시: 196명으로, 평소 같은 시각(108명)의 1.80배입니다(해당 금요일 27일).\n\n[교란 제거 후 역전 구간]\n- **순위가 뒤집히지 않았습니다.** 관광객, 시간대 쏠림, 비 오는 날의 영향을 하나씩 걷어내도 연동과의 비교 순위는 그대로였습니다.\n- **유불리가 바뀌는 시각도 없었습니다.** 귀가 시각을 17시부터 23시까지 바꿔 봐도 계속 노형동이 유리했습니다.\n- **평균에 가려진 혼잡 구간이 있습니다.** 금요일 밤 21~23시 노형오거리 정류소입니다. 금요일에 늦게 퇴근하신다면 이 시간대는 평소보다 붐빌 수 있습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 실제 시간표 대조가 필요합니다. 불편 정도는 시간대별로 모아 둔 승하차·운행 자료로 계산한 값입니다. 노선별 실제 막차 시각이나 배차 간격과 맞춰 본 것은 아닙니다.\n- 원인은 알 수 없습니다. 금요일 밤에 이용객이 느는 이유(모임, 행사 등)를 보여 주는 자료가 원자료에 없어, 그 시간대에 늘어난다는 사실만 확인됩니다.\n- 현장 확인 질문: 해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?\n\n이어서 이런 것도 물어보실 수 있습니다:\n- 퇴근 시간을 밤 9시 이후로 바꾸면?\n- 비 오는 날에는 어떻게 달라져?\n- 한림읍이랑 비교해 줘"
+  },
+  {
+   "id": "P02",
+   "group": "previous_live",
+   "workspace": "life",
+   "question": "우도면 새벽 3시 비 오는 장날 어르신 버스 붐벼?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 11,
+    "grounded": 11,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 8,
+    "grounded": 8,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 32.6,
+   "claude": {
+    "rounds": 3,
+    "seconds": 32.6,
+    "model": "claude-opus-5-5",
+    "input_tokens": 14966,
+    "output_tokens": 3151,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "우도면"
+       ],
+       "topic": "commute",
+       "question": "우도면 새벽 3시 비 오는 장날 어르신 버스 붐벼?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "우도면"
+       ],
+       "topic": "commute",
+       "hour_from": 3,
+       "hour_to": 4,
+       "weather": "rain",
+       "day_type": "market"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "우도면"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "user_group": "어르신",
+       "claim": ""
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "우도면"
+       ],
+       "topic": "commute",
+       "variable": "visit_hour",
+       "weather": "rain",
+       "day_type": "market",
+       "user_group": "어르신"
+      },
+      "ok": false
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '우도면'이 계속 앞섭니다.",
+   "field_question": "해당 정류소에서 퇴근 시간대 버스가 만차로 통과한 적이 있는지 기사님이나 이용자께 확인할 수 있을까요?",
+   "narrative": "**결론**: 우도면에서 비 오는 장날 새벽 3시에 어르신이 타는 버스가 붐비는지는 자료로 판단할 수 없습니다. 우도면 안에 분석할 수 있는 버스 정류소 자료가 없기 때문입니다. 대신 그 시간대 지역에 머무는 도민 수를 보면, 비가 와도 거의 변하지 않았습니다.\n\n(아래 수치는 공식 자료 양식을 따라 만든 시연용 합성 데이터입니다. 실제 측정값이 아닙니다.)\n\n[원자료로 확인된 수치 사실]\n- 우도면 주변에는 분석에 쓸 주요 버스 정류소가 0곳입니다. 그래서 정류소별 승하차 수로 혼잡도를 계산할 수 없었습니다. 날씨는 가장 가까운 성산 관측소 자료를 썼습니다.\n- 장날(매달 2·7로 끝나는 날) 새벽 3~4시에 우도면에 머문 도민은 1,637명입니다.\n- 같은 시간대 비 오는 날의 도민 수는 비 안 오는 날보다 -0.1%로, 사실상 차이가 없습니다. 비 온 날 8일, 안 온 날 28일을 비교했습니다.\n- 우도면은 하루 평균 시간당 4,612명이 머무는데, 이 중 65.5%가 도외 거주자(관광객 등)입니다. 카드 이용액 중 도민 비중은 11.0%입니다.\n- 도민 야간 잔류율(낮 12~17시 대비 밤 21~23시 인원)은 102.4%입니다. 밤에도 동네가 비지 않는다는 뜻입니다.\n\n[교란 제거 후 역전 구간]\n- 비교 대상으로 추자면을 자동으로 붙여 봤습니다. 같은 조건에서 추자면 도민은 1,508명입니다. 관광객, 시간대, 비의 영향을 차례로 빼도 우도면이 계속 많아서 순위가 바뀌지 않습니다(역전 없음).\n- 다만 이건 그 지역에 머문 사람 수 비교입니다. 버스 혼잡을 비교한 것이 아닙니다. 정류소 자료가 없어서 시각에 따라 혼잡이 뒤바뀌는 경계도 계산하지 못했습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 머문 인구(1,637명)는 그 시각 지역 안에 있던 사람 수입니다. 실제로 길에 나오거나 버스를 탄 사람 수가 아닙니다. 연령 구분도 확인되지 않아 '어르신'만 따로 볼 수 없었습니다. 새벽 3시대에 버스가 다니는지도 이 자료로는 알 수 없습니다.\n- 분석에서는 2·7일을 장날로 계산했습니다. 우도면에 실제로 그날 장이 서는지, 주민들이 성산 등 다른 지역 장에 다니는지는 자료에 없습니다.\n- 현장 확인 질문: 우도면 어르신들이 장날 새벽에 실제로 이용하는 교통편(버스, 마을 차량 등)이 있는지 주민센터나 이장님께 확인해 주실 수 있을까요?\n\n이어서 \"우도면 비 오는 장날 낮 시간대 체류는?\", \"비 안 올 때는?\", \"추자면이랑 자세히 비교해 줘\"처럼 물어보셔도 됩니다."
+  },
+  {
+   "id": "P03",
+   "group": "previous_live",
+   "workspace": "life",
+   "question": "'; DROP TABLE regions; --",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 0회",
+   "verdict": "insufficient_area",
+   "local_verdict": "insufficient_area",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 7,
+    "grounded": 7,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 7,
+    "grounded": 7,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 10.4,
+   "claude": {
+    "rounds": 1,
+    "seconds": 10.4,
+    "model": "claude-opus-5-5",
+    "input_tokens": 3380,
+    "output_tokens": 936,
+    "requests": 1,
+    "tool_calls": []
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local-fill",
+    "decompose_confounders": "local-fill",
+    "excavate_masked_slice": "local-fill",
+    "simulate_reversal_boundary": "local-fill"
+   },
+   "headline": "질문에서 제주 지역명을 찾지 못했습니다. 동네 이름(예: 노형동, 신제주, 삼화지구)을 함께 적어 주세요.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "입력하신 문장은 질문이 아니라 데이터베이스 표를 지우는 명령어(SQL) 형태라서 처리하지 않았습니다. 이 서비스는 이런 명령을 실행하지 않으므로 지역 정보나 다른 데이터는 바뀌지 않았습니다.\n\n이 서비스에서는 **평소 궁금한 점을 일상 말로** 물어보시면 됩니다. 관광객, 시간대, 날씨 때문에 평균값이 실제와 다르게 보이는 부분을 걸러서 도민 생활 기준으로 답해 드립니다.\n\n**이렇게 물어보실 수 있습니다**\n- **이사·생활권 비교**: \"노형동이랑 삼화지구 중에 퇴근 시간 버스 타기 편한 곳은 어디인가요?\"\n- **밤 외출**: \"구제주에서 밤 10시 넘어 귀가하면 신제주보다 불편한가요?\"\n- **날씨 영향**: \"비 오는 날 애월 쪽 출퇴근이 얼마나 더 힘들어지나요?\"\n- **장날·혼잡**: \"오일장 날 오전에 어르신이 가기 붐비지 않는 시간대가 있나요?\"\n- **기사·민원 확인**: \"'○○동 쓰레기 문제가 관광객 때문'이라는 기사 내용이 데이터로 맞나요?\" 기사 문장을 그대로 붙여 넣으시면 됩니다.\n\n**질문에 넣으시면 좋은 정보**\n1. **동네 이름**: 읍면동명이나 신제주·구제주 같은 생활권 이름, 최대 4곳까지 가능합니다. 오타가 있어도 됩니다.\n2. **조건**: 평일이나 주말, 시간대, 비 오는 날, 장날 등\n3. **이용하는 분**: 어르신, 청소년, 일반\n\n궁금하신 동네와 상황을 알려 주시면 바로 분석해 드리겠습니다.\n\n---\n_형식 보완: 빠진 근거 구획만 로컬 엔진이 같은 도구 결과로 덧붙였습니다._\n[원자료로 확인된 수치 사실]\n- floating_pop_hourly: 공식 예시 시트 '4-11 내국인 유동인구(읍면동)_v02' 컬럼 11/11개 그대로 사용, 출처 synthetic_seed(DH-753)\n- bus_stop_hourly: 공식 예시 시트 '3-04 버스 정류소별 이용 현황' 컬럼 9/9개 그대로 사용, 출처 synthetic_seed(DH-725)\n\n[교란 제거 후 역전 구간]\n- 교란을 걷어내도 결론이 바뀌는 구간은 확인되지 않았습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 한계: 강수량이 일 단위라 특정 시각(예: 18시 퇴근길)의 비 여부를 알 수 없음\n- 한계: 통신 기반 추정 인구로 거주 만족도·치안·소음 같은 생활 품질은 측정하지 않음\n\n- 현장 확인 질문: 이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?"
+  },
+  {
+   "id": "P04",
+   "group": "previous_live",
+   "workspace": "life",
+   "question": "작년 겨울 노형동 밤 버스 붐볐어?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "abstain",
+   "local_verdict": "abstain",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 27,
+    "grounded": 27,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 12,
+    "grounded": 12,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 34.5,
+   "claude": {
+    "rounds": 4,
+    "seconds": 34.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 21693,
+    "output_tokens": 3427,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "question": "작년 겨울 노형동 밤 버스 붐볐어?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "hour_from": 21,
+       "hour_to": 23,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "판정 보류: 요청 시점이 보유 자료 기간(2026.05~2026.10) 밖입니다. 억지 추론 대신 확인 가능한 범위만 안내하고 현장 확인 질문을 드립니다.",
+   "field_question": "해당 기간 원자료를 제주데이터허브에서 내려받아 data/raw/ 에 넣고 다시 분석해 볼까요?",
+   "narrative": "**결론**: 작년 겨울 노형동 밤 버스가 붐볐는지는 확인할 수 없습니다. 지금 가진 자료는 2026년 5~10월 184일치뿐이라 겨울(12~2월) 자료가 없습니다. 대신 5~10월 자료를 보면 노형동 밤 버스는 평소에는 여유로운 편이지만, **금요일 밤 9~11시 노형오거리 정류소**만 평소보다 눈에 띄게 붐볐습니다.\n※ 아래 수치는 모두 공식 양식을 본떠 만든 시연용 자료입니다. 실제 측정값이 아닙니다.\n\n[원자료로 확인된 수치 사실] (2026년 5~10월 기준, 겨울 아님)\n- 노형오거리 정류소에서 버스를 타고 내린 사람은 하루 전체 평균 시간당 188명입니다. 같은 밤 9~11시 평소에는 108명인데, 금요일에는 196명으로 평소의 1.80배였습니다(금요일 27일 기준).\n- 평일 밤 9~11시 노형동 근처 정류소에서 버스를 탄 사람은 비 오는 날 +7.2% 늘었습니다(비 온 날 52일, 안 온 날 132일).\n- 평일에 버스를 기다리고 붐비는 불편을 합친 지수(분)는 다음과 같습니다.\n  - 노형동: 17시 2.0분, 20시 1.8분, 23시 3.1분\n  - 연동: 17시 2.0분, 20시 2.4분, 23시 6.7분\n- 밤 9~11시 노형동에 머무는 도민은 58,020명입니다. 낮(12~17시)과 비교하면 밤 인구가 121.9%로 낮보다 오히려 많았습니다.\n- 노형동에 머무는 사람 가운데 다른 지역 사람(관광객 등)의 비중은 12.9%였습니다.\n\n[교란 제거 후 역전 구간]\n- 순위가 뒤집히는 구간은 없었습니다. 관광객, 시간대 쏠림, 비 오는 날을 차례로 빼고 비교해도 노형동이 연동보다 계속 앞섰습니다. 저녁 5시부터 밤 11시까지 귀갓길 불편도 노형동이 계속 덜했습니다.\n- 다만 평균에 가려진 구간이 하나 있습니다. 바로 금요일 밤 9~11시 노형오거리 정류소입니다. 월 평균만 보면 괜찮아 보이지만, 이 시간대만 떼어 보면 평소의 1.80배가 몰렸습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 겨울 자료가 아예 없어서 위 5~10월 결과를 겨울에도 그대로 적용할 수는 없습니다. 추위나 연말 모임 때문에 달라졌을 수 있지만 자료로 확인할 방법이 없습니다.\n- 자료에는 정류소에서 타고 내린 사람 수만 있습니다. 버스 안에 실제로 몇 명이 타고 있었는지는 기록되지 않아 차 안 혼잡도는 판단할 수 없습니다.\n- 현장 확인 질문: 작년 12월~올해 2월 노형오거리 정류소의 밤 9~11시 승하차 기록을 제주빅데이터센터나 버스정보시스템에서 따로 받을 수 있을까요?"
+  },
+  {
+   "id": "M01",
+   "group": "multi_turn",
+   "workspace": "life",
+   "question": "삼화지구 퇴근 버스 어때?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 31,
+    "grounded": 31,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 39.5,
+   "claude": {
+    "rounds": 4,
+    "seconds": 39.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 22103,
+    "output_tokens": 4124,
+    "requests": 4,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "question": "삼화지구 퇴근 버스 어때?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "hour_from": 17,
+       "hour_to": 19,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '노형동'이 계속 앞섭니다.",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 맑은 날 평일 퇴근길(17~19시)이라면 삼화지구 버스는 크게 불편하지 않습니다. 다만 **비 오는 평일 저녁**에는 정류소 이용객이 평소의 1.78배로 늘고, 귀가가 늦을수록 불편이 커집니다. 비교를 위해 노형동을 함께 봤는데, 노형동이 17시부터 23시까지 계속 더 편했습니다.\n\n[원자료로 확인된 수치 사실]\n※ 아래 수치는 공식 데이터 형식을 그대로 따라 만든 시연용 합성 데이터입니다. 실제 측정값이 아닙니다.\n- **정류소 이용객이 시간대와 날씨에 따라 크게 다릅니다.** 삼화지구 정류소에서 타고 내리는 사람은 하루 평균 시간당 89.5명입니다. 평일 17~19시에는 평소 170명이고, 같은 시간에 비가 오면 303명으로 늘었습니다(평소의 1.78배, 해당일 35일).\n- **비 오는 날 퇴근 시간 승차 증가폭:** 평일 17~19시에 버스를 타는 사람이 삼화지구 인근 정류소에서는 +61.9% 늘었고, 노형동 인근 정류소에서는 +4.6% 늘었습니다.\n- **늦게 귀가할수록 불편이 커집니다.** 귀가 불편 지수(기다리는 시간과 혼잡도를 합쳐 분으로 나타낸 값)는 다음과 같습니다.\n  - 삼화지구: 17시 4.1분, 20시 8.0분, 23시 33.5분\n  - 노형동: 17시 2.0분, 20시 1.8분, 23시 3.1분\n- **관광객 영향은 거의 없습니다.** 삼화지구에 머무는 사람 중 관광객 등 도외 거주자는 2.7%이고, 카드 사용액의 93.1%가 도민 몫입니다. 평균 수치가 관광객 때문에 부풀려졌을 가능성은 낮습니다.\n- **비가 와도 동네에 있는 사람 수는 거의 같습니다.** 17~19시 도민 체류 인구는 21,179명이고, 비 오는 날에는 -1.0%로 거의 변하지 않았습니다. 사람 수는 그대로인데 버스 승차만 늘어나는 모습입니다.\n\n[교란 제거 후 역전 구간]\n- **순위는 뒤집히지 않았습니다.** 관광객, 시간대 쏠림, 날씨 영향을 차례로 빼도 노형동이 계속 유리합니다.\n- **평균에 가려진 혼잡 구간이 있습니다.**\n  - 삼화지구 정류소: 비 오는 평일 17~19시에 평소의 1.78배\n  - 화북주공 정류소: 비 오는 평일에는 저녁뿐 아니라 하루 종일(05~23시) 시간당 90.9명으로, 평소 67.0명보다 많습니다(1.36배).\n- **\"이 시각부터 삼화지구가 낫다\"는 경계는 없습니다.** 17~23시 전 구간에서 노형동이 유리했습니다. 삼화지구는 20시 8.0분에서 23시 33.5분으로, 늦게 귀가할수록 불편이 가파르게 커집니다.\n- **활용 팁:** 비 예보가 있는 평일에는 17~19시를 피해서 출발하고, 밤늦은 귀가는 미리 시간표를 확인하는 편이 좋습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 승하차 인원은 실제로 탄 사람만 기록합니다. 버스가 꽉 차서 못 탄 사람, 차 안의 실제 혼잡, 실제로 기다린 시간은 측정되지 않습니다. 귀가 불편 지수도 이를 바탕으로 한 추정값입니다.\n- 비 오는 날 승차가 늘어나는 이유는 자료에 담겨 있지 않아 단정할 수 없습니다. 평소 걷거나 자가용을 타던 사람이 버스로 옮겼을 수도 있지만 확인된 사실은 아닙니다. 비와 승차 증가는 함께 나타난 연관으로만 볼 수 있습니다.\n- 현장 확인 질문: 삼화지구를 지나는 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "M02",
+   "group": "multi_turn",
+   "workspace": "life",
+   "question": "그럼 8시 이후는?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 3회",
+   "verdict": "no_boundary",
+   "local_verdict": "no_boundary",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 25,
+    "grounded": 25,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 33.4,
+   "claude": {
+    "rounds": 2,
+    "seconds": 33.4,
+    "model": "claude-opus-5-5",
+    "input_tokens": 26183,
+    "output_tokens": 3589,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "hour_from": 20,
+       "hour_to": 23,
+       "day_type": "weekday",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "wait_minutes",
+       "day_type": "weekday",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local-fill",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "local-fill",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "검토한 17~23시 전 구간에서 '노형동'이 계속 유리합니다(경계 없음).",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 밤 8시 이후에도 순위는 같습니다. 노형동이 계속 유리하고, 삼화지구는 늦게 귀가할수록 기다림과 혼잡이 크게 늘어 밤 11시에는 30분을 넘습니다. 다만 30분 가까이 기다릴 수 있다면, 저녁에 버스로 귀가할 수 있는 시간대가 얼마나 되는지는 순위가 바뀝니다.\n\n[원자료로 확인된 수치 사실]\n※ 이번 수치도 공식 데이터 형식을 따라 만든 시연용 합성 데이터입니다.\n- **귀가 불편 지수**(기다리는 시간과 혼잡도를 합쳐 분으로 나타낸 값, 평일 기준)\n  - 삼화지구: 20시 8.0분, 23시 33.5분\n  - 노형동: 20시 1.8분, 23시 3.1분\n- **비 오는 평일**에는 삼화지구가 20시 8.7분, 23시 34.6분입니다. 노형동은 20시 2.0분, 23시 3.1분입니다.\n- **비 오는 날 승차 증가폭**(평일 20~23시)은 삼화지구 인근 정류소 +20.3%, 노형동 +7.8%입니다. 앞서 본 퇴근 시간대(17~19시) 삼화지구 증가폭은 +61.9%였습니다.\n- **밤에 사람이 돌아오는 주거지입니다.** 평일 20~23시 도민 체류 인구는 24,006명입니다. 야간 잔류율은 133.6%로, 낮(12~17시)보다 밤(21~23시)에 머무는 도민이 더 많습니다.\n- **비가 와도 밤 시간 동네 인구는 거의 같습니다.** 비 오는 날 20~23시 도민 체류 인구 변화는 -0.9%입니다.\n\n[교란 제거 후 역전 구간]\n- **20~23시에도 순위는 뒤집히지 않습니다.** 관광객, 시간대, 날씨 영향을 빼도 노형동이 앞섭니다. 비 오는 날만 따로 봐도 17~23시 내내 노형동이 유리합니다.\n- **기다림을 감수하면 결과가 달라집니다.** 버스를 29분 넘게 기다려도 괜찮다면, 저녁에 버스로 귀가할 수 있는 시간대의 비율은 두 지역 순위가 바뀝니다.\n- **8시 이후의 성격이 다릅니다.** 비 때문에 갑자기 몰리는 현상은 퇴근 시간대보다 약해집니다. 대신 시각이 늦어질수록 불편이 꾸준히 커지는 게 핵심입니다.\n- 이번 결과에는 21시와 22시 값이 따로 없습니다. 그래서 20시에서 23시 사이 어느 시각부터 불편이 급격히 늘어나는지는 정확히 짚을 수 없습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 늦은 밤 불편이 커지는 이유가 배차 간격이 벌어져서인지, 막차가 끊겨서인지는 지금 자료만으로 단정할 수 없습니다. 귀가 불편 지수는 승하차 기록을 바탕으로 한 추정값이고, 실제로 기다린 시간을 잰 것이 아닙니다.\n- 승하차 기록에는 버스가 꽉 차서 못 탄 사람이나 막차를 놓친 사람이 남지 않습니다.\n- 현장 확인 질문: 삼화지구·화북주공 정류소를 지나는 노선의 실제 막차 시각과 21시 이후 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "M03",
+   "group": "multi_turn",
+   "workspace": "life",
+   "question": "비 오는 날에는?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 3회",
+   "verdict": "no_boundary",
+   "local_verdict": "no_boundary",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 30,
+    "grounded": 30,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 31.0,
+   "claude": {
+    "rounds": 2,
+    "seconds": 30.9,
+    "model": "claude-opus-5-5",
+    "input_tokens": 39527,
+    "output_tokens": 3480,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "hour_from": 20,
+       "hour_to": 23,
+       "day_type": "weekday",
+       "weather": "rain"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "rain",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구"
+       ],
+       "topic": "commute",
+       "variable": "wait_minutes",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local-fill",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "local-fill",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "검토한 17~23시 전 구간에서 '노형동'이 계속 유리합니다(경계 없음).",
+   "field_question": "퇴근 시간대(18~19시)에 실제로 비가 내렸는지 해당 일자의 시간별 관측값으로 확인할 수 있을까요?",
+   "narrative": "**결론**: 밤 8시 이후에는 비가 와도 불편이 조금만 늘어납니다. 이 시간대에 더 큰 문제는 비보다 늦은 시각입니다. 비 때문에 버스가 붐비는 현상은 주로 17~19시 퇴근 시간에 몰려 있습니다.\n\n[원자료로 확인된 수치 사실]\n※ 이번 수치도 공식 데이터 형식을 따라 만든 시연용 합성 데이터입니다. 비 온 평일 35일과 비가 안 온 평일 96일을 비교했습니다.\n- **귀가 불편 지수**(기다리는 시간과 혼잡도를 합쳐 분으로 나타낸 값)\n  - 삼화지구: 비 오는 평일 20시 8.7분, 23시 34.6분 / 평일 전체 20시 8.0분, 23시 33.5분\n  - 노형동: 비 오는 평일 20시 2.0분, 23시 3.1분 / 평일 전체 20시 1.8분, 23시 3.1분\n- **비 오는 날 승차 증가폭**(삼화지구 인근 정류소): 20~23시는 +20.3%, 17~19시 퇴근 시간은 +61.9%였습니다. 같은 20~23시 노형동은 +7.8%입니다.\n- **퇴근 시간대 정류소가 가장 붐빕니다.** 삼화지구 정류소에서 타고 내리는 사람은 비 오는 평일 17~19시에 시간당 303명으로, 평소 같은 시간 170명보다 많습니다.\n- **화북주공 정류소는 밤까지 붐빕니다.** 비 오는 평일에는 저녁뿐 아니라 하루 종일(05~23시) 시간당 90.9명으로, 평소 67.0명보다 많습니다. 밤 시간대도 이 안에 들어갑니다.\n- **비가 와도 동네에 있는 사람 수는 거의 같습니다.** 20~23시 도민 체류 인구 변화는 -0.9%입니다.\n\n[교란 제거 후 역전 구간]\n- **비 오는 날에도 순위는 같습니다.** 17~23시 내내 노형동이 유리하고, 비가 오든 안 오든 바뀌는 시각이 없습니다.\n- **기다림을 감수하면 결과가 달라지는 점도 그대로입니다.** 버스를 29분 넘게 기다려도 괜찮다면, 저녁에 버스로 귀가할 수 있는 시간대의 비율은 두 지역 순위가 바뀝니다.\n- **비 오는 날에도 일찍 귀가할수록 낫습니다.** 불편 지수가 17시 5.6분, 20시 8.7분, 23시 34.6분 순으로 늘어납니다. 다만 17~19시에는 정류소 자체가 붐빈다는 점을 함께 고려하세요.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 날씨 자료가 하루 단위라서, 아침에만 잠깐 비가 온 날도 \"비 오는 날\"에 포함됩니다. 밤 시간대에 비 효과가 작게 나온 것이 실제로 영향이 작아서인지, 밤에는 비가 그친 날이 섞여서인지는 이 자료만으로 가릴 수 없습니다.\n- 비 오는 날 버스 승차가 왜 늘어나는지도 자료에 담겨 있지 않습니다. 걷거나 자가용을 타던 사람이 버스로 옮겼는지 등은 단정할 수 없습니다.\n- 현장 확인 질문: 비 온 날로 분류된 35일 중 실제로 20~23시에 비가 내린 날이 며칠인지, 기상관측소의 시간별 관측값으로 확인할 수 있을까요?"
+  },
+  {
+   "id": "M04",
+   "group": "multi_turn",
+   "workspace": "life",
+   "question": "거기 말고 노형동이랑 비교해 줘",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_boundary",
+   "local_verdict": "no_boundary",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 29,
+    "grounded": 29,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 32.1,
+   "claude": {
+    "rounds": 2,
+    "seconds": 32.1,
+    "model": "claude-opus-5-5",
+    "input_tokens": 54093,
+    "output_tokens": 3539,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "question": "거기 말고 노형동이랑 비교해 줘"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "hour_from": 20,
+       "hour_to": 23,
+       "day_type": "weekday",
+       "weather": "rain"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekday",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "검토한 17~23시 전 구간에서 '노형동'이 계속 유리합니다(경계 없음).",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 앞선 세 번의 답변도 이미 노형동과 비교한 결과였습니다. 그래서 이번에 노형동을 직접 지정해 다시 돌려도 수치와 결론이 같습니다. 비 오는 평일 밤 8시 이후에는 모든 시각에서 노형동이 삼화지구보다 버스 귀가가 편합니다. 다만 노형동에도 금요일 밤에 노형오거리 정류소가 평소보다 크게 붐비는 구간이 있습니다.\n\n[원자료로 확인된 수치 사실]\n※ 이번 수치도 공식 데이터 형식을 따라 만든 시연용 합성 데이터입니다.\n\n| 항목 | 삼화지구 | 노형동 |\n|---|---|---|\n| 분석에 쓴 정류소 | 2곳(삼화지구, 화북주공) | 3곳(노형오거리, 한라병원, 제주민속오일장) |\n| 비 오는 평일 귀가 불편 지수 20시 | 8.7분 | 2.0분 |\n| 비 오는 평일 귀가 불편 지수 23시 | 34.6분 | 3.1분 |\n| 비 오는 날 20~23시 버스 승차 변화 | +20.3% | +7.8% |\n| 평일 20~23시 도민 체류 인구 | 24,006명 | 57,949명 |\n| 관광객 등 도외 거주자 체류 비중 | 2.7% | 12.9% |\n| 카드 사용액 중 도민 비중 | 93.1% | 76.9% |\n\n- 귀가 불편 지수는 기다리는 시간과 혼잡도를 합쳐 분으로 나타낸 값입니다.\n\n[교란 제거 후 역전 구간]\n- **순위는 뒤집히지 않았습니다.** 노형동은 관광객이 많아 평균이 부풀려 보이는 동네입니다. 그래도 관광객, 시간대, 날씨 영향을 차례로 빼면 노형동이 계속 앞섭니다. 비 오는 평일 17~23시 중 순위가 바뀌는 시각도 없습니다.\n- **노형동에도 평균에 가려진 혼잡 구간이 있습니다.** 노형오거리 정류소는 하루 평균 시간당 188명이 타고 내립니다. 금요일 21~23시에는 196명으로, 같은 시각 평소 108명의 1.80배입니다(해당일 27일). 비가 아니라 금요일 밤에 몰리는 패턴입니다.\n- **삼화지구의 혼잡은 비 오는 날에 몰립니다.**\n  - 삼화지구 정류소: 비 오는 평일 17~19시에 시간당 303명(평소 170명, 1.78배)\n  - 화북주공 정류소: 비 오는 평일 하루 종일 90.9명(평소 67.0명, 1.36배)\n- 앞서 확인한 대로, 버스를 29분 넘게 기다려도 괜찮다면 저녁에 귀가할 수 있는 시간대의 비율은 두 지역 순위가 바뀝니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 노형동 수치는 정류소 3곳을 합친 결과입니다. 실제로 어느 정류소를 이용하느냐에 따라 체감이 다를 수 있습니다. 승하차 인원 중 관광객이 얼마나 섞였는지도 이번 결과에서는 따로 나뉘지 않았습니다.\n- 금요일 밤 노형오거리가 붐비는 이유는 자료에 없어 단정할 수 없습니다. 노형동 승차가 비 오는 날 덜 늘어나는 이유도 마찬가지입니다.\n- 현장 확인 질문: 금요일 21~23시 노형오거리 정류소에서 버스가 꽉 차서 그냥 지나가거나 기다리는 줄이 길게 생기는지 현장에서 확인할 수 있을까요?"
+  },
+  {
+   "id": "M05",
+   "group": "multi_turn",
+   "workspace": "life",
+   "question": "주말엔?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 3회",
+   "verdict": "no_boundary",
+   "local_verdict": "no_boundary",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 24,
+    "grounded": 24,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 14,
+    "grounded": 14,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 28.6,
+   "claude": {
+    "rounds": 2,
+    "seconds": 28.3,
+    "model": "claude-opus-5-5",
+    "input_tokens": 67913,
+    "output_tokens": 3242,
+    "requests": 2,
+    "tool_calls": [
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "hour_from": 20,
+       "hour_to": 23,
+       "day_type": "weekend",
+       "weather": "rain"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "variable": "return_hour",
+       "day_type": "weekend",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "삼화지구",
+        "노형동"
+       ],
+       "topic": "commute",
+       "variable": "wait_minutes",
+       "day_type": "weekend",
+       "weather": "rain",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "local-fill",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "local-fill",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "검토한 17~23시 전 구간에서 '노형동'이 계속 유리합니다(경계 없음).",
+   "field_question": "해당 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표로 확인할 수 있을까요?",
+   "narrative": "**결론**: 비 오는 주말 밤에도 17~23시 내내 노형동이 유리합니다. 삼화지구는 밤 11시 귀가 부담이 평일보다 더 크게 나왔습니다. 평일에는 오래 기다리면 순위가 바뀌는 조건이 있었지만, 주말에는 그런 조건도 나타나지 않았습니다.\n\n[원자료로 확인된 수치 사실]\n※ 이번 수치도 공식 데이터 형식을 따라 만든 시연용 합성 데이터입니다. 주말 중 비 온 날은 17일, 안 온 날은 36일이라 평일보다 표본이 적습니다. 조건을 넓혀 표본을 늘리지는 않았습니다.\n\n| 항목 | 삼화지구 | 노형동 |\n|---|---|---|\n| 비 오는 주말 귀가 불편 지수 20시 | 8.8분 | 2.1분 |\n| 비 오는 주말 귀가 불편 지수 23시 | 39.7분 | 3.9분 |\n| (참고) 비 오는 평일 20시 | 8.7분 | 2.0분 |\n| (참고) 비 오는 평일 23시 | 34.6분 | 3.1분 |\n| 주말 20~23시 도민 체류 인구 | 24,108명 | 59,525명 |\n| 비 오는 주말 20~23시 도민 체류 변화 | -0.7% | +1.8% |\n\n- 귀가 불편 지수는 기다리는 시간과 혼잡도를 합쳐 분으로 나타낸 값입니다.\n- 이른 시각도 참고로 보면, 비 오는 주말 17시 불편 지수는 삼화지구 4.0분, 노형동 1.6분입니다.\n\n[교란 제거 후 역전 구간]\n- **주말에도 순위는 뒤집히지 않았습니다.** 관광객, 시간대, 날씨 영향을 빼도 노형동이 앞서고, 17~23시 중 순위가 바뀌는 시각이 없습니다.\n- **평일과 달라진 점이 하나 있습니다.** 평일에는 버스를 29분 넘게 기다릴 수 있으면, 저녁에 귀가할 수 있는 시간대의 비율에서 두 지역 순위가 바뀌었습니다. 비 오는 주말에는 이런 조건이 나타나지 않았습니다.\n- **20시까지는 평일과 비슷합니다.** 차이는 늦은 밤에 생깁니다. 삼화지구 23시 값이 평일 34.6분에서 주말 39.7분으로 늘었습니다. 주말 밤 늦게 귀가할 계획이면 평일보다 여유를 더 두는 게 좋습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 비 오는 날 버스 승차가 얼마나 늘어나는지는 이번 결과에 평일 값만 있습니다(삼화지구 +20.3%, 노형동 +7.8%). 주말만 따로 본 값은 없어서, 주말에 비 때문에 승차가 얼마나 늘었는지는 말할 수 없습니다.\n- 주말 밤 불편이 더 큰 이유는 자료에 없어 단정할 수 없습니다. 주말 배차가 줄어서인지, 이용객이 많아서인지 알 수 없고, 비 온 주말이 17일뿐이라 우연히 생긴 차이일 가능성도 있습니다.\n- 현장 확인 질문: 삼화지구를 지나는 노선의 주말·공휴일 22~23시 배차 간격과 막차 시각이 평일과 다른지 버스정보시스템 시간표로 확인할 수 있을까요?"
+  },
+  {
+   "id": "E01",
+   "group": "mixed_language",
+   "workspace": "life",
+   "question": "노형동 vs 연동 which is better at night?",
+   "passed": true,
+   "checks": {
+    "claude_mode": true,
+    "sections": true,
+    "numbers": true,
+    "verdict": true
+   },
+   "mode": "claude",
+   "mode_reason": "claude-opus-5-5 · effort xhigh · 도구 4회",
+   "verdict": "no_reversal",
+   "local_verdict": "no_reversal",
+   "gold": null,
+   "sections_problem": null,
+   "number_audit": {
+    "checked": 25,
+    "grounded": 25,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "local_number_audit": {
+    "checked": 19,
+    "grounded": 19,
+    "ungrounded": [],
+    "ratio": 1.0
+   },
+   "seconds": 29.5,
+   "claude": {
+    "rounds": 3,
+    "seconds": 29.5,
+    "model": "claude-opus-5-5",
+    "input_tokens": 15740,
+    "output_tokens": 3131,
+    "requests": 3,
+    "tool_calls": [
+     {
+      "name": "resolve_spatial_catalog",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "night",
+       "question": "노형동 vs 연동 which is better at night?"
+      },
+      "ok": true
+     },
+     {
+      "name": "decompose_confounders",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "night",
+       "hour_from": 21,
+       "hour_to": 23,
+       "day_type": "any",
+       "weather": "any"
+      },
+      "ok": true
+     },
+     {
+      "name": "excavate_masked_slice",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "night",
+       "mode": "all",
+       "claim": "",
+       "user_group": "일반"
+      },
+      "ok": true
+     },
+     {
+      "name": "simulate_reversal_boundary",
+      "input": {
+       "areas": [
+        "노형동",
+        "연동"
+       ],
+       "topic": "night",
+       "variable": "return_hour",
+       "day_type": "any",
+       "weather": "any",
+       "user_group": "일반"
+      },
+      "ok": true
+     }
+    ]
+   },
+   "tool_sources": {
+    "resolve_spatial_catalog": "claude",
+    "decompose_confounders": "claude",
+    "excavate_masked_slice": "claude",
+    "simulate_reversal_boundary": "claude"
+   },
+   "headline": "교란을 걷어내도 '노형동'이 계속 앞섭니다.",
+   "field_question": "이 동네에 실제 사는 주민께 밤 9시 이후 귀갓길이 불편한지 직접 여쭤볼 수 있을까요?",
+   "narrative": "**결론**: 밤 9~11시 기준으로는 노형동이 연동보다 유리합니다. 관광객 수, 시간대, 비 오는 날의 영향을 하나씩 걷어내도 순서는 바뀌지 않았고, 밤늦게 버스로 귀가할 때도 노형동이 더 편했습니다. 다만 여기서 '유리하다'는 사람이 많이 남아 있고 귀가가 편하다는 뜻입니다. 조용하고 안전한 동네를 찾으신다면 이 자료만으로는 판단할 수 없습니다.\n\n※ 이번 분석에 쓴 자료는 실제 공공데이터가 아니라 공식 양식에 맞춰 만든 시연용 데이터입니다.\n\n[원자료로 확인된 수치 사실]\n- **밤 9~11시 도민 체류 인구**: 노형동 58,020명, 연동 46,784명입니다.\n- **밤에 남아 있는 비율**: 오후 12~5시 대비 밤 9~11시 도민 체류 비율이 노형동 121.9%, 연동 103.3%입니다. 노형동은 밤에 사람이 오히려 늘어납니다.\n- **관광객 등 도외 거주자 비중**: 노형동 12.9%, 연동 17.5%입니다. 카드 이용액 가운데 제주도민 비중은 노형동 76.9%, 연동 62.1%입니다. 노형동이 도민 생활권 성격이 더 강합니다.\n- **평일 밤 11시 귀가 불편 지수**: 버스 대기와 혼잡을 분으로 환산한 값으로, 노형동 3.1분, 연동 6.7분입니다. 밤 8시에는 노형동 1.8분, 연동 2.4분이었습니다.\n- **비 오는 날 변화**(우천 52일과 비우천 132일 비교, 밤 9~11시)\n  - 도민 체류: 노형동 +1.9%, 연동 +0.4%\n  - 근처 정류소 평일 승차: 노형동 +7.2%, 연동 +9.7%\n\n[교란 제거 후 역전 구간]\n- **역전 없음**: 관광객 비중, 시간대 쏠림, 비 오는 날을 차례로 빼도 노형동이 계속 앞섰습니다. 귀가 시각을 오후 5시부터 밤 11시까지 바꿔 봐도 모든 시간대에서 노형동이 유리했고, 결론이 뒤집히는 시각은 없었습니다.\n- **평균에 가려진 혼잡 구간**: 노형오거리 정류소는 금요일 밤 9~11시에 시간당 196명이 타고 내립니다. 같은 시각 평소 108명의 1.80배입니다(해당 금요일 27일 기준). 이 정류소는 두 동이 함께 쓰므로, 금요일 밤에는 어느 쪽에 살든 이곳에서 혼잡을 겪을 수 있습니다.\n\n[원자료 컬럼 부재로 인해 단정할 수 없는 한계 및 현장 확인 질문 1개]\n- 자료에는 치안, 소음, 가로등 같은 항목이 없습니다. 그래서 노형동에 밤사람이 많은 것이 활기라는 장점인지, 소음과 혼잡이라는 단점인지는 판단할 수 없습니다. 조용한 밤을 원하신다면 이 결과를 그대로 '노형동이 더 좋다'로 받아들이시면 안 됩니다.\n- 귀가 불편 지수는 시간대별 승하차와 운행 자료로 계산한 값입니다. 실제 노선별 막차 시각을 반영한 것은 아닙니다.\n- 현장 확인 질문: 이용하실 노선의 실제 막차 시각과 배차 간격을 버스정보시스템 시간표에서 확인해 보실 수 있을까요?\n\n함께 보시면 좋은 질문:\n- 비 오는 날 밤에는 결과가 어떻게 달라지나요?\n- 퇴근 시간을 밤 9시 이후로 바꾸면 어떻게 되나요?\n- 노형동을 한림읍 등 다른 지역과 비교하면 어떤가요?"
+  }
+ ]
+}

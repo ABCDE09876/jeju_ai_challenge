@@ -1,0 +1,1659 @@
+{
+ "version": "2026-11-16",
+ "region_count": 43,
+ "notes": [
+  "행정기관코드 8자리: 공식 예시데이터에 실린 코드는 official_example, 나머지는 행정표준코드 체계에 맞춘 standard_pattern(원자료 적재 시 재확인).",
+  "좌표는 반경 계산·시각화를 위한 근사값(approximate). 국제여객선터미널 정류소와 중문 관측소만 공식 예시값.",
+  "법정동-행정동 관할 중 mapping_confidence=review 항목은 행정안전부 관할구역 자료로 재확인 필요.",
+  "정류소 ID 1(국제여객선터미널)·96(제주민속오일장)은 공식 예시데이터 값, 9000번대는 합성 식별자."
+ ],
+ "regions": [
+  {
+   "emd_nm": "한림읍",
+   "full_nm": "제주시 한림읍",
+   "city": "제주시",
+   "kind": "읍",
+   "emd_cd": "50110250",
+   "code_status": "official_example",
+   "dstrct_se": "제주시 서부",
+   "lat": 33.4108,
+   "lon": 126.2687,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "한림읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "애월읍"
+  },
+  {
+   "emd_nm": "애월읍",
+   "full_nm": "제주시 애월읍",
+   "city": "제주시",
+   "kind": "읍",
+   "emd_cd": "50110253",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 서부",
+   "lat": 33.4634,
+   "lon": 126.3312,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "애월읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "조천읍"
+  },
+  {
+   "emd_nm": "구좌읍",
+   "full_nm": "제주시 구좌읍",
+   "city": "제주시",
+   "kind": "읍",
+   "emd_cd": "50110256",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 동부",
+   "lat": 33.5216,
+   "lon": 126.8568,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "구좌읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "조천읍"
+  },
+  {
+   "emd_nm": "조천읍",
+   "full_nm": "제주시 조천읍",
+   "city": "제주시",
+   "kind": "읍",
+   "emd_cd": "50110259",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 동부",
+   "lat": 33.5381,
+   "lon": 126.6345,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "조천읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "애월읍"
+  },
+  {
+   "emd_nm": "한경면",
+   "full_nm": "제주시 한경면",
+   "city": "제주시",
+   "kind": "면",
+   "emd_cd": "50110310",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 서부",
+   "lat": 33.3436,
+   "lon": 126.1794,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "한경면"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "한림읍"
+  },
+  {
+   "emd_nm": "추자면",
+   "full_nm": "제주시 추자면",
+   "city": "제주시",
+   "kind": "면",
+   "emd_cd": "50110320",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 서부",
+   "lat": 33.96,
+   "lon": 126.299,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "추자면"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "우도면"
+  },
+  {
+   "emd_nm": "우도면",
+   "full_nm": "제주시 우도면",
+   "city": "제주시",
+   "kind": "면",
+   "emd_cd": "50110330",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 동부",
+   "lat": 33.504,
+   "lon": 126.953,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "우도면"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "추자면"
+  },
+  {
+   "emd_nm": "일도1동",
+   "full_nm": "제주시 일도1동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110510",
+   "code_status": "official_example",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5133,
+   "lon": 126.5272,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "일도1동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "삼도2동"
+  },
+  {
+   "emd_nm": "일도2동",
+   "full_nm": "제주시 일도2동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110520",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5087,
+   "lon": 126.5427,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "일도2동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "이도2동"
+  },
+  {
+   "emd_nm": "이도1동",
+   "full_nm": "제주시 이도1동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110530",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5065,
+   "lon": 126.529,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "이도1동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "일도1동"
+  },
+  {
+   "emd_nm": "이도2동",
+   "full_nm": "제주시 이도2동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110540",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.4997,
+   "lon": 126.5359,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "이도2동",
+    "도남동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "아라동"
+  },
+  {
+   "emd_nm": "삼도1동",
+   "full_nm": "제주시 삼도1동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110550",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.5048,
+   "lon": 126.5175,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "삼도1동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "삼도2동"
+  },
+  {
+   "emd_nm": "삼도2동",
+   "full_nm": "제주시 삼도2동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110560",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.5131,
+   "lon": 126.5205,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "삼도2동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "노형동"
+  },
+  {
+   "emd_nm": "용담1동",
+   "full_nm": "제주시 용담1동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110570",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.5094,
+   "lon": 126.5126,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "용담1동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "용담2동"
+  },
+  {
+   "emd_nm": "용담2동",
+   "full_nm": "제주시 용담2동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110580",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.5115,
+   "lon": 126.4996,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "용담2동",
+    "용담3동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "연동"
+  },
+  {
+   "emd_nm": "건입동",
+   "full_nm": "제주시 건입동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110590",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5165,
+   "lon": 126.537,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "건입동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "일도1동"
+  },
+  {
+   "emd_nm": "화북동",
+   "full_nm": "제주시 화북동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110600",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5197,
+   "lon": 126.5683,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "화북1동",
+    "화북2동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "외도동"
+  },
+  {
+   "emd_nm": "삼양동",
+   "full_nm": "제주시 삼양동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110610",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.5228,
+   "lon": 126.5867,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "삼양1동",
+    "삼양2동",
+    "삼양3동",
+    "도련1동",
+    "도련2동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "외도동"
+  },
+  {
+   "emd_nm": "봉개동",
+   "full_nm": "제주시 봉개동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110620",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.4562,
+   "lon": 126.6103,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "봉개동",
+    "회천동",
+    "용강동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "오라동"
+  },
+  {
+   "emd_nm": "아라동",
+   "full_nm": "제주시 아라동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110630",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(동)",
+   "lat": 33.4685,
+   "lon": 126.5452,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "아라1동",
+    "아라2동",
+    "오등동",
+    "월평동",
+    "영평동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "이도2동"
+  },
+  {
+   "emd_nm": "오라동",
+   "full_nm": "제주시 오라동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110640",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.493,
+   "lon": 126.511,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "오라1동",
+    "오라2동",
+    "오라3동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "아라동"
+  },
+  {
+   "emd_nm": "연동",
+   "full_nm": "제주시 연동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110650",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.4889,
+   "lon": 126.493,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "연동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "노형동"
+  },
+  {
+   "emd_nm": "노형동",
+   "full_nm": "제주시 노형동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110660",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.4836,
+   "lon": 126.4777,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "노형동",
+    "해안동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "연동"
+  },
+  {
+   "emd_nm": "외도동",
+   "full_nm": "제주시 외도동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110670",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.487,
+   "lon": 126.433,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "외도1동",
+    "외도2동",
+    "내도동",
+    "도평동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "삼양동"
+  },
+  {
+   "emd_nm": "이호동",
+   "full_nm": "제주시 이호동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110680",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.4985,
+   "lon": 126.457,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "이호1동",
+    "이호2동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "도두동"
+  },
+  {
+   "emd_nm": "도두동",
+   "full_nm": "제주시 도두동",
+   "city": "제주시",
+   "kind": "동",
+   "emd_cd": "50110690",
+   "code_status": "standard_pattern",
+   "dstrct_se": "제주시 중부(서)",
+   "lat": 33.505,
+   "lon": 126.4685,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "도두1동",
+    "도두2동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "이호동"
+  },
+  {
+   "emd_nm": "대정읍",
+   "full_nm": "서귀포시 대정읍",
+   "city": "서귀포시",
+   "kind": "읍",
+   "emd_cd": "50130250",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 서부",
+   "lat": 33.2257,
+   "lon": 126.2513,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "대정읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "안덕면"
+  },
+  {
+   "emd_nm": "남원읍",
+   "full_nm": "서귀포시 남원읍",
+   "city": "서귀포시",
+   "kind": "읍",
+   "emd_cd": "50130253",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 동부",
+   "lat": 33.2795,
+   "lon": 126.719,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "남원읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "표선면"
+  },
+  {
+   "emd_nm": "성산읍",
+   "full_nm": "서귀포시 성산읍",
+   "city": "서귀포시",
+   "kind": "읍",
+   "emd_cd": "50130259",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 동부",
+   "lat": 33.437,
+   "lon": 126.91,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "성산읍"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "표선면"
+  },
+  {
+   "emd_nm": "안덕면",
+   "full_nm": "서귀포시 안덕면",
+   "city": "서귀포시",
+   "kind": "면",
+   "emd_cd": "50130310",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 서부",
+   "lat": 33.2538,
+   "lon": 126.3333,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "안덕면"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "대정읍"
+  },
+  {
+   "emd_nm": "표선면",
+   "full_nm": "서귀포시 표선면",
+   "city": "서귀포시",
+   "kind": "면",
+   "emd_cd": "50130320",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 동부",
+   "lat": 33.326,
+   "lon": 126.832,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "표선면"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "성산읍"
+  },
+  {
+   "emd_nm": "송산동",
+   "full_nm": "서귀포시 송산동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130510",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.247,
+   "lon": 126.568,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "서귀동",
+    "보목동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "정방동"
+  },
+  {
+   "emd_nm": "정방동",
+   "full_nm": "서귀포시 정방동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130520",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.2465,
+   "lon": 126.564,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "서귀동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "중앙동"
+  },
+  {
+   "emd_nm": "중앙동",
+   "full_nm": "서귀포시 중앙동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130530",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.25,
+   "lon": 126.563,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "서귀동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "동홍동"
+  },
+  {
+   "emd_nm": "천지동",
+   "full_nm": "서귀포시 천지동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130540",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.2475,
+   "lon": 126.559,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "서귀동",
+    "서홍동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "중앙동"
+  },
+  {
+   "emd_nm": "효돈동",
+   "full_nm": "서귀포시 효돈동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130550",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.265,
+   "lon": 126.613,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "하효동",
+    "신효동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "영천동"
+  },
+  {
+   "emd_nm": "영천동",
+   "full_nm": "서귀포시 영천동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130560",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.272,
+   "lon": 126.586,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "토평동",
+    "상효동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "효돈동"
+  },
+  {
+   "emd_nm": "동홍동",
+   "full_nm": "서귀포시 동홍동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130570",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.26,
+   "lon": 126.57,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "동홍동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "대륜동"
+  },
+  {
+   "emd_nm": "서홍동",
+   "full_nm": "서귀포시 서홍동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130580",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.259,
+   "lon": 126.553,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "서홍동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "동홍동"
+  },
+  {
+   "emd_nm": "대륜동",
+   "full_nm": "서귀포시 대륜동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130590",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.244,
+   "lon": 126.532,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "법환동",
+    "서호동",
+    "호근동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "동홍동"
+  },
+  {
+   "emd_nm": "대천동",
+   "full_nm": "서귀포시 대천동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130600",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.247,
+   "lon": 126.496,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "강정동",
+    "도순동",
+    "영남동",
+    "월평동"
+   ],
+   "mapping_confidence": "review",
+   "partner_hint": "대륜동"
+  },
+  {
+   "emd_nm": "중문동",
+   "full_nm": "서귀포시 중문동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130610",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.253,
+   "lon": 126.417,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "중문동",
+    "대포동",
+    "하원동",
+    "회수동",
+    "색달동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "대천동"
+  },
+  {
+   "emd_nm": "예래동",
+   "full_nm": "서귀포시 예래동",
+   "city": "서귀포시",
+   "kind": "동",
+   "emd_cd": "50130620",
+   "code_status": "standard_pattern",
+   "dstrct_se": "서귀포시 중부",
+   "lat": 33.247,
+   "lon": 126.39,
+   "coord_status": "approximate",
+   "legal_dongs": [
+    "상예동",
+    "하예동"
+   ],
+   "mapping_confidence": "high",
+   "partner_hint": "중문동"
+  }
+ ],
+ "aliases": [
+  {
+   "alias": "신제주",
+   "targets": [
+    "연동",
+    "노형동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "구제주",
+   "note": "1970~80년대 조성된 신시가지"
+  },
+  {
+   "alias": "구제주",
+   "targets": [
+    "일도1동",
+    "일도2동",
+    "이도1동",
+    "이도2동",
+    "삼도1동",
+    "삼도2동",
+    "용담1동",
+    "용담2동",
+    "건입동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "신제주",
+   "note": "제주시 기존 도심"
+  },
+  {
+   "alias": "원도심",
+   "targets": [
+    "일도1동",
+    "이도1동",
+    "삼도1동",
+    "삼도2동",
+    "건입동",
+    "용담1동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "신제주",
+   "note": "관덕정·동문시장 일대"
+  },
+  {
+   "alias": "삼화지구",
+   "targets": [
+    "화북동",
+    "삼양동"
+   ],
+   "kind": "택지지구",
+   "partner_hint": "노형동",
+   "note": "화북2동·도련1동·삼양2동 법정동 일대 택지개발지구"
+  },
+  {
+   "alias": "첨단과학단지",
+   "targets": [
+    "아라동"
+   ],
+   "kind": "산업단지",
+   "partner_hint": "이도2동",
+   "note": "제주첨단과학기술단지(영평동)"
+  },
+  {
+   "alias": "첨단단지",
+   "targets": [
+    "아라동"
+   ],
+   "kind": "산업단지",
+   "partner_hint": "이도2동",
+   "note": "제주첨단과학기술단지(영평동)"
+  },
+  {
+   "alias": "제주대",
+   "targets": [
+    "아라동"
+   ],
+   "kind": "시설",
+   "partner_hint": "이도2동",
+   "note": "제주대학교"
+  },
+  {
+   "alias": "영어교육도시",
+   "targets": [
+    "대정읍"
+   ],
+   "kind": "택지지구",
+   "partner_hint": "안덕면",
+   "note": "제주영어교육도시(보성·구억·신평리)"
+  },
+  {
+   "alias": "영교",
+   "targets": [
+    "대정읍"
+   ],
+   "kind": "택지지구",
+   "partner_hint": "안덕면",
+   "note": "영어교육도시 줄임말"
+  },
+  {
+   "alias": "중문관광단지",
+   "targets": [
+    "중문동"
+   ],
+   "kind": "관광단지",
+   "partner_hint": "대륜동",
+   "note": "중문·색달·대포동 일대"
+  },
+  {
+   "alias": "중문단지",
+   "targets": [
+    "중문동"
+   ],
+   "kind": "관광단지",
+   "partner_hint": "대륜동",
+   "note": "중문관광단지 줄임말"
+  },
+  {
+   "alias": "오일장",
+   "targets": [
+    "도두동"
+   ],
+   "kind": "시장",
+   "partner_hint": "이호동",
+   "note": "제주민속오일시장(도두1동), 매월 2·7일 장"
+  },
+  {
+   "alias": "민속오일장",
+   "targets": [
+    "도두동"
+   ],
+   "kind": "시장",
+   "partner_hint": "이호동",
+   "note": "제주민속오일시장"
+  },
+  {
+   "alias": "제주민속오일장",
+   "targets": [
+    "도두동"
+   ],
+   "kind": "시장",
+   "partner_hint": "이호동",
+   "note": "제주민속오일시장"
+  },
+  {
+   "alias": "공항",
+   "targets": [
+    "용담2동"
+   ],
+   "kind": "시설",
+   "partner_hint": "연동",
+   "note": "제주국제공항"
+  },
+  {
+   "alias": "제주공항",
+   "targets": [
+    "용담2동"
+   ],
+   "kind": "시설",
+   "partner_hint": "연동",
+   "note": "제주국제공항"
+  },
+  {
+   "alias": "시청",
+   "targets": [
+    "이도2동"
+   ],
+   "kind": "시설",
+   "partner_hint": "아라동",
+   "note": "제주시청"
+  },
+  {
+   "alias": "동문시장",
+   "targets": [
+    "일도1동"
+   ],
+   "kind": "시장",
+   "partner_hint": "삼도2동",
+   "note": "제주동문재래시장"
+  },
+  {
+   "alias": "탑동",
+   "targets": [
+    "삼도2동"
+   ],
+   "kind": "상권",
+   "partner_hint": "노형동",
+   "note": "탑동 해변공연장 일대"
+  },
+  {
+   "alias": "함덕",
+   "targets": [
+    "조천읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "애월읍",
+   "note": "함덕해수욕장"
+  },
+  {
+   "alias": "협재",
+   "targets": [
+    "한림읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "애월읍",
+   "note": "협재해수욕장"
+  },
+  {
+   "alias": "월정리",
+   "targets": [
+    "구좌읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "조천읍",
+   "note": "월정리 해변"
+  },
+  {
+   "alias": "세화",
+   "targets": [
+    "구좌읍"
+   ],
+   "kind": "생활권",
+   "partner_hint": "조천읍",
+   "note": "세화리·세화오일장"
+  },
+  {
+   "alias": "하귀",
+   "targets": [
+    "애월읍"
+   ],
+   "kind": "생활권",
+   "partner_hint": "외도동",
+   "note": "하귀1·2리"
+  },
+  {
+   "alias": "곽지",
+   "targets": [
+    "애월읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "한림읍",
+   "note": "곽지해수욕장"
+  },
+  {
+   "alias": "고산",
+   "targets": [
+    "한경면"
+   ],
+   "kind": "생활권",
+   "partner_hint": "한림읍",
+   "note": "고산리"
+  },
+  {
+   "alias": "모슬포",
+   "targets": [
+    "대정읍"
+   ],
+   "kind": "생활권",
+   "partner_hint": "안덕면",
+   "note": "하모리·상모리"
+  },
+  {
+   "alias": "위미",
+   "targets": [
+    "남원읍"
+   ],
+   "kind": "생활권",
+   "partner_hint": "표선면",
+   "note": "위미리"
+  },
+  {
+   "alias": "성산일출봉",
+   "targets": [
+    "성산읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "표선면",
+   "note": "성산일출봉"
+  },
+  {
+   "alias": "일출봉",
+   "targets": [
+    "성산읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "표선면",
+   "note": "성산일출봉"
+  },
+  {
+   "alias": "섭지코지",
+   "targets": [
+    "성산읍"
+   ],
+   "kind": "관광지",
+   "partner_hint": "표선면",
+   "note": "섭지코지"
+  },
+  {
+   "alias": "산방산",
+   "targets": [
+    "안덕면"
+   ],
+   "kind": "관광지",
+   "partner_hint": "대정읍",
+   "note": "산방산"
+  },
+  {
+   "alias": "신화월드",
+   "targets": [
+    "안덕면"
+   ],
+   "kind": "관광지",
+   "partner_hint": "대정읍",
+   "note": "제주신화월드"
+  },
+  {
+   "alias": "우도",
+   "targets": [
+    "우도면"
+   ],
+   "kind": "생활권",
+   "partner_hint": "추자면",
+   "note": "우도"
+  },
+  {
+   "alias": "추자도",
+   "targets": [
+    "추자면"
+   ],
+   "kind": "생활권",
+   "partner_hint": "우도면",
+   "note": "추자도"
+  },
+  {
+   "alias": "노형오거리",
+   "targets": [
+    "노형동"
+   ],
+   "kind": "상권",
+   "partner_hint": "연동",
+   "note": "노형오거리"
+  },
+  {
+   "alias": "누웨마루거리",
+   "targets": [
+    "연동"
+   ],
+   "kind": "상권",
+   "partner_hint": "노형동",
+   "note": "옛 바오젠거리"
+  },
+  {
+   "alias": "바오젠거리",
+   "targets": [
+    "연동"
+   ],
+   "kind": "상권",
+   "partner_hint": "노형동",
+   "note": "현 누웨마루거리"
+  },
+  {
+   "alias": "이호테우",
+   "targets": [
+    "이호동"
+   ],
+   "kind": "관광지",
+   "partner_hint": "도두동",
+   "note": "이호테우해변"
+  },
+  {
+   "alias": "용두암",
+   "targets": [
+    "용담2동"
+   ],
+   "kind": "관광지",
+   "partner_hint": "연동",
+   "note": "용두암"
+  },
+  {
+   "alias": "화북공업단지",
+   "targets": [
+    "화북동"
+   ],
+   "kind": "산업단지",
+   "partner_hint": "외도동",
+   "note": "화북공업지역"
+  },
+  {
+   "alias": "서귀포 원도심",
+   "targets": [
+    "송산동",
+    "정방동",
+    "중앙동",
+    "천지동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "동홍동",
+   "note": "서귀동 일대"
+  },
+  {
+   "alias": "서귀포 구도심",
+   "targets": [
+    "송산동",
+    "정방동",
+    "중앙동",
+    "천지동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "동홍동",
+   "note": "서귀동 일대"
+  },
+  {
+   "alias": "올레시장",
+   "targets": [
+    "중앙동"
+   ],
+   "kind": "시장",
+   "partner_hint": "동홍동",
+   "note": "서귀포매일올레시장(관할 행정동 재확인 필요)"
+  },
+  {
+   "alias": "매일올레시장",
+   "targets": [
+    "중앙동"
+   ],
+   "kind": "시장",
+   "partner_hint": "동홍동",
+   "note": "서귀포매일올레시장(관할 행정동 재확인 필요)"
+  },
+  {
+   "alias": "혁신도시",
+   "targets": [
+    "대륜동"
+   ],
+   "kind": "택지지구",
+   "partner_hint": "동홍동",
+   "note": "서귀포혁신도시(서호동)"
+  },
+  {
+   "alias": "서귀포 신시가지",
+   "targets": [
+    "대륜동",
+    "대천동"
+   ],
+   "kind": "생활권",
+   "partner_hint": "동홍동",
+   "note": "법환·강정 일대(경계 재확인 필요)"
+  },
+  {
+   "alias": "쇠소깍",
+   "targets": [
+    "효돈동"
+   ],
+   "kind": "관광지",
+   "partner_hint": "영천동",
+   "note": "쇠소깍(하효동)"
+  }
+ ],
+ "landmarks": [
+  {
+   "name": "제주민속오일장",
+   "emd_nm": "도두동",
+   "lat": 33.495,
+   "lon": 126.476,
+   "kind": "시장",
+   "schedule": "매월 2·7·12·17·22·27일",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주국제공항",
+   "emd_nm": "용담2동",
+   "lat": 33.507,
+   "lon": 126.493,
+   "kind": "교통",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주시청",
+   "emd_nm": "이도2동",
+   "lat": 33.4996,
+   "lon": 126.5312,
+   "kind": "행정",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주동문재래시장",
+   "emd_nm": "일도1동",
+   "lat": 33.512,
+   "lon": 126.528,
+   "kind": "시장",
+   "schedule": "상설",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주대학교",
+   "emd_nm": "아라동",
+   "lat": 33.456,
+   "lon": 126.562,
+   "kind": "교육",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주첨단과학기술단지",
+   "emd_nm": "아라동",
+   "lat": 33.45,
+   "lon": 126.57,
+   "kind": "산업",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "노형오거리",
+   "emd_nm": "노형동",
+   "lat": 33.4845,
+   "lon": 126.48,
+   "kind": "상권",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "누웨마루거리",
+   "emd_nm": "연동",
+   "lat": 33.489,
+   "lon": 126.491,
+   "kind": "상권",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "함덕해수욕장",
+   "emd_nm": "조천읍",
+   "lat": 33.543,
+   "lon": 126.669,
+   "kind": "관광",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "협재해수욕장",
+   "emd_nm": "한림읍",
+   "lat": 33.394,
+   "lon": 126.24,
+   "kind": "관광",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "이호테우해변",
+   "emd_nm": "이호동",
+   "lat": 33.498,
+   "lon": 126.453,
+   "kind": "관광",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "중문관광단지",
+   "emd_nm": "중문동",
+   "lat": 33.25,
+   "lon": 126.412,
+   "kind": "관광",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "성산일출봉",
+   "emd_nm": "성산읍",
+   "lat": 33.458,
+   "lon": 126.942,
+   "kind": "관광",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "제주영어교육도시",
+   "emd_nm": "대정읍",
+   "lat": 33.29,
+   "lon": 126.285,
+   "kind": "교육",
+   "schedule": "",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "서귀포매일올레시장",
+   "emd_nm": "중앙동",
+   "lat": 33.25,
+   "lon": 126.563,
+   "kind": "시장",
+   "schedule": "상설",
+   "coord_status": "approximate"
+  },
+  {
+   "name": "서귀포혁신도시",
+   "emd_nm": "대륜동",
+   "lat": 33.244,
+   "lon": 126.515,
+   "kind": "행정",
+   "schedule": "",
+   "coord_status": "approximate"
+  }
+ ],
+ "bus_stations": [
+  {
+   "bus_station_id": "1",
+   "bus_station_name": "국제여객선터미널",
+   "emd_nm": "건입동",
+   "lat": 33.52596,
+   "lon": 126.54425,
+   "bus_city_type": "시내",
+   "id_status": "official_example",
+   "coord_status": "official_example"
+  },
+  {
+   "bus_station_id": "96",
+   "bus_station_name": "제주민속오일장",
+   "emd_nm": "도두동",
+   "lat": 33.495,
+   "lon": 126.4762,
+   "bus_city_type": "시내",
+   "id_status": "official_example",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9001",
+   "bus_station_name": "제주국제공항",
+   "emd_nm": "용담2동",
+   "lat": 33.5068,
+   "lon": 126.4929,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9002",
+   "bus_station_name": "제주버스터미널",
+   "emd_nm": "오라동",
+   "lat": 33.4993,
+   "lon": 126.515,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9003",
+   "bus_station_name": "제주시청",
+   "emd_nm": "이도2동",
+   "lat": 33.4996,
+   "lon": 126.5305,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9004",
+   "bus_station_name": "노형오거리",
+   "emd_nm": "노형동",
+   "lat": 33.4845,
+   "lon": 126.48,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9005",
+   "bus_station_name": "한라병원",
+   "emd_nm": "연동",
+   "lat": 33.4895,
+   "lon": 126.486,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9006",
+   "bus_station_name": "동문로터리",
+   "emd_nm": "일도1동",
+   "lat": 33.5125,
+   "lon": 126.5275,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9007",
+   "bus_station_name": "제주대학교",
+   "emd_nm": "아라동",
+   "lat": 33.456,
+   "lon": 126.562,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9008",
+   "bus_station_name": "첨단과학기술단지",
+   "emd_nm": "아라동",
+   "lat": 33.45,
+   "lon": 126.57,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9009",
+   "bus_station_name": "삼화지구",
+   "emd_nm": "삼양동",
+   "lat": 33.518,
+   "lon": 126.585,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9010",
+   "bus_station_name": "화북주공",
+   "emd_nm": "화북동",
+   "lat": 33.515,
+   "lon": 126.57,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9011",
+   "bus_station_name": "이호테우해변",
+   "emd_nm": "이호동",
+   "lat": 33.498,
+   "lon": 126.453,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9012",
+   "bus_station_name": "외도부영",
+   "emd_nm": "외도동",
+   "lat": 33.489,
+   "lon": 126.433,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9013",
+   "bus_station_name": "함덕해수욕장",
+   "emd_nm": "조천읍",
+   "lat": 33.543,
+   "lon": 126.669,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9014",
+   "bus_station_name": "한림환승정류장",
+   "emd_nm": "한림읍",
+   "lat": 33.411,
+   "lon": 126.265,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9015",
+   "bus_station_name": "협재해수욕장",
+   "emd_nm": "한림읍",
+   "lat": 33.394,
+   "lon": 126.24,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9016",
+   "bus_station_name": "애월환승정류장",
+   "emd_nm": "애월읍",
+   "lat": 33.463,
+   "lon": 126.331,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9017",
+   "bus_station_name": "서귀포중앙로터리",
+   "emd_nm": "중앙동",
+   "lat": 33.251,
+   "lon": 126.56,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9018",
+   "bus_station_name": "서귀포혁신도시",
+   "emd_nm": "대륜동",
+   "lat": 33.244,
+   "lon": 126.515,
+   "bus_city_type": "시내",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9019",
+   "bus_station_name": "중문관광단지",
+   "emd_nm": "중문동",
+   "lat": 33.25,
+   "lon": 126.412,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9020",
+   "bus_station_name": "성산일출봉",
+   "emd_nm": "성산읍",
+   "lat": 33.458,
+   "lon": 126.93,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9021",
+   "bus_station_name": "표선환승정류장",
+   "emd_nm": "표선면",
+   "lat": 33.326,
+   "lon": 126.832,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  },
+  {
+   "bus_station_id": "9022",
+   "bus_station_name": "영어교육도시",
+   "emd_nm": "대정읍",
+   "lat": 33.29,
+   "lon": 126.285,
+   "bus_city_type": "시외",
+   "id_status": "synthetic",
+   "coord_status": "approximate"
+  }
+ ],
+ "weather_stations": [
+  {
+   "observatory_code": "184",
+   "observatory_name": "제주",
+   "lat": 33.5141,
+   "lon": 126.5297,
+   "coord_status": "approximate"
+  },
+  {
+   "observatory_code": "185",
+   "observatory_name": "고산",
+   "lat": 33.2938,
+   "lon": 126.1628,
+   "coord_status": "approximate"
+  },
+  {
+   "observatory_code": "188",
+   "observatory_name": "성산",
+   "lat": 33.3868,
+   "lon": 126.8802,
+   "coord_status": "approximate"
+  },
+  {
+   "observatory_code": "189",
+   "observatory_name": "서귀포",
+   "lat": 33.2462,
+   "lon": 126.5653,
+   "coord_status": "approximate"
+  },
+  {
+   "observatory_code": "328",
+   "observatory_name": "중문",
+   "lat": 33.2494,
+   "lon": 126.406,
+   "coord_status": "official_example"
+  }
+ ]
+}

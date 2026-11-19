@@ -1,0 +1,17 @@
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.zip
+.env
+models/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/

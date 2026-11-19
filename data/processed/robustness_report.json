@@ -1,0 +1,7836 @@
+{
+ "generated_at": "2026-11-18 00:57:17",
+ "canonical": {
+  "items": 364,
+  "full_match": "364/364 (100.0%)",
+  "full_match_ratio": 1.0,
+  "parser_errors": 0,
+  "slot_accuracy": {
+   "intent": "364/364 (100.0%)",
+   "topic": "364/364 (100.0%)",
+   "emds": "364/364 (100.0%)",
+   "area_count": "364/364 (100.0%)",
+   "hour_from": "364/364 (100.0%)",
+   "hour_to": "364/364 (100.0%)",
+   "weather": "364/364 (100.0%)",
+   "day_type": "364/364 (100.0%)",
+   "user_group": "364/364 (100.0%)",
+   "wait_minutes": "364/364 (100.0%)",
+   "abstain": "364/364 (100.0%)",
+   "variable": "364/364 (100.0%)"
+  },
+  "by_style": {},
+  "by_family": {
+   "abstain_period": "15/15 (100.0%)",
+   "abstain_unmeasured": "18/18 (100.0%)",
+   "benchmark": "24/24 (100.0%)",
+   "boundary_after": "15/15 (100.0%)",
+   "boundary_visit": "15/15 (100.0%)",
+   "boundary_wait": "16/16 (100.0%)",
+   "causal_claim": "12/12 (100.0%)",
+   "compare_claim": "12/12 (100.0%)",
+   "compare_commute": "16/16 (100.0%)",
+   "compare_living": "15/15 (100.0%)",
+   "ev_claim": "6/6 (100.0%)",
+   "followup": "40/40 (100.0%)",
+   "group_elderly": "15/15 (100.0%)",
+   "group_youth": "10/10 (100.0%)",
+   "hidden_slice": "15/15 (100.0%)",
+   "market_crowd": "15/15 (100.0%)",
+   "night_crowd": "15/15 (100.0%)",
+   "profile_time": "18/18 (100.0%)",
+   "scenario": "6/6 (100.0%)",
+   "slice_claim": "12/12 (100.0%)",
+   "spending": "12/12 (100.0%)",
+   "trend_claim": "12/12 (100.0%)",
+   "waste_claim": "9/9 (100.0%)",
+   "weather_dry": "12/12 (100.0%)",
+   "wifi_claim": "9/9 (100.0%)"
+  }
+ },
+ "canonical_misses": [],
+ "sets": {
+  "gemma4:12b": {
+   "role": "개발용",
+   "items": 2548,
+   "full_match": "2494/2548 (97.9%)",
+   "full_match_ratio": 0.9788,
+   "parser_errors": 0,
+   "slot_accuracy": {
+    "intent": "2525/2548 (99.1%)",
+    "topic": "2532/2548 (99.4%)",
+    "emds": "2546/2548 (99.9%)",
+    "area_count": "2547/2548 (100.0%)",
+    "hour_from": "2544/2548 (99.8%)",
+    "hour_to": "2538/2548 (99.6%)",
+    "weather": "2548/2548 (100.0%)",
+    "day_type": "2545/2548 (99.9%)",
+    "user_group": "2543/2548 (99.8%)",
+    "wait_minutes": "2548/2548 (100.0%)",
+    "abstain": "2545/2548 (99.9%)",
+    "variable": "2543/2548 (99.8%)"
+   },
+   "by_style": {
+    "casual": "364/364 (100.0%)",
+    "typo": "339/364 (93.1%)",
+    "jeju": "364/364 (100.0%)",
+    "elderly": "363/364 (99.7%)",
+    "short": "338/364 (92.9%)",
+    "reorder": "362/364 (99.5%)",
+    "mixed": "364/364 (100.0%)"
+   },
+   "by_family": {
+    "abstain_period": "105/105 (100.0%)",
+    "abstain_unmeasured": "124/126 (98.4%)",
+    "benchmark": "163/168 (97.0%)",
+    "boundary_after": "105/105 (100.0%)",
+    "boundary_visit": "105/105 (100.0%)",
+    "boundary_wait": "112/112 (100.0%)",
+    "causal_claim": "84/84 (100.0%)",
+    "compare_claim": "84/84 (100.0%)",
+    "compare_commute": "112/112 (100.0%)",
+    "compare_living": "103/105 (98.1%)",
+    "ev_claim": "42/42 (100.0%)",
+    "followup": "271/280 (96.8%)",
+    "group_elderly": "105/105 (100.0%)",
+    "group_youth": "67/70 (95.7%)",
+    "hidden_slice": "102/105 (97.1%)",
+    "market_crowd": "105/105 (100.0%)",
+    "night_crowd": "96/105 (91.4%)",
+    "profile_time": "121/126 (96.0%)",
+    "scenario": "40/42 (95.2%)",
+    "slice_claim": "72/84 (85.7%)",
+    "spending": "84/84 (100.0%)",
+    "trend_claim": "84/84 (100.0%)",
+    "waste_claim": "62/63 (98.4%)",
+    "weather_dry": "84/84 (100.0%)",
+    "wifi_claim": "62/63 (98.4%)"
+   }
+  },
+  "qwen3:14b": {
+   "role": "평가용",
+   "items": 2548,
+   "full_match": "2225/2548 (87.3%)",
+   "full_match_ratio": 0.8732,
+   "parser_errors": 0,
+   "slot_accuracy": {
+    "intent": "2443/2548 (95.9%)",
+    "topic": "2493/2548 (97.8%)",
+    "emds": "2379/2548 (93.4%)",
+    "area_count": "2380/2548 (93.4%)",
+    "hour_from": "2479/2548 (97.3%)",
+    "hour_to": "2479/2548 (97.3%)",
+    "weather": "2538/2548 (99.6%)",
+    "day_type": "2538/2548 (99.6%)",
+    "user_group": "2512/2548 (98.6%)",
+    "wait_minutes": "2540/2548 (99.7%)",
+    "abstain": "2515/2548 (98.7%)",
+    "variable": "2505/2548 (98.3%)"
+   },
+   "by_style": {
+    "casual": "348/364 (95.6%)",
+    "typo": "321/364 (88.2%)",
+    "jeju": "359/364 (98.6%)",
+    "elderly": "348/364 (95.6%)",
+    "short": "302/364 (83.0%)",
+    "reorder": "356/364 (97.8%)",
+    "mixed": "191/364 (52.5%)"
+   },
+   "by_family": {
+    "abstain_period": "91/105 (86.7%)",
+    "abstain_unmeasured": "104/126 (82.5%)",
+    "benchmark": "137/168 (81.5%)",
+    "boundary_after": "96/105 (91.4%)",
+    "boundary_visit": "83/105 (79.0%)",
+    "boundary_wait": "102/112 (91.1%)",
+    "causal_claim": "83/84 (98.8%)",
+    "compare_claim": "75/84 (89.3%)",
+    "compare_commute": "98/112 (87.5%)",
+    "compare_living": "88/105 (83.8%)",
+    "ev_claim": "42/42 (100.0%)",
+    "followup": "264/280 (94.3%)",
+    "group_elderly": "64/105 (61.0%)",
+    "group_youth": "52/70 (74.3%)",
+    "hidden_slice": "101/105 (96.2%)",
+    "market_crowd": "97/105 (92.4%)",
+    "night_crowd": "78/105 (74.3%)",
+    "profile_time": "113/126 (89.7%)",
+    "scenario": "36/42 (85.7%)",
+    "slice_claim": "73/84 (86.9%)",
+    "spending": "75/84 (89.3%)",
+    "trend_claim": "79/84 (94.0%)",
+    "waste_claim": "55/63 (87.3%)",
+    "weather_dry": "76/84 (90.5%)",
+    "wifi_claim": "63/63 (100.0%)"
+   }
+  }
+ },
+ "misses": {
+  "gemma4:12b": [
+   {
+    "seed_id": "S0022",
+    "family": "compare_living",
+    "style": "typo",
+    "text": "우도면이랑 원도심 중 저녁에 설활하기 어기가 나아?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "living"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0026",
+    "family": "compare_living",
+    "style": "typo",
+    "text": "모슬포랑 중문단지 중 어디가 스아기 나아?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "living"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0033",
+    "family": "profile_time",
+    "style": "short",
+    "text": "노형오거리 8시 버스",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0039",
+    "family": "profile_time",
+    "style": "short",
+    "text": "추자면 8시 버스",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0040",
+    "family": "profile_time",
+    "style": "typo",
+    "text": "모설포 저녁 7시부스 어떠?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0043",
+    "family": "profile_time",
+    "style": "typo",
+    "text": "송산동 오흐 3시에 버수 어떠?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0045",
+    "family": "profile_time",
+    "style": "short",
+    "text": "천지동 8시 버스",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0066",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "조천읍 밤 10시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0067",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "노형동 밤 11시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0072",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "화북동 밤 10시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0073",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "중문단지 밤 11시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0074",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "안덕면 밤 9시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ],
+     "hour_to": [
+      22,
+      23
+     ]
+    }
+   },
+   {
+    "seed_id": "S0075",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "이호테우 밤 10시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0076",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "바오젠거리 밤 11시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0078",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "서귀포 신시가지 밤 10시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0079",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "쇠소깍 밤 11시 사람",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0096",
+    "family": "hidden_slice",
+    "style": "typo",
+    "text": "제주국제공항 정류소 보통은 한산한데 즃애 붐벼?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0097",
+    "family": "hidden_slice",
+    "style": "typo",
+    "text": "영어교육도시 정류소 평상시엔 한산한데 엉제 붐버?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0105",
+    "family": "hidden_slice",
+    "style": "typo",
+    "text": "화북주공 정류소 보통은 한산한데 왠제 붐븨?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0157",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학세들이 도두동에서 버스 타구 다니기 어떠?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0163",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학씸들이 한경면에서 버스 타구 다이기 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0164",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학셍들 모슬포에서 버스 타구 다니기 어떠?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0190",
+    "family": "abstain_unmeasured",
+    "style": "typo",
+    "text": "첨단과학단지 집가즈 어떠",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0199",
+    "family": "abstain_unmeasured",
+    "style": "elderly",
+    "text": "학생, 제주대 학군이 어떤지 좀 알려줄 수 있겠나?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      "청소년",
+      null
+     ]
+    }
+   },
+   {
+    "seed_id": "S0226",
+    "family": "followup",
+    "style": "typo",
+    "text": "그럼 8시 이횔은?",
+    "context": "천지동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0236",
+    "family": "followup",
+    "style": "typo",
+    "text": "그럼 8시 이훕은?",
+    "context": "중문관광단지 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0239",
+    "family": "followup",
+    "style": "typo",
+    "text": "쥬말은ㅇㅔ",
+    "context": "동홍동 퇴근 버스 어때?",
+    "wrong": {
+     "day_type": [
+      "any",
+      "weekend"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0244",
+    "family": "followup",
+    "style": "typo",
+    "text": "쥬말은 어캐?",
+    "context": "안덕면 퇴근 버스 어때?",
+    "wrong": {
+     "day_type": [
+      "any",
+      "weekend"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0246",
+    "family": "followup",
+    "style": "typo",
+    "text": "그럼 8시 이횔은?",
+    "context": "안덕면 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0254",
+    "family": "followup",
+    "style": "typo",
+    "text": "쥬말은요?",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "day_type": [
+      "any",
+      "weekend"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0255",
+    "family": "followup",
+    "style": "typo",
+    "text": "거기 말고 톳동이랑 비겨조",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "이도2동"
+      ],
+      [
+       "삼도2동",
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0256",
+    "family": "followup",
+    "style": "typo",
+    "text": "그럼 8시 이훕은?",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0261",
+    "family": "followup",
+    "style": "typo",
+    "text": "그럼 8시 이우는?",
+    "context": "연동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0263",
+    "family": "benchmark",
+    "style": "short",
+    "text": "애월 아라동 활기찬 정도 도민 기준",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "compare",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0270",
+    "family": "benchmark",
+    "style": "typo",
+    "text": "노형동 집가스 비싸나",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0274",
+    "family": "benchmark",
+    "style": "short",
+    "text": "외도동 삼화지구 퇴근 버스 귀가 편한 곳",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      17,
+      18
+     ],
+     "hour_to": [
+      19,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0280",
+    "family": "benchmark",
+    "style": "short",
+    "text": "동문시장 앞 정류소 숨은 혼잡 시간대",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0280",
+    "family": "benchmark",
+    "style": "reorder",
+    "text": "혼잡 민원이 과장이라는 동문시장 앞 정류소에 따로 숨은 혼잡 시간대가 있어?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0288",
+    "family": "scenario",
+    "style": "short",
+    "text": "오일장 장날 덜 붐비는 시간",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0291",
+    "family": "scenario",
+    "style": "short",
+    "text": "버스 이용 감소 전기차 보급 기사 사실",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "ev",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0330",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "애월환승정류장 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0331",
+    "family": "slice_claim",
+    "style": "typo",
+    "text": "서귀포혁신동시 정류소 평균 이용객 적어서 증편 필요 업나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0331",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "서귀포혁신도시 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0332",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "한림환승정류장 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0333",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "성산일출봉 정류소 증편 필요 없음",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0334",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "동문로터리 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0335",
+    "family": "slice_claim",
+    "style": "reorder",
+    "text": "증편이 필요 없다는 답변이 맞는지는 삼화지구 정류소 평균 이용객이 적기 때문인가요?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0336",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "제주민속오일장 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0337",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "노형오거리 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0338",
+    "family": "slice_claim",
+    "style": "typo",
+    "text": "중문관광단지 정류소 평균 이요객 적어증편 필요업나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0338",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "중문관광단지 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0339",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "서귀포중앙로터리 정류소 증편 필요 없음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0351",
+    "family": "waste_claim",
+    "style": "typo",
+    "text": "용담2동 음식물 쓰레기 2020년에 급증했다는 주전 검증해줘",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "용담2동"
+      ],
+      [
+       "용담1동"
+      ]
+     ]
+    }
+   },
+   {
+    "seed_id": "S0360",
+    "family": "wifi_claim",
+    "style": "typo",
+    "text": "외도동 공공와이퍡 이용자 2021년에 반토막 낫대? 맞나",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "wifi"
+     ],
+     "abstain": [
+      true,
+      false
+     ]
+    }
+   }
+  ],
+  "qwen3:14b": [
+   {
+    "seed_id": "S0001",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home, Tapdong or Ihotewu?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "삼도2동",
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0002",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for catching a bus after work on a rainy day, Donghongdong or Namwon-eup?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "남원읍",
+       "동홍동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0003",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home on a weekday between Samyangdong and Jeju Minsook Oeiljang?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "도두동",
+       "삼양동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0004",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for weekend bus ride, Yongdam 1-dong or Jeju Airport?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "용담1동",
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0006",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home on a rainy day, Daeryeongdong or Namwon-eup?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "남원읍",
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0007",
+    "family": "compare_commute",
+    "style": "short",
+    "text": "월정리 vs 첨단과학단지 퇴근 버스 어디 나음?",
+    "context": null,
+    "wrong": {
+     "day_type": [
+      "any",
+      "weekday"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0008",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking the weekend commute bus between Cheondan-daji and Samhwa-ji-gu?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "아라동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0009",
+    "family": "compare_commute",
+    "style": "typo",
+    "text": "첨단학과단지랑 애월읍 중에 퇴근 버스 타기 어디가 나아? (오타)",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "애월읍"
+      ],
+      [
+       "아라동",
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0009",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home, Cheonjeon Science Zone or Aewol-eup?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "아라동",
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0010",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better between 고산 and 우도면 for taking the bus home on a rainy day?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0011",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Between 제주민속오일장 and 첨단과학단지, which is better for taking a bus home on weekdays?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0013",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home between Chungmun Tourism Zone and Innovation City?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동",
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0014",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Which is better for taking a bus home on a rainy day, Cheondan Science Complex or Hanlim-eup?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "아라동",
+       "한림읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0016",
+    "family": "compare_commute",
+    "style": "mixed",
+    "text": "Between 연동 and 일도2동, which is better for taking the bus home on weekends?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0017",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living, Jeju Airport or Hwabukdong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "용담2동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0018",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living after work, Jocheon-eup or Chuja-myeon?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "조천읍",
+       "추자면"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0019",
+    "family": "compare_living",
+    "style": "typo",
+    "text": "이도1동랑 노형동 중 저엉에 생활하끼가 나아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0019",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living in the evening between Idodong and Nohyeongdong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "노형동",
+       "이도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0020",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better to live, Aewol-eup or Ide 2-dong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "topic": [
+      "general",
+      "living"
+     ],
+     "emds": [
+      [],
+      [
+       "애월읍",
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0021",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living after work, Olive Market or Daeryeong-dong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동",
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0022",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living in the evening between Udo-myeon and WonDosim?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "건입동",
+       "삼도1동",
+       "삼도2동",
+       "용담1동",
+       "우도면",
+       "이도1동",
+       "일도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0023",
+    "family": "compare_living",
+    "style": "jeju",
+    "text": "삼양동이랑 건입동 중에 어디가 더 좋우꽈?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "living"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0023",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better to live, Samyangdong or Geonipdong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "topic": [
+      "general",
+      "living"
+     ],
+     "emds": [
+      [],
+      [
+       "건입동",
+       "삼양동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0024",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living after work, Hanjeongmyeon or Samhwa area?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "한경면",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0025",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living in the evening between Seohongdong and Seokjikoji?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "서홍동",
+       "성산읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0026",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living, Mosupo or Jungmun Danji?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "대정읍",
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0027",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living after work, 월정리 or 한경면?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0028",
+    "family": "compare_living",
+    "style": "typo",
+    "text": "삼도2동랑 일도2동 중 저엉에 생활하기 어디가 낫겠지?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0028",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living in the evening between Samdo 2-dong and Ilbo 2-dong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "삼도2동",
+       "일도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0030",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living after work between Nohyeong-o-gori and Guseoju?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "건입동",
+       "노형동",
+       "삼도1동",
+       "삼도2동",
+       "용담1동",
+       "용담2동",
+       "이도1동",
+       "이도2동",
+       "일도1동",
+       "일도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0031",
+    "family": "compare_living",
+    "style": "mixed",
+    "text": "Which is better for living in the evening between Balsaemyeon and Dae-ryeong-dong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동",
+       "표선면"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0032",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "한경면 춺근 타임에 버스 어때?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      7
+     ],
+     "hour_to": [
+      null,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0033",
+    "family": "profile_time",
+    "style": "short",
+    "text": "노형오거리 8시 버스?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0034",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "What about the bus in Guseojeo at 7 PM?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "건입동",
+       "삼도1동",
+       "삼도2동",
+       "용담1동",
+       "용담2동",
+       "이도1동",
+       "이도2동",
+       "일도1동",
+       "일도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0036",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "Is there a bus in Yeondong at dawn?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      0
+     ],
+     "hour_to": [
+      null,
+      5
+     ]
+    }
+   },
+   {
+    "seed_id": "S0038",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "What's the bus like for commuting to Guso-eup at work time?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "구좌읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      7
+     ],
+     "hour_to": [
+      null,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0039",
+    "family": "profile_time",
+    "style": "short",
+    "text": "추자면 8시 버스?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0041",
+    "family": "profile_time",
+    "style": "typo",
+    "text": "제주공항 젓심때 버스 어태?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      12
+     ],
+     "hour_to": [
+      null,
+      13
+     ]
+    }
+   },
+   {
+    "seed_id": "S0041",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "How about the bus at Jeju Airport during lunch time?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0042",
+    "family": "profile_time",
+    "style": "typo",
+    "text": "남원읍 새벽 버스 어때? 그게 맞지?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0042",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "What about the bus in Namwon-eup at dawn?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "남원읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      0
+     ],
+     "hour_to": [
+      null,
+      5
+     ]
+    }
+   },
+   {
+    "seed_id": "S0044",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "What's the bus like for the commute to Mosupo at the usual time?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      7
+     ],
+     "hour_to": [
+      null,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0045",
+    "family": "profile_time",
+    "style": "short",
+    "text": "천지동 8시 버스?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      20,
+      8
+     ],
+     "hour_to": [
+      21,
+      9
+     ]
+    }
+   },
+   {
+    "seed_id": "S0048",
+    "family": "profile_time",
+    "style": "mixed",
+    "text": "Is there a bus to Jeju Minsook Oil Market early in the morning?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      7,
+      0
+     ],
+     "hour_to": [
+      9,
+      5
+     ]
+    }
+   },
+   {
+    "seed_id": "S0050",
+    "family": "boundary_after",
+    "style": "typo",
+    "text": "고산데 밤 8시 이후에도 버수 다녀?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "topic": [
+      "night",
+      "commute"
+     ],
+     "emds": [
+      [],
+      [
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0054",
+    "family": "boundary_after",
+    "style": "mixed",
+    "text": "In the English education city, can I take a bus after 9 PM?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0056",
+    "family": "boundary_after",
+    "style": "typo",
+    "text": "이도2동 버스 다녀 이도2동 버스 다녀 이도2동 버스 다녀",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      null,
+      20
+     ],
+     "hour_to": [
+      null,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0056",
+    "family": "boundary_after",
+    "style": "short",
+    "text": "이도2동 밤8시 버스",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0057",
+    "family": "boundary_after",
+    "style": "typo",
+    "text": "신화월드에서 밤 9시 이우에도 버스 다녀? 신화월드 이지",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      22,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0059",
+    "family": "boundary_after",
+    "style": "typo",
+    "text": "쇠소코에서 밤 8시 이우에도 버스 니라?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "효돈동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0060",
+    "family": "boundary_after",
+    "style": "short",
+    "text": "곽지 밤9시 버스",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      22,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0062",
+    "family": "boundary_after",
+    "style": "short",
+    "text": "영천동 밤 8시 버스?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_to": [
+      21,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0064",
+    "family": "boundary_after",
+    "style": "typo",
+    "text": "삼도2동에서 밤 10시 이하에도 버스 다녀?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0065",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "외도동 바 9시 넘어서도 사람 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      9,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0065",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Are there many people in 외도동 after 9 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0067",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Noheungdong after 11 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "노형동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0068",
+    "family": "night_crowd",
+    "style": "elderly",
+    "text": "천지동에서 밤 9시 이후에도 사람이 많으시다고 들었는데, 정말 그런가요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0068",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Cheonji-dong after 9 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "천지동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0069",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "대륜동 램 10시 뉘서도 사람 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      10,
+      22
+     ],
+     "hour_to": [
+      11,
+      23
+     ]
+    }
+   },
+   {
+    "seed_id": "S0069",
+    "family": "night_crowd",
+    "style": "elderly",
+    "text": "밤 10시를 지나서도 대륜동에 사람이 많으시다고 들었는데, 정말 그런지 궁금하옵니다.",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0069",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "대륜동 10시 이후 사람이 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      10,
+      22
+     ]
+    }
+   },
+   {
+    "seed_id": "S0069",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Daeryongdong after 10pm?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0070",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "매일올레시장 밤 11시 넘어서도 사람 말래?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0070",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "매일올레시장 11시 이후 사람이 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      11,
+      23
+     ]
+    }
+   },
+   {
+    "seed_id": "S0071",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "고산 밤9시 사람 많아?",
+    "context": null,
+    "wrong": {
+     "hour_to": [
+      22,
+      23
+     ]
+    }
+   },
+   {
+    "seed_id": "S0071",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Ko Sang after 9 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0073",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people at Zhongwen Danji after 11 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0074",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "안드면 밤 9시 넘어서도 사람 매워?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "안덕면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0074",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Andeok-myeon after 9 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "안덕면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0075",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people at Ihotew after 10 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0076",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people at Baozhen Street after 11 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0077",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "중문동 9시 이후 사람이 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      9,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0077",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in 중문동 after 9pm?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0078",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "서귀포 신타지 밤10시넘어도 사람 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대륜동",
+       "대천동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0078",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "서귀포 신시가지 10시 이후 사람이 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      10,
+      22
+     ]
+    }
+   },
+   {
+    "seed_id": "S0078",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people in Seogwipo Shin Sigaji after 10 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동",
+       "대천동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0079",
+    "family": "night_crowd",
+    "style": "typo",
+    "text": "쇠소코 밤 11시 넘어서도 사람 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "효돈동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0079",
+    "family": "night_crowd",
+    "style": "elderly",
+    "text": "밤 11시를 지나서도 쇠소깍에 사람이 많으시다고 들었는데, 사실은 어때시죠?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0079",
+    "family": "night_crowd",
+    "style": "short",
+    "text": "쇠소깍 11시 이후 사람이 많아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      11,
+      23
+     ]
+    }
+   },
+   {
+    "seed_id": "S0079",
+    "family": "night_crowd",
+    "style": "mixed",
+    "text": "Is there a lot of people at Soe Sokkot after 11 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "효돈동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0080",
+    "family": "market_crowd",
+    "style": "typo",
+    "text": "이호테우해변 정류소 장날에 붐벼? 이거 맞음?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0082",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Jeju University bus stop crowded on the market day?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0085",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Jeju City Hall bus stop busy on the market day?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0087",
+    "family": "market_crowd",
+    "style": "short",
+    "text": "서귀포중앙로터리 장날 붐비나?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0087",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Seogwipo Central Rotary Station busy on the market day?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0089",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Jeju Minsook Oil Market stop crowded on the market day?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "commute"
+     ],
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0091",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Jeju International Airport stop busy on the market day?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ],
+     "emds": [
+      [],
+      [
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0092",
+    "family": "market_crowd",
+    "style": "mixed",
+    "text": "Is the Jeju Bus Terminal stop busy on market day?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "오라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0097",
+    "family": "hidden_slice",
+    "style": "typo",
+    "text": "영어교육도시 정류소는 평군은 한산한데 언제 블무비?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0099",
+    "family": "hidden_slice",
+    "style": "mixed",
+    "text": "노형오거리 정류소는 폴리곤은 한산한데 when 붐비나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0106",
+    "family": "hidden_slice",
+    "style": "typo",
+    "text": "중문관광단지 정류소는 평균엔 한산한데 웬때 붐비우꽈?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0107",
+    "family": "hidden_slice",
+    "style": "mixed",
+    "text": "애월환승정류장 정류소는 usually 한산한데 when 붐벼?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0112",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 20 minutes at Hangeum Station, what time can I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      20
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0116",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 20 minutes at the English Education City bus stop, what time should I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      20
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0118",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 10 minutes at Seogwipo GudoSim bus stop, what's the latest time I can catch a bus?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "송산동",
+       "정방동",
+       "중앙동",
+       "천지동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      10
+     ],
+     "variable": [
+      "return_hour",
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0119",
+    "family": "boundary_wait",
+    "style": "typo",
+    "text": "olle시장 정류소에서 15분까지 기다릴 수 있으면 몇시 까지 버스 타면 돼?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0119",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 15 minutes at Olle Market bus stop, what time should I take the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      15
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0121",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 30 minutes at Gwakji bus stop, what time should I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      30
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0122",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait 10 minutes at Daecheon Station, what time can I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "대천동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      10
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0123",
+    "family": "boundary_wait",
+    "style": "short",
+    "text": "15분까지 기다릴 수 있으면 몇시까지 버스 타면 되?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0123",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 15 minutes at Olie Market bus stop, what time should I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      15
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0125",
+    "family": "boundary_wait",
+    "style": "mixed",
+    "text": "If I can wait for 30 minutes at Maeil Olle Market stop, what time should I catch the bus?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "wait_minutes": [
+      null,
+      30
+     ],
+     "variable": [
+      null,
+      "wait_minutes"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0126",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When should I go to Ihotewu Beach to see the market with less crowd?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0127",
+    "family": "boundary_visit",
+    "style": "typo",
+    "text": "서귀포혁신도시장 보러 몇시에 가면 덜 붐벼? ㅅㅈㅈ",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "노형동",
+       "대륜동",
+       "연동"
+      ],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      2,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0127",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to visit Seogwipo Innovation Town's market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0128",
+    "family": "boundary_visit",
+    "style": "typo",
+    "text": "제주민속오일장 장보러 몇시에가노 더 별로 붐빔?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0128",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to visit Jeju Folk Oil Market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0130",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to visit the Nuweamaru market in Jeju to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0131",
+    "family": "boundary_visit",
+    "style": "typo",
+    "text": "중문관광단지 장 보러 뭣시 때 가믄 덜 붐빔이야?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0131",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When should I go to Zhongwen Tourist Zone market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0132",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When do I go to Jeju University's market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0133",
+    "family": "boundary_visit",
+    "style": "short",
+    "text": "제주동문재래시장 장 보러 몇 시?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0133",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to go to Jeju Dongmun Market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "일도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0134",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to go to Jeju City Hall for the market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0135",
+    "family": "boundary_visit",
+    "style": "casual",
+    "text": "장 보러 언제 가면 사람이 덜 많을까?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0135",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to go to the Jeju English Education City market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0136",
+    "family": "boundary_visit",
+    "style": "typo",
+    "text": "서귀포매일올레시장장 보러 쯤 시에 가는게 덜 붐벼?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0136",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When should I go to Seogwipo Maeil Olie Market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0137",
+    "family": "boundary_visit",
+    "style": "typo",
+    "text": "제주국제공항 장 보러 면에 가는 게 덜 빽뷔?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0137",
+    "family": "boundary_visit",
+    "style": "jeju",
+    "text": "제주국제공항 장 보러 뭘 때 가야 덜 붐비우꽈?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0137",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to visit Jeju International Airport market to avoid crowds?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0139",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to go to Dongmuimarket for a market visit so it's less crowded?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "일도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0140",
+    "family": "boundary_visit",
+    "style": "jeju",
+    "text": "올레시장 장 보러 언제 가면 덜 붐벼우꽈? 10시에 가면 사람이 덜 많수과?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      10,
+      null
+     ],
+     "hour_to": [
+      11,
+      null
+     ]
+    }
+   },
+   {
+    "seed_id": "S0140",
+    "family": "boundary_visit",
+    "style": "mixed",
+    "text": "When is the best time to go to Oille Market for a market visit without too many people?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0141",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "어르신이 신화월드에서 평일에 아침에 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0141",
+    "family": "group_elderly",
+    "style": "typo",
+    "text": "어르신이 신화월드에서 평일 오젼에 버스 타기 괜찮을까? 신화월드 신화월드",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      9
+     ],
+     "hour_to": [
+      null,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0141",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "신화월드 평일 오전 버스 타기 괜찮을까",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0141",
+    "family": "group_elderly",
+    "style": "reorder",
+    "text": "평일 오전에 신화월드에서 버스 타기 괜찮을까요?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0142",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "조천읍 비 오는날 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0142",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take a bus in Jocheon-eup on a rainy day?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "조천읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0143",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "삼도2동 버스 타기 괜찮을까",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0144",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "어르신이 혁신도시에서 평일 아침에 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0144",
+    "family": "group_elderly",
+    "style": "elderly",
+    "text": "아, 제가 혁신도시에서 평일 아침에 버스를 타고 다니려는데, 그러시면 어르신들이 편하게 이용하시겠는지요? 혹시 문제가 있으시면 미리 알려주시면 감사하겠습니다.",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0144",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "혁신도시 평일 아침 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ],
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0144",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take a bus in Innovation City during weekdays in the morning?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0145",
+    "family": "group_elderly",
+    "style": "typo",
+    "text": "어르신 함渎에서 비 오는 날 버스 타기 괜찮을까? 가",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "조천읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0145",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "함덕 비 오는 날 버스 타면 될까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0145",
+    "family": "group_elderly",
+    "style": "reorder",
+    "text": "비 오는 날 함덕에서 버스 타는 게 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0145",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take the bus in Hamdeok on a rainy day?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "조천읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0146",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "예래동 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0147",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "어르신이 일출봉에서 평일 아침에 버스 타면 되는 거야?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0147",
+    "family": "group_elderly",
+    "style": "elderly",
+    "text": "어르신께서 일출봉에서 평일 아침에 버스를 타시는 것이 어떠신지요? 혹시 불편함이 없으시겠는지요.",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0147",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "일출봉 평일 오전 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0147",
+    "family": "group_elderly",
+    "style": "reorder",
+    "text": "평일 오전에 일출봉에서 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0148",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "아저씨가 곽지에 비가 오는 날 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0148",
+    "family": "group_elderly",
+    "style": "elderly",
+    "text": "아니요, 곽지에서 비 오는 날 버스를 타시는 것이 좀 힘들 수 있겠습니다. 조심하시기 바랍니다.",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0148",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "곽지 비 오는날 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0149",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "아저씨가 첨단단지에서 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0149",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take a bus at Cheomdan Dangi?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0150",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "어르신이 구좌읍에서 평일 아침에 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0150",
+    "family": "group_elderly",
+    "style": "typo",
+    "text": "어르신 구조읍 평일 오젼 버스 타기 괜찮을까? 틀린말 많아 죄송해",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      9
+     ],
+     "hour_to": [
+      null,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0150",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take a bus in Gujo-eup during weekdays in the morning?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "구좌읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0151",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "아저씨가 한경면에서 비가 오는 날에 버스 타는 게 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0151",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "한경면 비 오는 날 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0152",
+    "family": "group_elderly",
+    "style": "typo",
+    "text": "어르신 서弘동에서 버스 타기 꽤찮을까? ㅠ",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "서홍동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0152",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "서홍동 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "casual",
+    "text": "아저씨가 화북공업단지에서 평일 아침에 버스 타면 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ],
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "typo",
+    "text": "어르신 화북공업단지에서 평일 오젼 버스 타기 괜찮을까? 휴스",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      9
+     ],
+     "hour_to": [
+      null,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "jeju",
+    "text": "어르신 화북공업단지에 평일 아침에 버스 타면 괜찮을까우꽈?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "화북공업단지 평일 오전 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "reorder",
+    "text": "평일 오전 화북공업단지에서 버스를 타는 것이 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0153",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "화북공업단지에서 평일 오전에 버스 타기 good 할까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0154",
+    "family": "group_elderly",
+    "style": "short",
+    "text": "비 오는 날 오라동 버스 타기 괜찮을까?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0155",
+    "family": "group_elderly",
+    "style": "elderly",
+    "text": "그곳에서 버스를 타시는 것이 어르신께는 어떠실지요?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0155",
+    "family": "group_elderly",
+    "style": "mixed",
+    "text": "Is it okay for the elderly to take a bus at Baozeng Street?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0156",
+    "family": "group_youth",
+    "style": "short",
+    "text": "천지동에서 버스 타고 다니면 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0156",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Cheongji-dong take a bus to go around, how is that?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "천지동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0157",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학동이들 도두동에 버스 타고 다니기 어따?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0157",
+    "family": "group_youth",
+    "style": "short",
+    "text": "도두동 버스 타고 다니기 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0157",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Dodo-dong, taking a bus to go around, how's that?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0158",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Hwabukdong, taking a bus, how is it for students?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0159",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students take the bus in Donghongdong, how is that for students?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "동홍동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0160",
+    "family": "group_youth",
+    "style": "short",
+    "text": "삼양동에서 버스 타고 다니면 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0160",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Samyang-dong, taking a bus, how is that?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "삼양동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0161",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학동이 이호테우에서 버스 타고 다니기 어태?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0161",
+    "family": "group_youth",
+    "style": "short",
+    "text": "이호테우 버스 타고 다니기 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0162",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students take the bus in Oradong, how is that for students?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "오라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0163",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학셍들한경면 버스 타고 다니기 어텴?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0163",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Hangeum-myeon take the bus, how is that?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0164",
+    "family": "group_youth",
+    "style": "typo",
+    "text": "학시들이 모슬포에서 버스 타고 다니기 어텨? ㅠ",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0164",
+    "family": "group_youth",
+    "style": "short",
+    "text": "모슬포에서 버스 타고 다니면 어때?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "청소년"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0164",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Mosupo, taking a bus, how is that?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0165",
+    "family": "group_youth",
+    "style": "mixed",
+    "text": "Students in Seogwipo Gudo-sim, how is taking a bus around?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "송산동",
+       "정방동",
+       "중앙동",
+       "천지동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0166",
+    "family": "weather_dry",
+    "style": "mixed",
+    "text": "On a day when it's not raining, what's the bus for commuting back from the English Education City like?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ],
+     "weather": [
+      "rain",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0168",
+    "family": "weather_dry",
+    "style": "typo",
+    "text": "비 않 오는 날 곽지 퇴근 버스 어케지?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "rain",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0168",
+    "family": "weather_dry",
+    "style": "mixed",
+    "text": "On a day without rain, what's the bus from Gwakji for the commute home like?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ],
+     "weather": [
+      "rain",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0170",
+    "family": "weather_dry",
+    "style": "short",
+    "text": "산방산 퇴근 버스 어때?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "any",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0171",
+    "family": "weather_dry",
+    "style": "short",
+    "text": "혁신도시 퇴근 버스 어때?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "any",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0174",
+    "family": "weather_dry",
+    "style": "elderly",
+    "text": "비가 올 일 없는 날, 한경면에서 퇴근 버스를 타시면 어떠실지요?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "rain",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0174",
+    "family": "weather_dry",
+    "style": "short",
+    "text": "한경면 퇴근 버스",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "any",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0176",
+    "family": "weather_dry",
+    "style": "short",
+    "text": "용담1동 퇴근 버스?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "any",
+      "dry"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0180",
+    "family": "spending",
+    "style": "reorder",
+    "text": "도민이 많이 쓴다는 우도면 상권 저녁 매출은 맞나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0181",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much is the evening sales in the Shin Jeju business area used by residents?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "노형동",
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0183",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much is the evening sales at Ha-gwi Sanggyeon, which many citizens use?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0185",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much does the evening sales in Cheon-dan Science Zone commercial area depend on the residents?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0186",
+    "family": "spending",
+    "style": "casual",
+    "text": "매일올레시장 저녁에 도민들이 많이 써?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0187",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much does the Nuwemaru-gil commercial area generate in evening sales with locals?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0188",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much is the evening sales in Hangeum-myeon's upper district? 도민이 많이 써?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0189",
+    "family": "spending",
+    "style": "casual",
+    "text": "야, 올레시장 저녁에 도민들이 많이 써?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0189",
+    "family": "spending",
+    "style": "mixed",
+    "text": "How much is the evening sales at Olive Market? 도민이 많이 써?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0191",
+    "family": "abstain_unmeasured",
+    "style": "elderly",
+    "text": "모슬포에 사시는 분들께 물어보니, 층간소음이 좀 있는 듯하던데, 실제로는 어때요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0191",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the floor noise in Moslpo? 층간소음 어때?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0192",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the security in 탑동?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0193",
+    "family": "abstain_unmeasured",
+    "style": "casual",
+    "text": "용두암 주변 학교는 어때?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0193",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What is the situation of the school district around Yongduam?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0194",
+    "family": "abstain_unmeasured",
+    "style": "typo",
+    "text": "원도심 미스먼지 어때? 오타 많아 죄송",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0195",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How's the parking situation in 효돈동?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0196",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the house price near Jeju Minsook Oil Market?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0197",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the noise between floors in Yeoraedong?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "예래동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0198",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the situation of security in Sinjeju?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "노형동",
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0199",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the military base at Jeju University?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0200",
+    "family": "abstain_unmeasured",
+    "style": "typo",
+    "text": "남원읍 마세먼지 어대?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0200",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the PM2.5 level in Namwon-eup?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "남원읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0201",
+    "family": "abstain_unmeasured",
+    "style": "casual",
+    "text": "대천동에 주차할 때 얼마나 어렵고 힘들어?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0201",
+    "family": "abstain_unmeasured",
+    "style": "elderly",
+    "text": "대천동에서 주차하는 데 얼마나 어려우시고 힘드시던지요?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0201",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the parking situation in 대천동?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0203",
+    "family": "abstain_unmeasured",
+    "style": "elderly",
+    "text": "표선면에 있어 보니 층간소음이 꽤나 심하던데, 그곳의 층간소음 문제는 어떻게 되시나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0203",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the situation with floor noise in Balsaem-myeon?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "표선면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0204",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "How is the safety in 효돈동?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0205",
+    "family": "abstain_unmeasured",
+    "style": "casual",
+    "text": "애월읍에서 아이들 교육은 어떻게 돼? 학군이 괜찮아?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      "청소년",
+      null
+     ]
+    }
+   },
+   {
+    "seed_id": "S0206",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the PM2.5 situation in Yeondong?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0207",
+    "family": "abstain_unmeasured",
+    "style": "mixed",
+    "text": "What's the parking situation at Ollae Market? 주차난 어때?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0208",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus crowded in Jeju's Chungmun-danji in summer 2022?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0209",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus crowded in Daechun-dong during winter 2023?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대천동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0210",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was there a lot of bus traffic at Jeju Minsook Oeiljang in Spring 2024?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0212",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus crowded in Jongno during summer 2023?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0213",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Did the bus in Innovation City get crowded during the summer of 2022?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0214",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was there a lot of traffic on the bus at Dongmun Market during the winter of 2023?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "일도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0215",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus busy at Jungmun Tourist Area in spring 2024?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "중문동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0216",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus crowded in Samdo 2-dong during the 2024 autumn?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "삼도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0217",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was there a lot of traffic on the bus in Daecheon-dong during the 2023 summer?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대천동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0218",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was there a lot of bus traffic at Jeju Airport during the summer of 2022?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "용담2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0219",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus busy in Tableon-myeon during winter 2023?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "표선면"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0220",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus busy at Ihotewu during spring 2024?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0221",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus in Daeryeongdong crowded in the fall of 2024?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대륜동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0222",
+    "family": "abstain_period",
+    "style": "mixed",
+    "text": "Was the bus busy in the English Education City during the summer of 2023?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "대정읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0226",
+    "family": "followup",
+    "style": "mixed",
+    "text": "So what about after 8?",
+    "context": "천지동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0230",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Seongsan Ilchulbong instead of that",
+    "context": "송산동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "송산동"
+      ],
+      [
+       "성산읍",
+       "송산동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0231",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "송산동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0235",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Myeildole Market instead of that place",
+    "context": "중문관광단지 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "중문동"
+      ],
+      [
+       "중문동",
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0236",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "중문관광단지 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0240",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Jeongbangdong, not there",
+    "context": "동홍동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "동홍동"
+      ],
+      [
+       "동홍동",
+       "정방동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0241",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "동홍동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0245",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Maeyil Ole Market instead of that place",
+    "context": "안덕면 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "안덕면"
+      ],
+      [
+       "안덕면",
+       "중앙동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0246",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "안덕면 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0247",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What's the standard for elders?",
+    "context": "안덕면 퇴근 버스 어때?",
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0250",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Baozhen Street instead of that place",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "이도2동"
+      ],
+      [
+       "연동",
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0251",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0255",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with Taeppong, not there",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "이도2동"
+      ],
+      [
+       "삼도2동",
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0257",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What's the standard for elders?",
+    "context": "이도2동 퇴근 버스 어때?",
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0260",
+    "family": "followup",
+    "style": "mixed",
+    "text": "Compare with chujiamyeon?",
+    "context": "연동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [
+       "연동"
+      ],
+      [
+       "연동",
+       "추자면"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0261",
+    "family": "followup",
+    "style": "mixed",
+    "text": "What about after 8?",
+    "context": "연동 퇴근 버스 어때?",
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "hour_from": [
+      17,
+      20
+     ],
+     "hour_to": [
+      19,
+      23
+     ],
+     "variable": [
+      null,
+      "return_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0264",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "If I move to Samhwa area, will the bus for going home be okay? Compare with Ara-dong",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "아라동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0265",
+    "family": "benchmark",
+    "style": "short",
+    "text": "도두동 오일장 정류소 버스 증편 필요 여부",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0266",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "When is Samhwa Area Bus Stop busy on a rainy weekday during commute?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "hidden_slice"
+     ],
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "hour_from": [
+      null,
+      17
+     ],
+     "hour_to": [
+      null,
+      19
+     ]
+    }
+   },
+   {
+    "seed_id": "S0269",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Is it true that the evening civilian population flow in Noheung-dong is higher than in Yeondong?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "노형동",
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0270",
+    "family": "benchmark",
+    "style": "elderly",
+    "text": "노형동에서 집을 사시는 분들이 계시는데, 거기 집값이 많이 비싸시다고 들었는데, 정말 그런지요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "fact_check",
+      "profile"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0271",
+    "family": "benchmark",
+    "style": "short",
+    "text": "중문동 대륜동 인구 비교",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "living"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0272",
+    "family": "benchmark",
+    "style": "casual",
+    "text": "일도1동하고 삼도1동 중에 밤 9시 이후 사람이 많은 동네는 어딘대?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "night"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0272",
+    "family": "benchmark",
+    "style": "elderly",
+    "text": "일도1동과 삼도1동 중에서 밤 9시 이후 사람이 많은 곳은 어딜까요? 잘 알지 못해서 조언을 구합니다.",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "night"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0272",
+    "family": "benchmark",
+    "style": "short",
+    "text": "일도1동 삼도1동 밤9시 이후 사람 많은 동네?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "night"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0272",
+    "family": "benchmark",
+    "style": "reorder",
+    "text": "밤 9시 이후에 사람이 많은 동네는 일도1동과 삼도1동 중에 어디야?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "night"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0272",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Which area between 일도1동 and 삼도1동 has lots of people after 9 PM?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "night"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0273",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Which is better for living after work, Nohyeong-dong or Waedong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "emds": [
+      [],
+      [
+       "노형동",
+       "외도동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0274",
+    "family": "benchmark",
+    "style": "short",
+    "text": "외도동 삼화지구 퇴근 버스 귀가 편한곳?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      17,
+      18
+     ],
+     "hour_to": [
+      19,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0274",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Which is more convenient to go back home by bus after work, 외도동 or 삼화지구?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      18
+     ],
+     "hour_to": [
+      null,
+      21
+     ]
+    }
+   },
+   {
+    "seed_id": "S0275",
+    "family": "benchmark",
+    "style": "typo",
+    "text": "작년 겨울 아라동이랑 노형동 중 밤에 어지가 더 블미봤어?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "night",
+      "crowd"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0275",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Last winter, between Ara-dong and Nowhyeong-dong, which was busier at night?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "topic": [
+      "general",
+      "crowd"
+     ],
+     "emds": [
+      [],
+      [
+       "노형동",
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0280",
+    "family": "benchmark",
+    "style": "elderly",
+    "text": "동문시장 앞 정류소에 이용객이 평균적이어서 혼잡 민원이 과장된 듯하나, 사실은 따로 혼잡 시간대가 있는지 여쭙고자 합니다.",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0280",
+    "family": "benchmark",
+    "style": "short",
+    "text": "동문시장 앞 정류소 혼잡 시간대 있나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0280",
+    "family": "benchmark",
+    "style": "reorder",
+    "text": "동문시장 앞 정류소에 평균적인 이용객 수에도 불구하고 숨은 혼잡 시간대가 있는지 묻고 싶다.",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0281",
+    "family": "benchmark",
+    "style": "casual",
+    "text": "화요일 아침 외도동 외도부영 정류소가 평소보다 더 붐비는 거 맞아?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0281",
+    "family": "benchmark",
+    "style": "typo",
+    "text": "외도동 외도부영 제류소는 화요일 오전에 평소보다 붐비다는데 맞아? 푸",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0281",
+    "family": "benchmark",
+    "style": "elderly",
+    "text": "혹시 화요일 아침 외도동 외도부영 정류소가 평소보다 더 붐비는지 여쭙고 싶은데, 맞으시나요?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      7,
+      9
+     ],
+     "hour_to": [
+      9,
+      11
+     ]
+    }
+   },
+   {
+    "seed_id": "S0281",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Is it true that the 외도동 외도부영 bus stop is busier than usual on Tuesday mornings?",
+    "context": null,
+    "wrong": {
+     "hour_from": [
+      null,
+      9
+     ],
+     "hour_to": [
+      null,
+      11
+     ],
+     "day_type": [
+      "any",
+      "화"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0282",
+    "family": "benchmark",
+    "style": "typo",
+    "text": "첨단과학테크놀로지단지 정류소는 오일장 장날에 평소보다 붐비대던데 사실이야?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "도두동"
+      ],
+      [
+       "아라동"
+      ]
+     ]
+    }
+   },
+   {
+    "seed_id": "S0282",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Is it true that the Chando Science & Tech Park Station gets busier than usual on the oil market day?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ],
+     "emds": [
+      [],
+      [
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0284",
+    "family": "benchmark",
+    "style": "elderly",
+    "text": "비가 많이 오는 바람에 연동 카드 매출이 줄어든다고 하셨는데, 그 말씀이 옳으신지요?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "rain",
+      "any"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0284",
+    "family": "benchmark",
+    "style": "reorder",
+    "text": "연동 카드 매출이 비가 많이 오는 이유로 줄었나요?",
+    "context": null,
+    "wrong": {
+     "weather": [
+      "rain",
+      "any"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0284",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Because it rained a lot, did the Yeondong card sales really drop?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "spending"
+     ],
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0285",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Are the number of citizens in Ara-dong more than in Samyang-dong during the evening? It's true?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0286",
+    "family": "benchmark",
+    "style": "short",
+    "text": "2024 삼화지구 버스 이용객 2025보다 늘었나?",
+    "context": null,
+    "wrong": {
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0286",
+    "family": "benchmark",
+    "style": "mixed",
+    "text": "Did the number of bus passengers in Samhwa District in 2024 increase compared to 2025?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "삼양동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0287",
+    "family": "scenario",
+    "style": "mixed",
+    "text": "Which is better for living after 9 PM, Ilgo 1-dong near Dongmun Market or Ego 1-dong?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "topic": [
+      "living",
+      "night"
+     ],
+     "emds": [
+      [],
+      [
+       "이도1동",
+       "일도1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0288",
+    "family": "scenario",
+    "style": "short",
+    "text": "오일장 장날 언제 가면 덜 붐벼?",
+    "context": null,
+    "wrong": {
+     "user_group": [
+      null,
+      "어르신"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0288",
+    "family": "scenario",
+    "style": "mixed",
+    "text": "When is the best time to go to the Oeiljang market on the fair day so it's less crowded? I'm going with my elders.",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "boundary"
+     ],
+     "emds": [
+      [],
+      [
+       "도두동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "day_type": [
+      "any",
+      "market"
+     ],
+     "user_group": [
+      null,
+      "어르신"
+     ],
+     "variable": [
+      null,
+      "visit_hour"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0289",
+    "family": "scenario",
+    "style": "mixed",
+    "text": "Which is better for evening life after work, Sinjeju or Guseju?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "profile",
+      "compare"
+     ],
+     "topic": [
+      "general",
+      "living"
+     ],
+     "emds": [
+      [],
+      [
+       "건입동",
+       "노형동",
+       "삼도1동",
+       "삼도2동",
+       "연동",
+       "용담1동",
+       "용담2동",
+       "이도1동",
+       "이도2동",
+       "일도1동",
+       "일도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0290",
+    "family": "scenario",
+    "style": "short",
+    "text": "도두동 오일장 정류소 버스 증편 필요 없나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0291",
+    "family": "scenario",
+    "style": "short",
+    "text": "기사 맞아?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0293",
+    "family": "trend_claim",
+    "style": "mixed",
+    "text": "Is the news about the number of passengers using Ihoteu bus doubling true?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0298",
+    "family": "trend_claim",
+    "style": "typo",
+    "text": "섭지코지 부스 이용객이 1.5배 늘었다는 기사 사실이야? 스럽",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0298",
+    "family": "trend_claim",
+    "style": "mixed",
+    "text": "Is the news about the 1.5 times increase in Ssangji Coast Bus passengers true?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "성산읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0303",
+    "family": "trend_claim",
+    "style": "mixed",
+    "text": "Is it true that the number of passengers using the bus in Gujo-eup has tripled according to the news?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "구좌읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0304",
+    "family": "trend_claim",
+    "style": "mixed",
+    "text": "Is the news about the bus passenger increase by 1.5 times at Baogenzhai Street true?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "연동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0315",
+    "family": "causal_claim",
+    "style": "typo",
+    "text": "쇠소코 카드 매출이 줄어든 건 관광객 때문이라던데 맞아? (오타 2개 이상)",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "효돈동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0319",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "도두동 저녁 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "도두동"
+      ],
+      [
+       "도두동",
+       "오라동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0320",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "화북공업단지 저녁에 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "화북동"
+      ],
+      [
+       "아라동",
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0321",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "성산일출봉 저녁 도민 수 더 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "성산읍"
+      ],
+      [
+       "성산읍",
+       "송산동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0323",
+    "family": "compare_claim",
+    "style": "mixed",
+    "text": "Is it true that there are more residents in Udo-myeon than at Ihotew during the evening?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [],
+      [
+       "우도면",
+       "이호동"
+      ]
+     ],
+     "area_count": [
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0324",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "건입동 저녁 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "건입동"
+      ],
+      [
+       "건입동",
+       "애월읍"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0325",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "일도2동 저녁 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "일도2동"
+      ],
+      [
+       "일도2동",
+       "한경면"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0326",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "성산일출봉 저녁에 도민이 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "성산읍"
+      ],
+      [
+       "남원읍",
+       "성산읍"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0327",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "노형오거리 저녁에 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "노형동"
+      ],
+      [
+       "노형동",
+       "아라동"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0328",
+    "family": "compare_claim",
+    "style": "short",
+    "text": "조천읍 저녁 도민 많아?",
+    "context": null,
+    "wrong": {
+     "emds": [
+      [
+       "조천읍"
+      ],
+      [
+       "연동",
+       "조천읍"
+      ]
+     ],
+     "area_count": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "seed_id": "S0330",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "애월환승정류장 정류소 증편 필요 없나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0332",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "한림환승정류장 정류소 증편 필요 없어?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0334",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "동문로터리 정류소는 증편 필요 없나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0335",
+    "family": "slice_claim",
+    "style": "typo",
+    "text": "삼화지구징류소는 평균이용객이 적어서 증편이 필요없다는 안버, 맞아?",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "crowd",
+      "commute"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0335",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "삼화지구 정류소 증편 필요 없나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0337",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "노형오거리 정류소 증편 필요 없나요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0338",
+    "family": "slice_claim",
+    "style": "jeju",
+    "text": "중문관광단지 정류소 평균 이용객이 적어서 증편이 필요 없는 거우꽈?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0338",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "중문관광단지 정류소 평균 이용객 적어서 증편 필요 없나?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0338",
+    "family": "slice_claim",
+    "style": "mixed",
+    "text": "중문관광단지 정류소 평균 이용객이 적어서 증편 필요 없는 답변, that right?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0339",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "서귀포중앙로터리 정류소 증편 필요?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0340",
+    "family": "slice_claim",
+    "style": "short",
+    "text": "제주국제공항 정류소 이용객 적다 증편 필요 없어?",
+    "context": null,
+    "wrong": {
+     "intent": [
+      "hidden_slice",
+      "fact_check"
+     ]
+    }
+   },
+   {
+    "seed_id": "S0347",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Verify the claim that food waste in Bonggae-dong increased sharply in 2019",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "봉개동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0348",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Check if the claim that food waste in Namwon-eup increased sharply in 2020 is true",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "남원읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0349",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Check if the claim that food waste in Ide 2-dong increased sharply in 2023 is true.",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "이도2동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   },
+   {
+    "seed_id": "S0350",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Verify the claim that food waste in Seohongdong increased sharply in 2019.",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "서홍동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0351",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Check if the claim that food waste in Yongdam 1-dong increased sharply in 2020 is true",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "용담1동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0353",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Verify the claim that food waste in Hwahokdong increased sharply in 2019.",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "화북동"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0354",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Check if the claim that food waste in Namwon-Myeon increased sharply in 2020 is true",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "남원읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "seed_id": "S0355",
+    "family": "waste_claim",
+    "style": "mixed",
+    "text": "Check if the claim that food waste in Jocheon-Myeon increased sharply in 2023 is true.",
+    "context": null,
+    "wrong": {
+     "topic": [
+      "general",
+      "waste"
+     ],
+     "emds": [
+      [],
+      [
+       "조천읍"
+      ]
+     ],
+     "area_count": [
+      0,
+      1
+     ],
+     "abstain": [
+      false,
+      true
+     ]
+    }
+   }
+  ]
+ },
+ "baseline": {
+  "measured_at": "2026-11-16",
+  "code": "해석기 수정 전 코드(제출 ZIP 2026-11-16 10:26 판의 src)로 같은 채점 스크립트를 실행한 값",
+  "protocol": [
+   "기준 질문 364개(data/meta/robustness_seeds.jsonl)를 로컬 LLM 2종이 7가지 말투로 바꿔 썼다.",
+   "gemma4:12b 세트(개발용)의 불일치만 보고 해석기를 고쳤다. qwen3:14b 세트(평가용)는 수정 전과 수정 후 점수만 쟀고 불일치 예시를 보지 않았다. 단, 생성 설정을 확인하려고 평가용 모델의 2문항(S0001, S0002) 출력을 미리 본 적이 있으며 수정에는 쓰지 않았다.",
+   "수정 전 점수는 이 파일, 수정 후 점수는 scripts/run_robustness_test.py 의 실행 결과(data/processed/robustness_report.json)이다.",
+   "1차 채점 뒤 평가용 세트의 불일치를 보고 실제 한국어 표현(한글 숫자 시각, '살아야', '비가 오지 않는' 등)을 2차로 고쳤다. 그래서 현재 코드의 평가용 점수는 사후 점수이며 일반화 성능으로 주장하지 않는다."
+  ],
+  "generation": {
+   "host": "데스크탑 RTX 5070 Ti 16GB, WSL2 Ubuntu, Ollama 0.34.2",
+   "models": {
+    "gemma4:12b": {
+     "role": "개발용",
+     "digest": "6114515d63c1",
+     "size": "8.0 GB",
+     "license": "Apache-2.0",
+     "seconds": 755
+    },
+    "qwen3:14b": {
+     "role": "평가용",
+     "digest": "bdbd181c33f2",
+     "size": "9.3 GB",
+     "license": "Apache-2.0",
+     "seconds": 1483
+    }
+   },
+   "options": {
+    "temperature": 0.8,
+    "num_ctx": 4096,
+    "think": false,
+    "sample_seed": "문항 번호 x 10 + 재시도 번호",
+    "format": "JSON 스키마",
+    "workers": 4
+   },
+   "styles": [
+    "casual",
+    "typo",
+    "jeju",
+    "elderly",
+    "short",
+    "reorder",
+    "mixed"
+   ],
+   "script": "scripts/generate_question_variants.py",
+   "discarded": "설정 확인용 시험 생성(문항 2~4개 프로브, 추론 모드를 켠 gemma4 앞부분 11문항)은 버리고 위 조건의 1회 생성만 썼다."
+  },
+  "canonical": {
+   "items": 364,
+   "full_match": "362/364 (99.5%)",
+   "full_match_ratio": 0.9945,
+   "parser_errors": 0,
+   "slot_accuracy": {
+    "intent": "364/364 (100.0%)",
+    "topic": "362/364 (99.5%)",
+    "emds": "364/364 (100.0%)",
+    "area_count": "364/364 (100.0%)",
+    "hour_from": "364/364 (100.0%)",
+    "hour_to": "364/364 (100.0%)",
+    "weather": "364/364 (100.0%)",
+    "day_type": "364/364 (100.0%)",
+    "user_group": "364/364 (100.0%)",
+    "wait_minutes": "364/364 (100.0%)",
+    "abstain": "364/364 (100.0%)",
+    "variable": "364/364 (100.0%)"
+   },
+   "by_style": {},
+   "by_family": {
+    "abstain_period": "15/15 (100.0%)",
+    "abstain_unmeasured": "17/18 (94.4%)",
+    "benchmark": "24/24 (100.0%)",
+    "boundary_after": "15/15 (100.0%)",
+    "boundary_visit": "15/15 (100.0%)",
+    "boundary_wait": "16/16 (100.0%)",
+    "causal_claim": "12/12 (100.0%)",
+    "compare_claim": "12/12 (100.0%)",
+    "compare_commute": "16/16 (100.0%)",
+    "compare_living": "15/15 (100.0%)",
+    "ev_claim": "6/6 (100.0%)",
+    "followup": "40/40 (100.0%)",
+    "group_elderly": "15/15 (100.0%)",
+    "group_youth": "10/10 (100.0%)",
+    "hidden_slice": "15/15 (100.0%)",
+    "market_crowd": "15/15 (100.0%)",
+    "night_crowd": "15/15 (100.0%)",
+    "profile_time": "18/18 (100.0%)",
+    "scenario": "6/6 (100.0%)",
+    "slice_claim": "12/12 (100.0%)",
+    "spending": "11/12 (91.7%)",
+    "trend_claim": "12/12 (100.0%)",
+    "waste_claim": "9/9 (100.0%)",
+    "weather_dry": "12/12 (100.0%)",
+    "wifi_claim": "9/9 (100.0%)"
+   }
+  },
+  "sets": {
+   "gemma4:12b": {
+    "items": 2548,
+    "full_match": "2149/2548 (84.3%)",
+    "full_match_ratio": 0.8434,
+    "parser_errors": 0,
+    "slot_accuracy": {
+     "intent": "2319/2548 (91.0%)",
+     "topic": "2420/2548 (95.0%)",
+     "emds": "2518/2548 (98.8%)",
+     "area_count": "2519/2548 (98.9%)",
+     "hour_from": "2529/2548 (99.3%)",
+     "hour_to": "2505/2548 (98.3%)",
+     "weather": "2543/2548 (99.8%)",
+     "day_type": "2543/2548 (99.8%)",
+     "user_group": "2542/2548 (99.8%)",
+     "wait_minutes": "2533/2548 (99.4%)",
+     "abstain": "2542/2548 (99.8%)",
+     "variable": "2422/2548 (95.1%)"
+    },
+    "by_style": {
+     "casual": "346/364 (95.1%)",
+     "typo": "275/364 (75.5%)",
+     "jeju": "320/364 (87.9%)",
+     "elderly": "289/364 (79.4%)",
+     "short": "276/364 (75.8%)",
+     "reorder": "342/364 (94.0%)",
+     "mixed": "301/364 (82.7%)"
+    },
+    "by_family": {
+     "abstain_period": "105/105 (100.0%)",
+     "abstain_unmeasured": "115/126 (91.3%)",
+     "benchmark": "144/168 (85.7%)",
+     "boundary_after": "72/105 (68.6%)",
+     "boundary_visit": "35/105 (33.3%)",
+     "boundary_wait": "97/112 (86.6%)",
+     "causal_claim": "84/84 (100.0%)",
+     "compare_claim": "60/84 (71.4%)",
+     "compare_commute": "107/112 (95.5%)",
+     "compare_living": "83/105 (79.0%)",
+     "ev_claim": "42/42 (100.0%)",
+     "followup": "253/280 (90.4%)",
+     "group_elderly": "105/105 (100.0%)",
+     "group_youth": "66/70 (94.3%)",
+     "hidden_slice": "67/105 (63.8%)",
+     "market_crowd": "105/105 (100.0%)",
+     "night_crowd": "38/105 (36.2%)",
+     "profile_time": "120/126 (95.2%)",
+     "scenario": "34/42 (81.0%)",
+     "slice_claim": "53/84 (63.1%)",
+     "spending": "75/84 (89.3%)",
+     "trend_claim": "84/84 (100.0%)",
+     "waste_claim": "60/63 (95.2%)",
+     "weather_dry": "83/84 (98.8%)",
+     "wifi_claim": "62/63 (98.4%)"
+    }
+   },
+   "qwen3:14b": {
+    "items": 2548,
+    "full_match": "1929/2548 (75.7%)",
+    "full_match_ratio": 0.7571,
+    "parser_errors": 0,
+    "slot_accuracy": {
+     "intent": "2306/2548 (90.5%)",
+     "topic": "2257/2548 (88.6%)",
+     "emds": "2344/2548 (92.0%)",
+     "area_count": "2345/2548 (92.0%)",
+     "hour_from": "2416/2548 (94.8%)",
+     "hour_to": "2401/2548 (94.2%)",
+     "weather": "2513/2548 (98.6%)",
+     "day_type": "2522/2548 (99.0%)",
+     "user_group": "2490/2548 (97.7%)",
+     "wait_minutes": "2539/2548 (99.6%)",
+     "abstain": "2497/2548 (98.0%)",
+     "variable": "2439/2548 (95.7%)"
+    },
+    "by_style": {
+     "casual": "297/364 (81.6%)",
+     "typo": "281/364 (77.2%)",
+     "jeju": "336/364 (92.3%)",
+     "elderly": "286/364 (78.6%)",
+     "short": "264/364 (72.5%)",
+     "reorder": "330/364 (90.7%)",
+     "mixed": "135/364 (37.1%)"
+    },
+    "by_family": {
+     "abstain_period": "81/105 (77.1%)",
+     "abstain_unmeasured": "94/126 (74.6%)",
+     "benchmark": "131/168 (78.0%)",
+     "boundary_after": "84/105 (80.0%)",
+     "boundary_visit": "47/105 (44.8%)",
+     "boundary_wait": "95/112 (84.8%)",
+     "causal_claim": "83/84 (98.8%)",
+     "compare_claim": "54/84 (64.3%)",
+     "compare_commute": "98/112 (87.5%)",
+     "compare_living": "77/105 (73.3%)",
+     "ev_claim": "42/42 (100.0%)",
+     "followup": "218/280 (77.9%)",
+     "group_elderly": "64/105 (61.0%)",
+     "group_youth": "50/70 (71.4%)",
+     "hidden_slice": "77/105 (73.3%)",
+     "market_crowd": "98/105 (93.3%)",
+     "night_crowd": "17/105 (16.2%)",
+     "profile_time": "109/126 (86.5%)",
+     "scenario": "34/42 (81.0%)",
+     "slice_claim": "47/84 (56.0%)",
+     "spending": "68/84 (81.0%)",
+     "trend_claim": "79/84 (94.0%)",
+     "waste_claim": "55/63 (87.3%)",
+     "weather_dry": "64/84 (76.2%)",
+     "wifi_claim": "63/63 (100.0%)"
+    }
+   }
+  },
+  "round1": {
+   "code": "1차 수정 코드: 개발용(gemma4) 세트의 불일치만 보고 고친 해석기. 평가용(qwen3) 세트는 이 코드로 처음 채점했고 이것이 공식 평가 점수다.",
+   "canonical": {
+    "items": 364,
+    "full_match": "364/364 (100.0%)",
+    "full_match_ratio": 1.0,
+    "parser_errors": 0,
+    "slot_accuracy": {
+     "intent": "364/364 (100.0%)",
+     "topic": "364/364 (100.0%)",
+     "emds": "364/364 (100.0%)",
+     "area_count": "364/364 (100.0%)",
+     "hour_from": "364/364 (100.0%)",
+     "hour_to": "364/364 (100.0%)",
+     "weather": "364/364 (100.0%)",
+     "day_type": "364/364 (100.0%)",
+     "user_group": "364/364 (100.0%)",
+     "wait_minutes": "364/364 (100.0%)",
+     "abstain": "364/364 (100.0%)",
+     "variable": "364/364 (100.0%)"
+    },
+    "by_style": {},
+    "by_family": {
+     "abstain_period": "15/15 (100.0%)",
+     "abstain_unmeasured": "18/18 (100.0%)",
+     "benchmark": "24/24 (100.0%)",
+     "boundary_after": "15/15 (100.0%)",
+     "boundary_visit": "15/15 (100.0%)",
+     "boundary_wait": "16/16 (100.0%)",
+     "causal_claim": "12/12 (100.0%)",
+     "compare_claim": "12/12 (100.0%)",
+     "compare_commute": "16/16 (100.0%)",
+     "compare_living": "15/15 (100.0%)",
+     "ev_claim": "6/6 (100.0%)",
+     "followup": "40/40 (100.0%)",
+     "group_elderly": "15/15 (100.0%)",
+     "group_youth": "10/10 (100.0%)",
+     "hidden_slice": "15/15 (100.0%)",
+     "market_crowd": "15/15 (100.0%)",
+     "night_crowd": "15/15 (100.0%)",
+     "profile_time": "18/18 (100.0%)",
+     "scenario": "6/6 (100.0%)",
+     "slice_claim": "12/12 (100.0%)",
+     "spending": "12/12 (100.0%)",
+     "trend_claim": "12/12 (100.0%)",
+     "waste_claim": "9/9 (100.0%)",
+     "weather_dry": "12/12 (100.0%)",
+     "wifi_claim": "9/9 (100.0%)"
+    }
+   },
+   "sets": {
+    "gemma4:12b": {
+     "items": 2548,
+     "full_match": "2488/2548 (97.6%)",
+     "full_match_ratio": 0.9765,
+     "parser_errors": 0,
+     "slot_accuracy": {
+      "intent": "2523/2548 (99.0%)",
+      "topic": "2530/2548 (99.3%)",
+      "emds": "2545/2548 (99.9%)",
+      "area_count": "2546/2548 (99.9%)",
+      "hour_from": "2544/2548 (99.8%)",
+      "hour_to": "2538/2548 (99.6%)",
+      "weather": "2548/2548 (100.0%)",
+      "day_type": "2545/2548 (99.9%)",
+      "user_group": "2542/2548 (99.8%)",
+      "wait_minutes": "2548/2548 (100.0%)",
+      "abstain": "2545/2548 (99.9%)",
+      "variable": "2543/2548 (99.8%)"
+     },
+     "by_style": {
+      "casual": "364/364 (100.0%)",
+      "typo": "336/364 (92.3%)",
+      "jeju": "364/364 (100.0%)",
+      "elderly": "362/364 (99.5%)",
+      "short": "336/364 (92.3%)",
+      "reorder": "362/364 (99.5%)",
+      "mixed": "364/364 (100.0%)"
+     },
+     "by_family": {
+      "abstain_period": "105/105 (100.0%)",
+      "abstain_unmeasured": "123/126 (97.6%)",
+      "benchmark": "162/168 (96.4%)",
+      "boundary_after": "105/105 (100.0%)",
+      "boundary_visit": "103/105 (98.1%)",
+      "boundary_wait": "112/112 (100.0%)",
+      "causal_claim": "84/84 (100.0%)",
+      "compare_claim": "83/84 (98.8%)",
+      "compare_commute": "112/112 (100.0%)",
+      "compare_living": "103/105 (98.1%)",
+      "ev_claim": "42/42 (100.0%)",
+      "followup": "270/280 (96.4%)",
+      "group_elderly": "105/105 (100.0%)",
+      "group_youth": "67/70 (95.7%)",
+      "hidden_slice": "102/105 (97.1%)",
+      "market_crowd": "105/105 (100.0%)",
+      "night_crowd": "96/105 (91.4%)",
+      "profile_time": "121/126 (96.0%)",
+      "scenario": "40/42 (95.2%)",
+      "slice_claim": "72/84 (85.7%)",
+      "spending": "84/84 (100.0%)",
+      "trend_claim": "84/84 (100.0%)",
+      "waste_claim": "62/63 (98.4%)",
+      "weather_dry": "84/84 (100.0%)",
+      "wifi_claim": "62/63 (98.4%)"
+     }
+    },
+    "qwen3:14b": {
+     "items": 2548,
+     "full_match": "2140/2548 (84.0%)",
+     "full_match_ratio": 0.8399,
+     "parser_errors": 0,
+     "slot_accuracy": {
+      "intent": "2420/2548 (95.0%)",
+      "topic": "2468/2548 (96.9%)",
+      "emds": "2363/2548 (92.7%)",
+      "area_count": "2364/2548 (92.8%)",
+      "hour_from": "2427/2548 (95.3%)",
+      "hour_to": "2429/2548 (95.3%)",
+      "weather": "2528/2548 (99.2%)",
+      "day_type": "2538/2548 (99.6%)",
+      "user_group": "2490/2548 (97.7%)",
+      "wait_minutes": "2540/2548 (99.7%)",
+      "abstain": "2500/2548 (98.1%)",
+      "variable": "2489/2548 (97.7%)"
+     },
+     "by_style": {
+      "casual": "332/364 (91.2%)",
+      "typo": "307/364 (84.3%)",
+      "jeju": "356/364 (97.8%)",
+      "elderly": "333/364 (91.5%)",
+      "short": "288/364 (79.1%)",
+      "reorder": "351/364 (96.4%)",
+      "mixed": "173/364 (47.5%)"
+     },
+     "by_family": {
+      "abstain_period": "82/105 (78.1%)",
+      "abstain_unmeasured": "99/126 (78.6%)",
+      "benchmark": "137/168 (81.5%)",
+      "boundary_after": "88/105 (83.8%)",
+      "boundary_visit": "73/105 (69.5%)",
+      "boundary_wait": "101/112 (90.2%)",
+      "causal_claim": "83/84 (98.8%)",
+      "compare_claim": "70/84 (83.3%)",
+      "compare_commute": "98/112 (87.5%)",
+      "compare_living": "78/105 (74.3%)",
+      "ev_claim": "42/42 (100.0%)",
+      "followup": "247/280 (88.2%)",
+      "group_elderly": "64/105 (61.0%)",
+      "group_youth": "51/70 (72.9%)",
+      "hidden_slice": "99/105 (94.3%)",
+      "market_crowd": "97/105 (92.4%)",
+      "night_crowd": "79/105 (75.2%)",
+      "profile_time": "110/126 (87.3%)",
+      "scenario": "35/42 (83.3%)",
+      "slice_claim": "71/84 (84.5%)",
+      "spending": "75/84 (89.3%)",
+      "trend_claim": "79/84 (94.0%)",
+      "waste_claim": "55/63 (87.3%)",
+      "weather_dry": "64/84 (76.2%)",
+      "wifi_claim": "63/63 (100.0%)"
+     }
+    }
+   }
+  }
+ },
+ "pipeline": {
+  "questions": 5207,
+  "runtime_errors": 0,
+  "missing_sections": 0,
+  "audit_below_full": 0,
+  "seconds": 116.0,
+  "ms_median": 168.4,
+  "ms_p95": 338.9,
+  "ms_max": 5509.3,
+  "verdicts": {
+   "no_boundary": 523,
+   "boundary": 202,
+   "no_reversal": 2119,
+   "reversal": 201,
+   "masked_overload": 539,
+   "none": 63,
+   "abstain": 574,
+   "inconclusive": 265,
+   "thin_denominator": 112,
+   "unmeasured_cause": 33,
+   "confirmed": 118,
+   "refuted": 99,
+   "structural_break": 104,
+   "correlation_only": 128,
+   "insufficient_area": 127
+  },
+  "error_samples": [],
+  "missing_samples": [],
+  "audit_samples": []
+ }
+}

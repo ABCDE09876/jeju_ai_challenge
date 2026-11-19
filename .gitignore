@@ -1,0 +1,13 @@
+# 실행 중 생기거나 공개하면 안 되는 파일(저장소에 올리지 않음)
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+dist/
+data/raw/
+data/official/
+data/processed/jeju_truelife.db
+data/processed/*.building
+data/processed/app_errors.log

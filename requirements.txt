@@ -1,0 +1,12 @@
+# 제주의 두 얼굴 - 검증 환경: Python 3.13.9·3.12.10 / Windows 11 (CPU 전용, GPU 불필요)
+# 아래는 검증된 표준 패키지이며 하한은 실제 테스트한 버전 기준입니다.
+anthropic>=2.8.0,<3        # Claude API(선택). 키가 없으면 설치돼 있어도 호출하지 않음
+python-dotenv>=1.0         # .env 로드
+streamlit>=1.51,<2         # UI (width="stretch" API 사용)
+pandas>=2.0,<3             # 데이터 처리(format="mixed" 날짜 파싱 사용)
+numpy>=1.24,<3
+openpyxl>=3.1              # 공식 엑셀 해독
+plotly>=6.0                # 대시보드 차트
+matplotlib>=3.7            # 기획서용 고해상도 차트(PNG) 생성
+pytest>=8.0                # 테스트
+# 선택: psutil(벤치마크 메모리 측정), python-pptx(기획서 PPTX 생성) - 없으면 해당 기능만 건너뜀
